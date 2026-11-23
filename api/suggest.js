@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = (process.env.GEMINI_API_KEY || '').trim();
   if (!apiKey) {
     return res.status(503).json({ error: 'GEMINI_API_KEY is not configured' });
   }
@@ -70,32 +70,72 @@ Geschenkprofil:
 - Zusatzwunsch des Nutzers: ${safePrompt || 'keiner'}
 `.trim();
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: systemInstruction }] },
-          contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            temperature: 0.85,
-            responseMimeType: 'application/json'
-          }
-        })
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+    const payload = JSON.stringify({
+      systemInstruction: { parts: [{ text: systemInstruction }] },
+      contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+      generationConfig: {
+        temperature: 0.85,
+        responseMimeType: 'application/json'
       }
-    );
+    });
 
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error('Gemini API error:', response.status, errText);
-      return res.status(502).json({ error: 'Upstream AI error', details: errText.slice(0, 300) });
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const retryStatuses = new Set([429, 500, 502, 503, 504]);
+    const maxAttempts = 3;
+    const startedAt = Date.now();
+
+    let response = null;
+    let lastStatus = 0;
+
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
+      if (attempt > 0 && Date.now() - startedAt > 18000) break;
+
+      try {
+        response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+          signal: AbortSignal.timeout(12000)
+        });
+
+        if (response.ok) break;
+
+        lastStatus = response.status;
+        const errText = await response.text();
+        console.error(`Gemini API error (attempt ${attempt + 1}/${maxAttempts}):`, response.status, errText.slice(0, 300));
+
+        if (retryStatuses.has(response.status) && attempt < maxAttempts - 1) {
+          await sleep(900 * (attempt + 1));
+          continue;
+        }
+        break;
+      } catch (fetchErr) {
+        console.error(`Gemini fetch error (attempt ${attempt + 1}/${maxAttempts}):`, fetchErr?.name || fetchErr?.message || fetchErr);
+        response = null;
+        lastStatus = 504;
+
+        if (attempt < maxAttempts - 1 && Date.now() - startedAt < 14000) {
+          await sleep(900);
+          continue;
+        }
+        break;
+      }
+    }
+
+    if (!response || !response.ok) {
+      return res.status(502).json({ error: 'Upstream AI error', status: lastStatus });
     }
 
     const data = await response.json();
     const parts = data?.candidates?.[0]?.content?.parts || [];
-    const answerPart = parts.find((p) => !p.thought && typeof p.text === 'string') || parts[parts.length - 1] || {};
-    const rawText = String(answerPart.text || '[]').trim();
+    const textParts = parts
+      .filter((p) => !p.thought && typeof p.text === 'string')
+      .map((p) => p.text);
+    const rawText = String(textParts.length ? textParts.join('\n') : (parts[parts.length - 1]?.text || '[]'))
+      .replace(/^```(?:json)?\s*/i, '')
+      .replace(/\s*```$/i, '')
+      .trim();
 
     let parsed = [];
     try {
@@ -103,7 +143,11 @@ Geschenkprofil:
     } catch {
       const match = rawText.match(/\[[\s\S]*\]/);
       if (match) {
-        parsed = JSON.parse(match[0]);
+        try {
+          parsed = JSON.parse(match[0]);
+        } catch {
+          parsed = [];
+        }
       }
     }
 
@@ -124,9 +168,10 @@ Geschenkprofil:
           .replace(/\s+/g, ' ')
           .trim()
           .slice(0, 65);
+        const safeEmoji = Array.from(String(item.emoji || '✨').trim()).slice(0, 4).join('') || '✨';
         return {
           id: `ai_${Date.now()}_${idx}`,
-          emoji: String(item.emoji || '✨').slice(0, 4),
+          emoji: safeEmoji,
           title: String(item.title || 'Geschenkidee').replace(/\d+\s?(€|eur|euro)/gi, '').trim().slice(0, 75),
           reason: String(item.reason || '').replace(/\d+\s?(€|eur|euro)/gi, '').trim().slice(0, 145),
           query: cleanQuery,
@@ -138,7 +183,7 @@ Geschenkprofil:
       .slice(0, 5);
 
     if (!cleanItems.length) {
-      console.error('Empty parsed items from rawText:', rawText.slice(0, 300));
+      console.error('Empty parsed items:', rawText.slice(0, 300));
       return res.status(502).json({ error: 'Empty AI response' });
     }
 
