@@ -89,23 +89,33 @@ Geschenkprofil:
     if (!response.ok) {
       const errText = await response.text();
       console.error('Gemini API error:', response.status, errText);
-      return res.status(502).json({ error: 'Upstream AI error' });
+      return res.status(502).json({ error: 'Upstream AI error', details: errText.slice(0, 300) });
     }
 
     const data = await response.json();
-    const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '[]';
+    const parts = data?.candidates?.[0]?.content?.parts || [];
+    const answerPart = parts.find((p) => !p.thought && typeof p.text === 'string') || parts[parts.length - 1] || {};
+    const rawText = String(answerPart.text || '[]').trim();
 
     let parsed = [];
     try {
       parsed = JSON.parse(rawText);
     } catch {
       const match = rawText.match(/\[[\s\S]*\]/);
-      parsed = match ? JSON.parse(match[0]) : [];
+      if (match) {
+        parsed = JSON.parse(match[0]);
+      }
     }
+
+    const rawList = Array.isArray(parsed)
+      ? parsed
+      : (parsed && typeof parsed === 'object'
+          ? (Object.values(parsed).find((v) => Array.isArray(v)) || [])
+          : []);
 
     const bannedMinor = /(alkohol|whisky|wein|bier|gin|vodka|likör|messer|zigarre|vape|erotik)/i;
 
-    const cleanItems = (Array.isArray(parsed) ? parsed : [])
+    const cleanItems = rawList
       .slice(0, 6)
       .map((item, idx) => {
         const cleanQuery = String(item.query || item.title || '')
@@ -126,6 +136,11 @@ Geschenkprofil:
       .filter((item) => item.query.length > 2)
       .filter((item) => !(isMinor && bannedMinor.test(`${item.title} ${item.query} ${item.reason}`)))
       .slice(0, 5);
+
+    if (!cleanItems.length) {
+      console.error('Empty parsed items from rawText:', rawText.slice(0, 300));
+      return res.status(502).json({ error: 'Empty AI response' });
+    }
 
     return res.status(200).json({ items: cleanItems });
   } catch (error) {
