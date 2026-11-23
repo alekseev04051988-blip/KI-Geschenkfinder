@@ -1,4 +1,3 @@
-// api/suggest.js — Vercel Serverless Function (ESM) for KI Geschenkfinder
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -134,4 +133,3 @@ Geschenkprofil:
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 }
-```[span_4](start_span)[span_4](end_span)
