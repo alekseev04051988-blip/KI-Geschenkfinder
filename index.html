@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>KI Geschenkfinder — Persönliche Geschenkideen in Sekunden</title>
+  <meta name="description" content="Finde mit dem KI Geschenkfinder in wenigen Sekunden passende, kreative Geschenkideen für Geburtstag, Weihnachten, Wichteln & mehr — perfekt im Wunschbudget." />
+  <meta property="og:title" content="KI Geschenkfinder — Persönliche Geschenkideen in Sekunden" />
+  <meta property="og:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6d28d9" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-2: #f1f3f9;
+      --text: #111827;
+      --muted: #5b6474;
+      --border: rgba(17, 24, 39, 0.09);
+      --accent: #7c3aed;
+      --accent-2: #ec4899;
+      --accent-soft: rgba(124, 58, 237, 0.11);
+      --ok: #10b981;
+      --amz: #ff9900;
+      --amz-text: #111827;
+      --shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
+      --radius: 20px;
+    }
+    [data-theme="dark"] {
+      --bg: #0b0f19;
+      --surface: #131a2a;
+      --surface-2: #1b2438;
+      --text: #f3f6fc;
+      --muted: #98a4bc;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #8b5cf6;
+      --accent-2: #f472b6;
+      --accent-soft: rgba(139, 92, 246, 0.18);
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      line-height: 1.45;
+      min-height: 100vh;
+    }
+    body {
+      padding-bottom: 92px;
+      background-image:
+        radial-gradient(600px circle at 10% -10%, rgba(124,58,237,0.14), transparent 60%),
+        radial-gradient(500px circle at 95% 0%, rgba(236,72,153,0.12), transparent 55%);
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 14px 16px 32px; }
+
+    /* Header */
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; margin-bottom: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .logo {
+      width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 21px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff; box-shadow: 0 8px 20px rgba(124,58,237,0.32);
+    }
+    .brand-title { font-weight: 800; font-size: 1.08rem; letter-spacing: -0.02em; }
+    .brand-sub { font-size: 0.76rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .icon-btn {
+      height: 38px; padding: 0 11px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-weight: 700; font-size: 0.82rem;
+      display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+      transition: transform .15s, border-color .15s;
+    }
+    .icon-btn:active { transform: scale(0.95); }
+    .fav-badge {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff; font-size: 0.72rem; padding: 1px 6px; border-radius: 999px;
+      min-width: 19px; text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center; padding: 8px 4px 18px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.76rem; font-weight: 700; color: var(--accent);
+      background: var(--accent-soft); padding: 5px 12px; border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 8px; font-size: clamp(1.5rem, 5vw, 2.05rem);
+      font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+    }
+    .hero p {
+      margin: 0 auto; max-width: 520px; color: var(--muted); font-size: 0.94rem;
+    }
+
+    /* Card */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px; margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+    .sec-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; margin-bottom: 12px;
+    }
+    .sec-title { font-weight: 800; font-size: 0.96rem; display: flex; align-items: center; gap: 7px; }
+    .sec-hint { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+
+    /* Chips & Segmented */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      border: 1.5px solid var(--border); background: var(--surface-2);
+      color: var(--text); border-radius: 13px; padding: 9px 12px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      transition: all .15s ease; user-select: none;
+    }
+    .chip:active { transform: scale(0.96); }
+    .chip.active {
+      background: var(--accent-soft); border-color: var(--accent);
+      color: var(--accent); box-shadow: 0 4px 12px rgba(124,58,237,0.14);
+    }
+    .mini-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .mini-chip {
+      border: 1px solid var(--border); background: var(--surface-2);
+      color: var(--muted); border-radius: 999px; padding: 4px 10px;
+      font-size: 0.76rem; font-weight: 700; cursor: pointer;
+    }
+    .mini-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* Sliders */
+    .range-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .big-val {
+      font-weight: 900; font-size: 1.25rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .safe-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.74rem; font-weight: 700; padding: 3px 9px; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14); color: #059669;
+    }
+    [data-theme="dark"] .safe-badge { color: #34d399; }
+    input[type="range"] {
+      width: 100%; height: 8px; border-radius: 999px; appearance: none;
+      background: var(--surface-2); outline: none; accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .corridor-box {
+      margin-top: 12px; padding: 10px 12px; border-radius: 13px;
+      background: var(--surface-2); display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      font-size: 0.82rem;
+    }
+    .tol-btns { display: inline-flex; gap: 6px; }
+    .tol-btn {
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); border-radius: 9px; padding: 5px 10px;
+      font-size: 0.78rem; font-weight: 700; cursor: pointer;
+    }
+    .tol-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* Text Input */
+    .hint-input {
+      width: 100%; border: 1.5px solid var(--border); background: var(--surface-2);
+      color: var(--text); border-radius: 14px; padding: 12px 14px;
+      font-size: 0.92rem; font-family: inherit; outline: none;
+      transition: border-color .15s;
+    }
+    .hint-input:focus { border-color: var(--accent); }
+
+    /* CTA */
+    .cta-btn {
+      width: 100%; border: none; border-radius: 16px; padding: 16px 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 12px 28px rgba(124, 58, 237, 0.34);
+      transition: transform .15s, filter .15s;
+    }
+    .cta-btn:active { transform: scale(0.98); }
+    .sticky-bar {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border);
+    }
+    .sticky-inner { max-width: 720px; margin: 0 auto; }
+
+    /* Modals */
+    .overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(8, 12, 24, 0.72); backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center; padding: 14px;
+    }
+    .overlay.open { display: flex; }
+    .modal {
+      width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 24px; padding: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+      animation: popIn .22s ease;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(14px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; margin-bottom: 14px;
+    }
+    .modal-title { font-size: 1.15rem; font-weight: 900; }
+    .close-btn {
+      width: 36px; height: 36px; border-radius: 12px; border: 1px solid var(--border);
+      background: var(--surface-2); color: var(--text); font-size: 1.1rem;
+      cursor: pointer; display: grid; place-items: center; flex-shrink: 0;
+    }
+
+    /* Thinking Animation */
+    .think-wrap { text-align: center; padding: 18px 8px; }
+    .orb {
+      width: 82px; height: 82px; margin: 0 auto 18px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f472b6, #7c3aed 65%, #3b0764);
+      display: grid; place-items: center; font-size: 34px; color: #fff;
+      box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.5);
+      animation: pulseOrb 1.3s infinite ease-in-out;
+    }
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124,58,237,0.45); }
+      50% { transform: scale(1.07); box-shadow: 0 0 0 20px rgba(124,58,237,0); }
+    }
+    .prog-track {
+      height: 10px; border-radius: 999px; background: var(--surface-2);
+      overflow: hidden; margin: 14px 0 16px;
+    }
+    .prog-fill {
+      height: 100%; width: 0%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width .22s ease;
+    }
+    .think-steps { text-align: left; display: grid; gap: 8px; max-width: 420px; margin: 0 auto; }
+    .t-step {
+      font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 8px;
+      opacity: 0.4; transition: all .2s;
+    }
+    .t-step.done { opacity: 1; color: var(--text); font-weight: 600; }
+
+    /* Gift Result Cards */
+    .profile-bar {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+    }
+    .ptag {
+      font-size: 0.75rem; font-weight: 700; padding: 4px 10px;
+      border-radius: 999px; background: var(--surface-2); color: var(--muted);
+    }
+    .gift-list { display: grid; gap: 12px; }
+    .gift-card {
+      border: 1px solid var(--border); background: var(--surface-2);
+      border-radius: 18px; padding: 14px; display: grid; gap: 10px;
+    }
+    .gift-top { display: flex; align-items: flex-start; gap: 12px; }
+    .gift-ico {
+      width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+      background: var(--surface); border: 1px solid var(--border);
+      display: grid; place-items: center; font-size: 24px;
+    }
+    .gift-meta { flex: 1; min-width: 0; }
+    .gift-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+    .match-badge {
+      font-size: 0.71rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14); color: #059669;
+    }
+    [data-theme="dark"] .match-badge { color: #34d399; }
+    .ai-badge {
+      font-size: 0.71rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+    }
+    .gift-title { font-weight: 800; font-size: 0.98rem; margin: 0 0 3px; }
+    .gift-reason { font-size: 0.84rem; color: var(--muted); margin: 0; }
+    .gift-actions { display: flex; align-items: center; gap: 8px; }
+    .amz-btn {
+      flex: 1; text-decoration: none; text-align: center;
+      background: var(--amz); color: var(--amz-text);
+      font-weight: 800; font-size: 0.86rem; padding: 11px 14px;
+      border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .act-btn {
+      width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-size: 1rem; cursor: pointer;
+      display: grid; place-items: center;
+    }
+    .act-btn.faved { background: rgba(236, 72, 153, 0.16); border-color: var(--accent-2); }
+
+    /* Result Footer & Live AI Box */
+    .res-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .sec-btn {
+      border: 1.5px solid var(--border); background: var(--surface-2);
+      color: var(--text); border-radius: 13px; padding: 12px 14px;
+      font-weight: 700; font-size: 0.86rem; cursor: pointer;
+    }
+    .ai-box {
+      margin-top: 14px; padding: 14px; border-radius: 16px;
+      border: 1.5px dashed var(--accent); background: var(--accent-soft);
+    }
+    .ai-box-title { font-weight: 800; font-size: 0.88rem; margin-bottom: 8px; }
+    .ai-row { display: flex; gap: 8px; }
+    .ai-go {
+      border: none; border-radius: 13px; padding: 0 16px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff; font-weight: 800; font-size: 0.86rem; cursor: pointer;
+    }
+    .ai-status { font-size: 0.78rem; color: var(--muted); margin-top: 7px; }
+
+    /* Footer */
+    footer {
+      margin-top: 22px; text-align: center; font-size: 0.77rem; color: var(--muted);
+      padding: 12px 8px;
+    }
+    .foot-links { display: flex; justify-content: center; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
+    .link-btn {
+      background: none; border: none; color: var(--accent); font-weight: 700;
+      font-size: 0.79rem; cursor: pointer; text-decoration: underline; padding: 0;
+    }
+    .toast {
+      position: fixed; left: 50%; bottom: 86px; transform: translateX(-50%) translateY(20px);
+      background: #111827; color: #fff; padding: 10px 16px; border-radius: 999px;
+      font-size: 0.84rem; font-weight: 700; opacity: 0; pointer-events: none;
+      transition: all .22s; z-index: 200; white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    @media (min-width: 680px) {
+      .sticky-bar { display: none; }
+      body { padding-bottom: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🎁</div>
+        <div>
+          <div class="brand-title" id="t-brand">KI Geschenkfinder</div>
+          <div class="brand-sub" id="t-sub">Persönliche Ideen in Sekunden</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="icon-btn" id="btn-lang" title="Sprache">DE</button>
+        <button class="icon-btn" id="btn-theme" title="Theme">🌙</button>
+        <button class="icon-btn" id="btn-favs">❤️ <span class="fav-badge" id="fav-count">0</span></button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="pill" id="t-pill">✨ Smart-Auswahl für Amazon.de (4★+)</div>
+      <h1 id="t-h1">Das perfekte Geschenk — ohne langes Suchen</h1>
+      <p id="t-lead">Wähle Profil, Anlass, Hobbys und Budget. Unsere KI analysiert passende Ideen und zeigt dir 5 Volltreffer.</p>
+    </section>
+
+    <main>
+      <!-- Gender & Age -->
+      <section class="card">
+        <div class="sec-head">
+          <div class="sec-title">👤 <span id="t-who">Für wen suchst du?</span></div>
+        </div>
+        <div class="grid-3" id="gender-group"></div>
+
+        <div style="height:16px"></div>
+        <div class="range-row">
+          <div class="sec-title">🎂 <span id="t-age-lbl">Alter</span></div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="safe-badge" id="minor-badge" style="display:none">🛡️ <span id="t-minor">Jugendschutz aktiv</span></span>
+            <span class="big-val" id="age-val">30</span>
+          </div>
+        </div>
+        <input type="range" id="age-slider" min="3" max="85" value="30" />
+        <div class="mini-chips" id="age-presets"></div>
+      </section>
+
+      <!-- Relation -->
+      <section class="card">
+        <div class="sec-head">
+          <div class="sec-title">🤝 <span id="t-rel">Wer ist die Person für dich?</span></div>
+        </div>
+        <div class="chips" id="rel-group"></div>
+      </section>
+
+      <!-- Occasion -->
+      <section class="card">
+        <div class="sec-head">
+          <div class="sec-title">🎉 <span id="t-occ">Welcher Anlass?</span></div>
+        </div>
+        <div class="chips" id="occ-group"></div>
+      </section>
+
+      <!-- Hobbies -->
+      <section class="card">
+        <div class="sec-head">
+          <div class="sec-title">🎯 <span id="t-hob">Hobbys & Interessen</span></div>
+          <div class="sec-hint" id="t-hob-hint">Optional, mehrfach wählbar</div>
+        </div>
+        <div class="chips" id="hob-group"></div>
+      </section>
+
+      <!-- Budget & AI Hint -->
+      <section class="card">
+        <div class="range-row">
+          <div class="sec-title">💶 <span id="t-bud">Wunschbudget</span></div>
+          <span class="big-val" id="bud-val">35 €</span>
+        </div>
+        <input type="range" id="bud-slider" min="10" max="200" step="5" value="35" />
+        <div class="corridor-box">
+          <span id="corridor-text">Suchbereich: 28 € – 42 €</span>
+          <div class="tol-btns">
+            <button class="tol-btn active" data-tol="0.20">±20%</button>
+            <button class="tol-btn" data-tol="0.35">±35%</button>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+        <div class="sec-head" style="margin-bottom:8px">
+          <div class="sec-title">✨ <span id="t-prompt-lbl">Besonderer Hinweis (optional)</span></div>
+        </div>
+        <input type="text" class="hint-input" id="main-hint" maxlength="160" placeholder="z.B. liebt Espresso, fährt viel Auto, mag minimalistische Dinge..." />
+      </section>
+
+      <button class="cta-btn" id="btn-find-main">✨ <span id="t-cta">Geschenke finden</span></button>
+    </main>
+
+    <footer>
+      <div id="t-disclosure">* Als Amazon-Partner verdiene ich an qualifizierten Verkäufen (Tag: kigeschenkfinder-21). Für dich entstehen keine Mehrkosten.</div>
+      <div class="foot-links">
+        <button class="link-btn" id="open-impressum">Impressum</button>
+        <button class="link-btn" id="open-datenschutz">Datenschutz</button>
+        <span id="db-count-badge"></span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="sticky-bar">
+    <div class="sticky-inner">
+      <button class="cta-btn" id="btn-find-sticky">✨ <span id="t-cta-2">Geschenke finden</span></button>
+    </div>
+  </div>
+
+  <!-- Thinking + Results Modal -->
+  <div class="overlay" id="modal-results">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title" id="res-modal-title">✨ KI analysiert...</div>
+        <button class="close-btn" data-close="modal-results">✕</button>
+      </div>
+
+      <!-- Phase 1: Thinking -->
+      <div id="phase-thinking" class="think-wrap">
+        <div class="orb">🧠</div>
+        <div style="font-weight:800;font-size:1.05rem" id="think-headline">KI sucht passende Volltreffer...</div>
+        <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+        <div class="think-steps" id="think-steps"></div>
+      </div>
+
+      <!-- Phase 2: Results -->
+      <div id="phase-results" style="display:none">
+        <div class="profile-bar" id="profile-bar"></div>
+        <div class="gift-list" id="gift-list"></div>
+
+        <div class="res-controls">
+          <button class="sec-btn" id="btn-recalc">🔄 <span id="t-recalc">Neue Ideen berechnen</span></button>
+          <button class="sec-btn" data-close="modal-results">⚙️ <span id="t-change">Parameter ändern</span></button>
+        </div>
+
+        <div class="ai-box">
+          <div class="ai-box-title" id="t-aibox">✨ Noch spezieller? Direkt die Live-KI fragen:</div>
+          <div class="ai-row">
+            <input type="text" class="hint-input" id="modal-ai-input" maxlength="160" placeholder="z.B. mag Angeln, Sauna & scharfe Saucen..." />
+            <button class="ai-go" id="btn-live-ai">KI ✨</button>
+          </div>
+          <div class="ai-status" id="ai-status"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Favorites Modal -->
+  <div class="overlay" id="modal-favs">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title" id="t-fav-title">❤️ Deine Merkliste</div>
+        <button class="close-btn" data-close="modal-favs">✕</button>
+      </div>
+      <div class="gift-list" id="fav-list"></div>
+      <div class="res-controls" style="margin-top:14px">
+        <button class="sec-btn" id="btn-fav-wa">💬 WhatsApp</button>
+        <button class="sec-btn" id="btn-fav-clear">🗑️ <span id="t-clear">Leeren</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Modal -->
+  <div class="overlay" id="modal-legal">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title" id="legal-title">Impressum</div>
+        <button class="close-btn" data-close="modal-legal">✕</button>
+      </div>
+      <div id="legal-body" style="font-size:0.86rem;color:var(--muted);line-height:1.6"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const AFFILIATE_TAG = 'kigeschenkfinder-21';
+    const STORAGE_FAV_KEY = 'ki_geschenkfinder_favs_v3';
+    const FALLBACK_GIFTS = [{"id": "kid01", "emoji": "🧲", "gender": "all", "minAge": 3, "maxAge": 10, "price": 28, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["diy", "cozy"], "query": "Magnetbausteine Kinder Lernspielzeug", "title": {"de": "Magnetbausteine Kreativ-Set", "ru": "Набор магнитного конструктора", "en": "Magnetic Building Tiles Set"}, "reason": {"de": "Fördert räumliches Denken und beschäftigt Kinder stundenlang kreativ.", "ru": "Развивает пространственное мышление и увлекает ребёнка на часы.", "en": "Boosts spatial thinking and keeps kids creatively engaged for hours."}}, {"id": "kid02", "emoji": "🌌", "gender": "all", "minAge": 3, "maxAge": 14, "price": 22, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["cozy", "tech"], "query": "Sternenhimmel Projektor Nachtlicht Kinder", "title": {"de": "Galaxie-Nachtlicht Projektor", "ru": "Ночник-проектор звёздного неба", "en": "Galaxy Star Nightlight Projector"}, "reason": {"de": "Verwandelt das Kinderzimmer abends in einen magischen Sternenhimmel.", "ru": "Превращает детскую комнату вечером в волшебное звёздное небо.", "en": "Turns the bedroom ceiling into a soothing starry galaxy at night."}}, {"id": "kid03", "emoji": "🔬", "gender": "all", "minAge": 7, "maxAge": 14, "price": 35, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["tech", "diy"], "query": "Kinder Mikroskop Set Experimente", "title": {"de": "Entdecker-Mikroskop für Kinder", "ru": "Детский микроскоп с набором опытов", "en": "Kids Explorer Microscope Kit"}, "reason": {"de": "Weckt echte Forscherlust mit fertigen Präparaten zum Sofort-Loslegen.", "ru": "Пробуждает интерес к науке — готовые образцы уже в комплекте.", "en": "Sparks real curiosity with ready-to-view slides out of the box."}}, {"id": "kid04", "emoji": "📻", "gender": "all", "minAge": 5, "maxAge": 12, "price": 26, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["travel", "sport", "tech"], "query": "Kinder Walkie Talkie Aufladbar", "title": {"de": "Wiederaufladbare Walkie-Talkies", "ru": "Детские рации с подзарядкой", "en": "Rechargeable Kids Walkie Talkies"}, "reason": {"de": "Perfekt für Abenteuer im Garten, Park oder im Familienurlaub.", "ru": "Идеально для игр во дворе, парке и семейных поездок.", "en": "Great for backyard adventures, park games, and family trips."}}, {"id": "kid05", "emoji": "🎨", "gender": "all", "minAge": 4, "maxAge": 12, "price": 24, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["diy", "cozy"], "query": "Kinder Malkoffer Komplettset Buntstifte", "title": {"de": "Großer Künstler-Malkoffer", "ru": "Большой чемоданчик для рисования", "en": "Deluxe Kids Art Case"}, "reason": {"de": "Alles ordentlich verstaut für kleine Künstler – sofort startklar.", "ru": "Всё аккуратно разложено для юного художника — можно рисовать сразу.", "en": "Everything neatly packed for young artists to start right away."}}, {"id": "kid06", "emoji": "🏎️", "gender": "all", "minAge": 6, "maxAge": 13, "price": 38, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["auto", "tech"], "query": "Ferngesteuertes Stunt Auto 360 Grad", "title": {"de": "RC Stunt-Auto mit 360°-Drehung", "ru": "Радиоуправляемая машинка-перевёртыш", "en": "360° RC Stunt Car"}, "reason": {"de": "Fährt über Hindernisse, dreht sich blitzschnell und sorgt für Action.", "ru": "Легко преодолевает препятствия, крутится на 360° и дарит море драйва.", "en": "Handles obstacles easily, flips 360°, and delivers nonstop action."}}, {"id": "kid07", "emoji": "🧪", "gender": "all", "minAge": 8, "maxAge": 14, "price": 30, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["diy", "tech"], "query": "Experimentierkasten Kinder Wissenschaft", "title": {"de": "Spannender Experimentierkasten", "ru": "Набор научных экспериментов", "en": "Science Experiment Kit for Kids"}, "reason": {"de": "Spielerisches Lernen mit beeindruckenden Aha-Effekten zu Hause.", "ru": "Обучение через игру с эффектными домашними опытами.", "en": "Hands-on learning packed with impressive at-home experiments."}}, {"id": "kid08", "emoji": "🛤️", "gender": "all", "minAge": 8, "maxAge": 15, "price": 48, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["diy", "gaming"], "query": "GraviTrax Kugelbahn Starter Set", "title": {"de": "Interaktive Kugelbahn Starter-Set", "ru": "Интерактивный конструктор-трек", "en": "Interactive Marble Run Starter Set"}, "reason": {"de": "Fesselndes Bausystem rund um Schwerkraft, das immer erweiterbar ist.", "ru": "Захватывающий трек с законами физики, который можно бесконечно расширять.", "en": "Addictive gravity track system that expands endlessly."}}, {"id": "kid09", "emoji": "📷", "gender": "all", "minAge": 5, "maxAge": 11, "price": 32, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas"], "hobbies": ["tech", "travel"], "query": "Kinderkamera Digital Sofortbild Thermodruck", "title": {"de": "Kinder-Sofortbildkamera", "ru": "Детский фотоаппарат с мгновенной печатью", "en": "Kids Instant Print Camera"}, "reason": {"de": "Druckt Schnappschüsse sofort auf günstiges Thermopapier zum Ausmalen.", "ru": "Печатает снимки на недорогую термобумагу — фото можно даже раскрашивать.", "en": "Prints snapshots instantly on affordable paper kids can color."}}, {"id": "kid10", "emoji": "🧸", "gender": "all", "minAge": 3, "maxAge": 9, "price": 18, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["cozy"], "query": "Wärmekissen Kuscheltier Mikrowelle Kinder", "title": {"de": "Kuscheliges Wärme-Stofftier", "ru": "Мягкая игрушка-грелка", "en": "Warmable Plush Toy"}, "reason": {"de": "Spendet angenehme Wärme beim Einschlafen und tröstet an kalten Tagen.", "ru": "Дарит мягкое тепло перед сном и уют в прохладные вечера.", "en": "Gives soothing warmth at bedtime and comfort on chilly days."}}, {"id": "kid11", "emoji": "🖍️", "gender": "all", "minAge": 4, "maxAge": 10, "price": 14, "adultOnly": false, "relations": ["child", "friend", "sibling"], "occasions": ["birthday", "wichteln", "justbecause"], "hobbies": ["diy", "travel"], "query": "LCD Schreibtafel Kinder Zeichentablet", "title": {"de": "Bunte LCD-Zeichentafel", "ru": "Цветной LCD-планшет для рисования", "en": "Colorful LCD Drawing Tablet"}, "reason": {"de": "Kein Papierchaos mehr – genial für lange Autofahrten und Restaurants.", "ru": "Никакого беспорядка с бумагой — спасение в дороге и в кафе.", "en": "Mess-free sketching that saves road trips and restaurant waits."}}, {"id": "kid12", "emoji": "⛺", "gender": "all", "minAge": 3, "maxAge": 8, "price": 36, "adultOnly": false, "relations": ["child"], "occasions": ["birthday", "christmas"], "hobbies": ["cozy", "travel"], "query": "Kinder Spielzelt Tipi Indoor", "title": {"de": "Gemütliches Kinder-Spielzelt", "ru": "Уютная детская палатка-вигвам", "en": "Cozy Kids Play Tent"}, "reason": {"de": "Der eigene kleine Rückzugsort zum Lesen, Spielen und Träumen.", "ru": "Свой уютный уголок в комнате для игр, сказок и секретов.", "en": "A cozy little hideaway for reading, play, and imagination."}}, {"id": "kid13", "emoji": "🛴", "gender": "all", "minAge": 5, "maxAge": 12, "price": 68, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["sport", "travel"], "query": "Kinder Tretroller LED Rollen Klappbar", "title": {"de": "Klappbarer Kinder-Scooter mit LED", "ru": "Складной самокат со светящимися колёсами", "en": "Foldable Kids LED Scooter"}, "reason": {"de": "Leuchtende Rollen motivieren zu mehr Bewegung an der frischen Luft.", "ru": "Светящиеся колёса вызывают восторг и выманивают на прогулку.", "en": "Light-up wheels make outdoor rides exciting every single day."}}, {"id": "kid14", "emoji": "🎲", "gender": "all", "minAge": 6, "maxAge": 13, "price": 19, "adultOnly": false, "relations": ["child", "friend", "sibling"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["gaming", "humor"], "query": "Familienspiel Gesellschaftsspiel Kinder ab 6", "title": {"de": "Kurzweiliges Familienspiel", "ru": "Весёлая семейная настольная игра", "en": "Fast-Paced Family Board Game"}, "reason": {"de": "Schnell erklärt und bringt Kinder und Erwachsene an einen Tisch.", "ru": "Объясняется за минуту и собирает всю семью за одним столом.", "en": "Quick to learn and brings kids and adults laughing together."}}, {"id": "kid15", "emoji": "🤖", "gender": "all", "minAge": 8, "maxAge": 14, "price": 42, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["tech", "diy"], "query": "Solar Roboter Bausatz Kinder Lernspielzeug", "title": {"de": "Solar-Roboter Bausatz", "ru": "Конструктор робота на солнечной батарее", "en": "Solar Robot STEM Building Kit"}, "reason": {"de": "Mehrere Modelle baubar – Technikverständnis ganz ohne Batterien.", "ru": "Несколько моделей в одном наборе — знакомство с техникой без батареек.", "en": "Build multiple moving robots powered purely by sunlight."}}, {"id": "kid16", "emoji": "🎧", "gender": "all", "minAge": 5, "maxAge": 12, "price": 25, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "travel"], "query": "Kinder Kopfhörer Lautstärkebegrenzung Bluetooth", "title": {"de": "Kinder-Kopfhörer mit Gehörschutz", "ru": "Детские наушники с ограничением громкости", "en": "Safe Volume Kids Headphones"}, "reason": {"de": "Begrenzte Lautstärke schützt Kinderohren bei Hörspielen und Reisen.", "ru": "Безопасный уровень громкости бережёт слух в поездках и дома.", "en": "Volume-limited audio protects young ears during stories and trips."}}, {"id": "kid17", "emoji": "🦕", "gender": "all", "minAge": 5, "maxAge": 11, "price": 16, "adultOnly": false, "relations": ["child", "friend"], "occasions": ["birthday", "wichteln", "justbecause"], "hobbies": ["diy", "humor"], "query": "Ausgrabungsset Dinosaurier Fossilien Kinder", "title": {"de": "Dino-Ausgrabungsset", "ru": "Набор раскопок динозавра", "en": "Dinosaur Fossil Dig Kit"}, "reason": {"de": "Spannendes Buddeln wie echte Archäologen – super Mitbringsel.", "ru": "Настоящие раскопки как у археолога — крутой недорогой подарок.", "en": "Exciting archaeological digging fun at a budget-friendly price."}}, {"id": "kid18", "emoji": "⚽", "gender": "all", "minAge": 5, "maxAge": 14, "price": 29, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas"], "hobbies": ["sport", "cozy"], "query": "Hoverball Fußball Indoor LED Schaumstoff", "title": {"de": "Indoor-Schwebe-Fußball mit LED", "ru": "Домашний аэромяч с мягким бампером", "en": "Indoor LED Hover Soccer Ball"}, "reason": {"de": "Gleitet über glatte Böden und schont dank Schaumstoffrand die Möbel.", "ru": "Скользит по полу как аэрохоккей, а мягкий обод бережёт мебель.", "en": "Glides smoothly indoors with a soft bumper that protects furniture."}}, {"id": "teen01", "emoji": "🌈", "gender": "all", "minAge": 12, "maxAge": 22, "price": 22, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "cozy", "gaming"], "query": "LED Strip RGBIC App Steuerung Zimmer", "title": {"de": "Smarte RGBIC LED-Lichterkette", "ru": "Умная адресная LED-лента в комнату", "en": "Smart RGBIC LED Strip Lights"}, "reason": {"de": "Reagiert auf Musik und verleiht dem Zimmer sofort modernen Vibe.", "ru": "Реагирует на музыку и мгновенно преображает комнату.", "en": "Syncs to music and instantly upgrades room ambiance."}}, {"id": "teen02", "emoji": "📸", "gender": "all", "minAge": 13, "maxAge": 28, "price": 78, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner"], "occasions": ["birthday", "christmas", "anniversary"], "hobbies": ["travel", "cozy", "tech"], "query": "Sofortbildkamera Instax Mini Set", "title": {"de": "Sofortbildkamera für Erinnerungen", "ru": "Камера мгновенной печати снимков", "en": "Instant Film Camera"}, "reason": {"de": "Hält Freundschaftsmomente als echte Fotos zum Aufhängen fest.", "ru": "Печатает живые карточки-воспоминания, которые классно вешать на стену.", "en": "Captures real physical snapshots perfect for wall collages."}}, {"id": "teen03", "emoji": "🧥", "gender": "all", "minAge": 12, "maxAge": 45, "price": 34, "adultOnly": false, "relations": ["child", "sibling", "partner", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["cozy", "gaming"], "query": "Oversize Hoodie Decke Sherpa Fleece", "title": {"de": "Kuschelige Oversize-Hoodie-Decke", "ru": "Огромное худи-плед с мягким мехом", "en": "Oversized Sherpa Hoodie Blanket"}, "reason": {"de": "Ultimativer Kuschelfaktor für Serienabende, Zocken und kalte Tage.", "ru": "Максимум уюта для сериалов, игр и холодных вечеров.", "en": "Peak cozy comfort for movie nights, gaming, and chilly days."}}, {"id": "teen04", "emoji": "🧊", "gender": "all", "minAge": 10, "maxAge": 30, "price": 15, "adultOnly": false, "relations": ["child", "sibling", "friend", "colleague"], "occasions": ["birthday", "wichteln", "justbecause"], "hobbies": ["gaming", "humor"], "query": "Speedcube Zauberwürfel Magnetisch 3x3", "title": {"de": "Magnetischer Profi-Speedcube", "ru": "Магнитный скоростной кубик Рубика", "en": "Magnetic Speed Cube 3x3"}, "reason": {"de": "Dreht butterweich, entspannt den Kopf und macht erstaunlich süchtig.", "ru": "Крутится мягко как по маслу, разгружает голову и затягивает.", "en": "Silky smooth magnetic turns that relieve stress and hook you fast."}}, {"id": "teen05", "emoji": "🔋", "gender": "all", "minAge": 13, "maxAge": 60, "price": 29, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner", "colleague"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "travel"], "query": "Mini Powerbank USB C Schnellladen 10000mAh", "title": {"de": "Kompakte Schnelllade-Powerbank", "ru": "Компактный пауэрбанк с быстрой зарядкой", "en": "Compact Fast-Charge Power Bank"}, "reason": {"de": "Passt in jede Jackentasche und rettet zuverlässig vor leerem Akku.", "ru": "Помещается в карман и всегда спасает от севшего телефона.", "en": "Fits any pocket and rescues low batteries on the go."}}, {"id": "teen06", "emoji": "🎵", "gender": "all", "minAge": 12, "maxAge": 45, "price": 44, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "travel", "sport"], "query": "Bluetooth Lautsprecher Wasserdicht Kompakt", "title": {"de": "Wasserdichter Bluetooth-Speaker", "ru": "Водонепроницаемая Bluetooth-колонка", "en": "Waterproof Portable Bluetooth Speaker"}, "reason": {"de": "Satter Sound für Park, Strand, Dusche oder spontane Treffen.", "ru": "Сочный звук для парка, пляжа, душа и встреч с друзьями.", "en": "Punchy sound built for parks, showers, and spontaneous hangouts."}}, {"id": "teen07", "emoji": "🖱️", "gender": "all", "minAge": 13, "maxAge": 38, "price": 25, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["gaming", "tech"], "query": "XXL Gaming Mauspad RGB Schreibtischunterlage", "title": {"de": "XXL RGB-Gaming-Mauspad", "ru": "Огромный игровой коврик с RGB-подсветкой", "en": "XXL RGB Gaming Desk Mat"}, "reason": {"de": "Schützt den Schreibtisch und setzt das gesamte Setup perfekt in Szene.", "ru": "Защищает стол и сразу делает компьютерное место стильным.", "en": "Protects the desk while elevating any gaming or study setup."}}, {"id": "teen08", "emoji": "🥤", "gender": "all", "minAge": 13, "maxAge": 55, "price": 32, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner", "colleague"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["sport", "travel", "cozy"], "query": "Edelstahl Trinkflasche Isoliert Thermosflasche", "title": {"de": "Stylische Isolier-Trinkflasche", "ru": "Стильная термобутылка из нержавеющей стали", "en": "Insulated Stainless Steel Bottle"}, "reason": {"de": "Hält Getränke 24 Stunden eiskalt oder 12 Stunden angenehm heiß.", "ru": "Держит напиток ледяным сутки или горячим до 12 часов.", "en": "Keeps drinks ice-cold for 24h or steaming hot for 12h."}}, {"id": "auto01", "emoji": "💨", "gender": "all", "minAge": 18, "maxAge": 70, "price": 49, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["auto", "tech", "diy"], "query": "Akku Luftpumpe Auto Kompressor Digital", "title": {"de": "Digitaler Akku-Minikompressor", "ru": "Портативный электронасос-компрессор", "en": "Cordless Digital Tire Inflator"}, "reason": {"de": "Prüft und füllt Auto-, Fahrrad- und Rollerreifen in Sekunden auf.", "ru": "Подкачивает колёса авто, велосипеда и самоката за секунды без проводов.", "en": "Checks and inflates car, bike, and scooter tires effortlessly."}}, {"id": "auto02", "emoji": "🧽", "gender": "all", "minAge": 18, "maxAge": 65, "price": 34, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["auto", "diy"], "query": "Auto Pflege Set Reinigung Innenraum Außen", "title": {"de": "Komplettes Autopflege-Set", "ru": "Подарочный набор для ухода за авто", "en": "Complete Car Detailing Kit"}, "reason": {"de": "Alles für strahlenden Lack und sauberen Innenraum in einer Tasche.", "ru": "Всё для блеска кузова и чистоты салона в удобной сумке.", "en": "Everything needed for a showroom shine inside and out."}}, {"id": "auto03", "emoji": "🧹", "gender": "all", "minAge": 18, "maxAge": 70, "price": 44, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "housewarming"], "hobbies": ["auto", "tech"], "query": "Auto Handstaubsauger Kabellos Stark Akku", "title": {"de": "Starker kabelloser Auto-Staubsauger", "ru": "Мощный беспроводной автопылесос", "en": "Cordless High-Power Car Vacuum"}, "reason": {"de": "Beseitigt Krümel und Staub im Fußraum blitzschnell ohne Kabelsalat.", "ru": "За минуту убирает крошки и песок в салоне без возни с проводами.", "en": "Clears crumbs and dust from car seats in seconds without cords."}}, {"id": "auto04", "emoji": "⚡", "gender": "all", "minAge": 18, "maxAge": 75, "price": 69, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas"], "hobbies": ["auto", "tech", "travel"], "query": "Starthilfe Powerbank Auto Jump Starter", "title": {"de": "Auto-Starthilfe & Powerbank", "ru": "Пусковое устройство-пауэрбанк для авто", "en": "Car Jump Starter Power Bank"}, "reason": {"de": "Rettet im Winter bei leerer Batterie – Sicherheit für jedes Handschuhfach.", "ru": "Заведёт машину в мороз при севшем аккумуляторе — спокойствие в бардачке.", "en": "Rescues dead batteries in winter—peace of mind for any glovebox."}}, {"id": "auto05", "emoji": "📱", "gender": "all", "minAge": 18, "maxAge": 70, "price": 24, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "wichteln", "justbecause"], "hobbies": ["auto", "tech"], "query": "Magnetische Handyhalterung Auto MagSafe Lüftung", "title": {"de": "Magnet-Handyhalterung fürs Auto", "ru": "Магнитный держатель телефона в авто", "en": "Magnetic Car Phone Mount"}, "reason": {"de": "Hält das Smartphone bombenfest mit nur einer Handbewegung.", "ru": "Держит смартфон намертво и крепится буквально одним движением.", "en": "Locks your phone securely in place with a single effortless tap."}}, {"id": "auto06", "emoji": "🗂️", "gender": "all", "minAge": 18, "maxAge": 75, "price": 27, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["auto", "travel"], "query": "Kofferraum Organizer Faltbar Stabil Auto", "title": {"de": "Faltbarer Kofferraum-Organizer", "ru": "Складной органайзер в багажник", "en": "Foldable Trunk Organizer"}, "reason": {"de": "Schluss mit rollenden Einkäufen – endlich dauerhaft Ordnung im Kofferraum.", "ru": "Конец катающимся пакетам — идеальный порядок в багажнике.", "en": "No more rolling groceries—keeps any car trunk tidy all year."}}, {"id": "auto07", "emoji": "🚗", "gender": "all", "minAge": 18, "maxAge": 65, "price": 16, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "wichteln", "justbecause"], "hobbies": ["auto", "humor"], "query": "Auto Reinigungsgel Lüftungsschlitze Detail Pinsel", "title": {"de": "Detail-Reinigungsgel & Pinsel-Set", "ru": "Гель-слайм и кисти для чистки салона", "en": "Car Vent Cleaning Gel & Brush Kit"}, "reason": {"de": "Holt Staub aus jeder kleinsten Ritze – erstaunlich befriedigend.", "ru": "Вытягивает пыль из всех кнопок и дефлекторов — странно, но кайфово.", "en": "Lifts dust out of tight vents and crevices—strangely satisfying."}}, {"id": "auto08", "emoji": "🔌", "gender": "all", "minAge": 18, "maxAge": 65, "price": 58, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas"], "hobbies": ["auto", "tech"], "query": "Wireless CarPlay Android Auto Adapter Dongle", "title": {"de": "Kabelloser CarPlay / Android Auto Adapter", "ru": "Беспроводной адаптер CarPlay / Android Auto", "en": "Wireless CarPlay & Android Auto Adapter"}, "reason": {"de": "Verbindet das Handy automatisch ohne lästiges Kabel im Cockpit.", "ru": "Подключает телефон к экрану машины сам — без лишних проводов в салоне.", "en": "Connects your phone automatically with zero dashboard cable clutter."}}, {"id": "auto09", "emoji": "🧊", "gender": "all", "minAge": 18, "maxAge": 70, "price": 19, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["auto", "travel"], "query": "Elektrischer Eiskratzer Auto USB Akku", "title": {"de": "Elektrischer Akku-Eiskratzer", "ru": "Электрический скребок для льда с USB", "en": "Electric Rechargeable Ice Scraper"}, "reason": {"de": "Befreit vereiste Scheiben morgens in Sekunden ohne kalte Finger.", "ru": "Счищает лёд со стёкол за секунды без обмороженных пальцев.", "en": "Clears frozen windshields in seconds without freezing your hands."}}, {"id": "auto10", "emoji": "🎥", "gender": "all", "minAge": 18, "maxAge": 70, "price": 95, "adultOnly": false, "relations": ["partner", "parents", "friend", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["auto", "tech"], "query": "Dashcam Auto Vorne Hinten Nachtsicht", "title": {"de": "Full-HD Dashcam mit Nachtsicht", "ru": "Видеорегистратор с ночной съёмкой", "en": "Full-HD Night Vision Dashcam"}, "reason": {"de": "Sorgt für klare Beweise im Straßenverkehr und ein ruhiges Gefühl.", "ru": "Чёткая запись днём и ночью — спокойствие и защита на дороге.", "en": "Crisp day-and-night recording for extra confidence on the road."}}];
+
+    let GIFTS_DB = [...FALLBACK_GIFTS];
+    let recentlyShown = new Set();
+    let currentLang = localStorage.getItem('ki_gf_lang') || 'de';
+    let currentTheme = localStorage.getItem('ki_gf_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    const state = {
+      gender: 'all',
+      age: 30,
+      relation: 'friend',
+      occasion: 'birthday',
+      hobbies: new Set(),
+      budget: 35,
+      tolerance: 0.20,
+      prompt: ''
+    };
+
+    const I18N = {
+      de: {
+        brand: 'KI Geschenkfinder',
+        sub: 'Persönliche Ideen in Sekunden',
+        pill: '✨ Smart-Auswahl für Amazon.de (4★+)',
+        h1: 'Das perfekte Geschenk — ohne langes Suchen',
+        lead: 'Wähle Profil, Anlass, Hobbys und Budget. Unsere KI analysiert passende Ideen und zeigt dir 5 Volltreffer.',
+        who: 'Für wen suchst du?',
+        ageLbl: 'Alter',
+        years: 'Jahre',
+        minor: 'Jugendschutz aktiv (<18)',
+        rel: 'Wer ist die Person für dich?',
+        occ: 'Welcher Anlass?',
+        hob: 'Hobbys & Interessen',
+        hobHint: 'Optional, mehrfach wählbar',
+        bud: 'Wunschbudget',
+        corridor: (a, b) => `Suchbereich: ${a} € – ${b} €`,
+        promptLbl: 'Besonderer Hinweis (optional)',
+        promptPh: 'z.B. liebt Espresso, fährt viel Auto, mag minimalistische Dinge...',
+        cta: 'Geschenke finden',
+        disclosure: '* Als Amazon-Partner verdiene ich an qualifizierten Verkäufen (Tag: kigeschenkfinder-21). Für dich entstehen keine Mehrkosten.',
+        thinkTitle: '✨ KI analysiert Profil...',
+        thinkHead: 'KI berechnet passende Geschenkideen...',
+        resTitle: '🎁 Deine KI-Empfehlungen',
+        recalc: 'Neue Ideen berechnen',
+        change: 'Parameter ändern',
+        aibox: '✨ Noch spezieller? Direkt die Live-KI fragen:',
+        aiPh: 'z.B. mag Angeln, Sauna & scharfe Saucen...',
+        aiLoading: '⏳ Live-KI denkt nach...',
+        aiReady: '✅ 5 frische Live-KI Ideen generiert!',
+        aiFallback: '✨ Smart-Auswahl lokal verfeinert (für Live-KI einfach GEMINI_API_KEY auf Vercel hinterlegen).',
+        amzBtn: 'Auf Amazon.de ansehen *',
+        match: (p) => `${p}% Match`,
+        aiTag: 'Live-KI ✨',
+        copied: '🔗 Link kopiert!',
+        saved: '❤️ Gemerkt',
+        removed: 'Entfernt',
+        favTitle: '❤️ Deine Merkliste',
+        favEmpty: 'Noch keine Geschenkideen gemerkt. Tippe auf ❤️ bei einer Empfehlung.',
+        clear: 'Leeren',
+        dbInfo: (n) => `${n} Ideen bereit`,
+        genders: { all: '✨ Egal', m: '👨 Mann / Junge', f: '👩 Frau / Mädchen' },
+        relations: { partner: '❤️ Partner/in', friend: '🥳 Freund/in', parents: '🏡 Eltern', sibling: '👫 Geschwister', colleague: '💼 Kollege/in', child: '🧒 Kind', grandparents: '🌟 Großeltern' },
+        occasions: { birthday: '🎂 Geburtstag', christmas: '🎄 Weihnachten', newyear: '🎆 Silvester', wichteln: '🎅 Wichteln', wedding: '💍 Hochzeit', housewarming: '🏠 Einzug', anniversary: '💐 Jahrestag', justbecause: '✨ Einfach so' },
+        hobbies: { auto: '🚗 Auto', tech: '📱 Technik', kitchen: '☕ Küche & Kaffee', grill: '🔥 Grill & Garten', sport: '🏋️ Sport', gaming: '🎮 Gaming', diy: '🔧 DIY & Werkzeug', cozy: '🕯️ Wellness & Cozy', travel: '✈️ Reisen', pets: '🐾 Haustiere', humor: '😂 Spaß & Humor' },
+        steps: (s, minB, maxB) => [
+          `Profil erfassen: ${s.age} Jahre · ${I18N.de.occasions[s.occasion]}`,
+          `Preis-Korridor ${minB}–${maxB} € & 4★+ Qualität prüfen`,
+          s.age < 18 ? 'Jugendschutz-Filter (<18) strikt anwenden' : 'Interessen & Originalität abgleichen',
+          'Top 5 Geschenkideen zusammenstellen'
+        ],
+        impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
+        datenschutz: `<strong>Datenschutz (DSGVO):</strong><br>Diese Website setzt keine Werbe-Cookies und kein Tracking-Pixel ein. Deine Merkliste sowie Sprach- und Theme-Wahl werden ausschließlich lokal im Browser (<code>localStorage</code>) gespeichert.<br><br>Wenn du die optionale Live-KI-Suche nutzt, werden deine gewählten Filter und dein eingegebener Hinweis kurzzeitig zur Erstellung der Geschenkideen an den KI-Dienst übermittelt und nicht dauerhaft gespeichert. Beim Klick auf einen Amazon-Link gelten die Datenschutzbestimmungen von Amazon.de.`
+      },
+      ru: {
+        brand: 'ИИ Подборщик подарков',
+        sub: 'Персональные идеи за секунды',
+        pill: '✨ Умный подбор на Amazon.de (4★+)',
+        h1: 'Идеальный подарок — без долгих поисков',
+        lead: 'Выбери профиль, повод, хобби и бюджет. ИИ проанализирует параметры и предложит 5 точных вариантов.',
+        who: 'Для кого ищем?',
+        ageLbl: 'Возраст',
+        years: 'лет',
+        minor: 'Защита 18- активна',
+        rel: 'Кем приходится человек?',
+        occ: 'Какой повод?',
+        hob: 'Хобби и интересы',
+        hobHint: 'Необязательно, можно несколько',
+        bud: 'Примерный бюджет',
+        corridor: (a, b) => `Коридор поиска: ${a} € – ${b} €`,
+        promptLbl: 'Особая подсказка для ИИ (необязательно)',
+        promptPh: 'например: любит кофе, водит авто, ценит уют...',
+        cta: 'Подобрать подарки',
+        disclosure: '* Участник партнёрской программы Amazon EU (тег: kigeschenkfinder-21). Для покупателя цена не меняется.',
+        thinkTitle: '✨ ИИ анализирует профиль...',
+        thinkHead: 'ИИ подбирает лучшие идеи...',
+        resTitle: '🎁 Рекомендации ИИ',
+        recalc: 'Пересчитать идеи',
+        change: 'Изменить параметры',
+        aibox: '✨ Нужно ещё точнее? Спроси живой ИИ:',
+        aiPh: 'например: любит рыбалку, баню и острые соусы...',
+        aiLoading: '⏳ Живой ИИ придумывает идеи...',
+        aiReady: '✅ Сгенерировано 5 свежих идей от ИИ!',
+        aiFallback: '✨ Подборка уточнена локально (для живого ИИ добавь GEMINI_API_KEY в Vercel).',
+        amzBtn: 'Смотреть на Amazon.de *',
+        match: (p) => `Совпадение ${p}%`,
+        aiTag: 'Живой ИИ ✨',
+        copied: '🔗 Ссылка скопирована!',
+        saved: '❤️ Добавлено в избранное',
+        removed: 'Удалено',
+        favTitle: '❤️ Избранное',
+        favEmpty: 'Список пока пуст. Нажми ❤️ на понравившейся идее.',
+        clear: 'Очистить',
+        dbInfo: (n) => `В базе ${n} идей`,
+        genders: { all: '✨ Неважно', m: '👨 Мужчина / Мальчик', f: '👩 Женщина / Девочка' },
+        relations: { partner: '❤️ Партнёр', friend: '🥳 Друг / Подруга', parents: '🏡 Родители', sibling: '👫 Брат / Сестра', colleague: '💼 Коллега', child: '🧒 Ребёнок', grandparents: '🌟 Бабушка / Дедушка' },
+        occasions: { birthday: '🎂 День рождения', christmas: '🎄 Рождество', newyear: '🎆 Новый год', wichteln: '🎅 Тайный Санта', wedding: '💍 Свадьба', housewarming: '🏠 Новоселье', anniversary: '💐 Годовщина', justbecause: '✨ Просто так' },
+        hobbies: { auto: '🚗 Авто', tech: '📱 Техника', kitchen: '☕ Кухня и кофе', grill: '🔥 Гриль и сад', sport: '🏋️ Спорт', gaming: '🎮 Гейминг', diy: '🔧 DIY и инструменты', cozy: '🕯️ Уют и релакс', travel: '✈️ Путешествия', pets: '🐾 Питомцы', humor: '😂 Юмор' },
+        steps: (s, minB, maxB) => [
+          `Анализ профиля: ${s.age} лет · ${I18N.ru.occasions[s.occasion]}`,
+          `Проверка бюджета ${minB}–${maxB} € и рейтинга 4★+`,
+          s.age < 18 ? 'Применение строгого фильтра 18-' : 'Сопоставление хобби и оригинальности',
+          'Формирование 5 лучших рекомендаций'
+        ],
+        impressum: `<strong>Сведения согласно § 5 DDG (Германия):</strong><br>KI Geschenkfinder<br>Владелец: Имя владельца (шаблон)<br>Postfach 1234, 63738 Musterstadt, Германия<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon PartnerNet:</strong><br>Участник партнёрской программы Amazon EU (тег: <code>kigeschenkfinder-21</code>). Комиссия начисляется без какой-либо наценки для покупателя.`,
+        datenschutz: `<strong>Конфиденциальность (DSGVO):</strong><br>Сайт не использует рекламные cookies и трекеры. Избранное, язык и тема хранятся только локально в браузере (<code>localStorage</code>). При использовании кнопки живого ИИ параметры подбора временно передаются на сервер для генерации идей и не сохраняются.`
+      },
+      en: {
+        brand: 'AI Gift Finder',
+        sub: 'Personal ideas in seconds',
+        pill: '✨ Smart Picks for Amazon.de (4★+)',
+        h1: 'The right gift — without endless scrolling',
+        lead: 'Pick age, occasion, hobbies, and budget. Our AI analyzes the profile and surfaces 5 great matches.',
+        who: 'Who is it for?',
+        ageLbl: 'Age',
+        years: 'yrs',
+        minor: 'Under-18 Filter Active',
+        rel: 'Relationship',
+        occ: 'Occasion',
+        hob: 'Hobbies & Interests',
+        hobHint: 'Optional, multi-select',
+        bud: 'Target Budget',
+        corridor: (a, b) => `Search range: €${a} – €${b}`,
+        promptLbl: 'Special note for AI (optional)',
+        promptPh: 'e.g. loves espresso, road trips, minimal gear...',
+        cta: 'Find Gifts',
+        disclosure: '* As an Amazon Associate I earn from qualifying purchases (Tag: kigeschenkfinder-21) at no extra cost to you.',
+        thinkTitle: '✨ AI analyzing profile...',
+        thinkHead: 'AI is crafting personalized gift ideas...',
+        resTitle: '🎁 Your AI Recommendations',
+        recalc: 'Generate New Ideas',
+        change: 'Edit Parameters',
+        aibox: '✨ Want something hyper-specific? Ask Live AI:',
+        aiPh: 'e.g. loves fishing, sauna & hot sauces...',
+        aiLoading: '⏳ Live AI is thinking...',
+        aiReady: '✅ 5 fresh Live AI ideas generated!',
+        aiFallback: '✨ Refined locally (add GEMINI_API_KEY on Vercel to activate Live AI).',
+        amzBtn: 'View on Amazon.de *',
+        match: (p) => `${p}% Match`,
+        aiTag: 'Live AI ✨',
+        copied: '🔗 Link copied!',
+        saved: '❤️ Saved',
+        removed: 'Removed',
+        favTitle: '❤️ Saved Wishlist',
+        favEmpty: 'No saved gifts yet. Tap ❤️ on any recommendation.',
+        clear: 'Clear',
+        dbInfo: (n) => `${n} ideas loaded`,
+        genders: { all: '✨ Any', m: '👨 Man / Boy', f: '👩 Woman / Girl' },
+        relations: { partner: '❤️ Partner', friend: '🥳 Friend', parents: '🏡 Parents', sibling: '👫 Sibling', colleague: '💼 Colleague', child: '🧒 Child', grandparents: '🌟 Grandparents' },
+        occasions: { birthday: '🎂 Birthday', christmas: '🎄 Christmas', newyear: '🎆 New Year', wichteln: '🎅 Secret Santa', wedding: '💍 Wedding', housewarming: '🏠 Housewarming', anniversary: '💐 Anniversary', justbecause: '✨ Just Because' },
+        hobbies: { auto: '🚗 Cars', tech: '📱 Tech', kitchen: '☕ Kitchen & Coffee', grill: '🔥 BBQ & Garden', sport: '🏋️ Sports', gaming: '🎮 Gaming', diy: '🔧 DIY & Tools', cozy: '🕯️ Cozy & Spa', travel: '✈️ Travel', pets: '🐾 Pets', humor: '😂 Humor' },
+        steps: (s, minB, maxB) => [
+          `Scanning profile: ${s.age} yrs · ${I18N.en.occasions[s.occasion]}`,
+          `Checking €${minB}–€${maxB} range & 4★+ rating`,
+          s.age < 18 ? 'Enforcing strict under-18 safety filter' : 'Matching hobbies & uniqueness',
+          'Compiling top 5 gift recommendations'
+        ],
+        impressum: `<strong>Information pursuant to § 5 DDG:</strong><br>KI Geschenkfinder<br>Operator: Owner Name (Placeholder)<br>Postfach 1234, 63738 Musterstadt, Germany<br>Email: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon Associates Disclosure:</strong><br>This site participates in the Amazon EU Associates Programme (Tag: <code>kigeschenkfinder-21</code>) at zero additional cost to buyers.`,
+        datenschutz: `<strong>Privacy Policy (GDPR):</strong><br>No ad cookies or tracking pixels are used. Favorites, language, and theme preferences stay strictly inside your browser's <code>localStorage</code>.`
+      }
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function t() { return I18N[currentLang] || I18N.de; }
+
+    function getBudgetBounds() {
+      const minB = Math.max(5, Math.round(state.budget * (1 - state.tolerance)));
+      const maxB = Math.round(state.budget * (1 + state.tolerance));
+      return { minB, maxB };
+    }
+
+    function buildAmazonUrl(query, minPrice, maxPrice) {
+      const cleanQ = String(query || 'Geschenkidee').replace(/bestseller/gi, '').trim();
+      const params = new URLSearchParams({
+        k: cleanQ,
+        'low-price': String(minPrice),
+        'high-price': String(maxPrice),
+        rh: 'p_72:419117031',
+        tag: AFFILIATE_TAG
+      });
+      return `https://www.amazon.de/s?${params.toString()}`;
+    }
+
+    function showToast(msg) {
+      const el = $('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(el._tm);
+      el._tm = setTimeout(() => el.classList.remove('show'), 2100);
+    }
+
+    function getFavs() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_FAV_KEY) || '[]'); }
+      catch { return []; }
+    }
+
+    function saveFavs(list) {
+      localStorage.setItem(STORAGE_FAV_KEY, JSON.stringify(list));
+      $('fav-count').textContent = String(list.length);
+    }
+
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      $('btn-theme').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('ki_gf_theme', currentTheme);
+    }
+
+    function renderFormControls() {
+      const tr = t();
+      document.documentElement.lang = currentLang;
+      $('btn-lang').textContent = currentLang.toUpperCase();
+      $('t-brand').textContent = tr.brand;
+      $('t-sub').textContent = tr.sub;
+      $('t-pill').textContent = tr.pill;
+      $('t-h1').textContent = tr.h1;
+      $('t-lead').textContent = tr.lead;
+      $('t-who').textContent = tr.who;
+      $('t-age-lbl').textContent = tr.ageLbl;
+      $('t-minor').textContent = tr.minor;
+      $('t-rel').textContent = tr.rel;
+      $('t-occ').textContent = tr.occ;
+      $('t-hob').textContent = tr.hob;
+      $('t-hob-hint').textContent = tr.hobHint;
+      $('t-bud').textContent = tr.bud;
+      $('t-prompt-lbl').textContent = tr.promptLbl;
+      $('main-hint').placeholder = tr.promptPh;
+      $('t-cta').textContent = tr.cta;
+      $('t-cta-2').textContent = tr.cta;
+      $('t-disclosure').textContent = tr.disclosure;
+      $('t-recalc').textContent = tr.recalc;
+      $('t-change').textContent = tr.change;
+      $('t-aibox').textContent = tr.aibox;
+      $('modal-ai-input').placeholder = tr.aiPh;
+      $('t-fav-title').textContent = tr.favTitle;
+      $('t-clear').textContent = tr.clear;
+      $('db-count-badge').textContent = tr.dbInfo(GIFTS_DB.length);
+
+      // Genders
+      $('gender-group').innerHTML = Object.entries(tr.genders).map(([k, lbl]) =>
+        `<button class="chip ${state.gender === k ? 'active' : ''}" data-gender="${k}">${lbl}</button>`
+      ).join('');
+
+      // Age presets
+      const presets = [6, 12, 16, 25, 35, 50, 65];
+      $('age-presets').innerHTML = presets.map(a =>
+        `<button class="mini-chip ${state.age === a ? 'active' : ''}" data-age="${a}">${a}</button>`
+      ).join('');
+      updateAgeUI();
+
+      // Relations
+      $('rel-group').innerHTML = Object.entries(tr.relations).map(([k, lbl]) =>
+        `<button class="chip ${state.relation === k ? 'active' : ''}" data-rel="${k}">${lbl}</button>`
+      ).join('');
+
+      // Occasions
+      $('occ-group').innerHTML = Object.entries(tr.occasions).map(([k, lbl]) =>
+        `<button class="chip ${state.occasion === k ? 'active' : ''}" data-occ="${k}">${lbl}</button>`
+      ).join('');
+
+      // Hobbies
+      $('hob-group').innerHTML = Object.entries(tr.hobbies).map(([k, lbl]) =>
+        `<button class="chip ${state.hobbies.has(k) ? 'active' : ''}" data-hob="${k}">${lbl}</button>`
+      ).join('');
+
+      updateBudgetUI();
+      $('fav-count').textContent = String(getFavs().length);
+    }
+
+    function updateAgeUI() {
+      $('age-slider').value = state.age;
+      $('age-val').textContent = `${state.age} ${t().years}`;
+      $('minor-badge').style.display = state.age < 18 ? 'inline-flex' : 'none';
+      document.querySelectorAll('#age-presets .mini-chip').forEach(b =>
+        b.classList.toggle('active', Number(b.dataset.age) === state.age)
+      );
+    }
+
+    function updateBudgetUI() {
+      $('bud-slider').value = state.budget;
+      $('bud-val').textContent = `${state.budget} €`;
+      const { minB, maxB } = getBudgetBounds();
+      $('corridor-text').textContent = t().corridor(minB, maxB);
+    }
+
+    function scoreAndPickLocal(extraPrompt = '') {
+      const { minB, maxB } = getBudgetBounds();
+      const isMinor = state.age < 18;
+      const tokens = `${state.prompt} ${extraPrompt}`.toLowerCase().split(/[\s,.;!?]+/).filter(w => w.length > 2);
+
+      // Step 1: Hard safety & age/gender filters
+      let pool = GIFTS_DB.filter(item => {
+        if (isMinor && item.adultOnly) return false;
+        if (state.age < item.minAge - 2 || state.age > item.maxAge + 5) return false;
+        if (state.gender !== 'all' && item.gender !== 'all' && item.gender !== state.gender) return false;
+        return true;
+      });
+
+      if (pool.length < 5) {
+        pool = GIFTS_DB.filter(item => !(isMinor && item.adultOnly));
+      }
+
+      const scored = pool.map(item => {
+        let score = 50;
+        // Budget fit
+        if (item.price >= minB && item.price <= maxB) score += 32;
+        else {
+          const dist = Math.min(Math.abs(item.price - minB), Math.abs(item.price - maxB));
+          score += Math.max(0, 22 - dist * 0.6);
+        }
+        // Relation fit
+        if (item.relations && item.relations.includes(state.relation)) score += 16;
+        // Occasion fit
+        if (item.occasions && item.occasions.includes(state.occasion)) score += 14;
+        // Hobbies fit
+        if (state.hobbies.size > 0 && item.hobbies) {
+          let matched = 0;
+          state.hobbies.forEach(h => { if (item.hobbies.includes(h)) matched++; });
+          score += matched * 22;
+        }
+        // Text hint matching
+        if (tokens.length) {
+          const blob = `${item.query} ${item.title.de} ${item.title.ru} ${item.title.en} ${item.reason.de} ${item.reason.ru}`.toLowerCase();
+          tokens.forEach(tok => { if (blob.includes(tok)) score += 28; });
+        }
+        // Novelty penalty if recently shown
+        if (recentlyShown.has(item.id)) score -= 26;
+        // Slight randomness for fresh recalculations
+        score += Math.random() * 14;
+        return { item, score };
+      });
+
+      scored.sort((a, b) => b.score - a.score);
+      const top = scored.slice(0, 5);
+      if (recentlyShown.size > 35) recentlyShown.clear();
+      top.forEach(x => recentlyShown.add(x.item.id));
+
+      return top.map((x, idx) => {
+        const pct = Math.min(99, Math.max(82, Math.round(97 - idx * 2.5 - Math.random() * 2)));
+        return {
+          id: x.item.id,
+          emoji: x.item.emoji,
+          title: x.item.title[currentLang] || x.item.title.de,
+          reason: x.item.reason[currentLang] || x.item.reason.de,
+          query: x.item.query,
+          matchPct: pct,
+          isAi: false
+        };
+      });
+    }
+
+    function renderGiftCards(items, targetEl) {
+      const { minB, maxB } = getBudgetBounds();
+      const favIds = new Set(getFavs().map(f => f.id));
+      const tr = t();
+
+      targetEl.innerHTML = items.map(item => {
+        const url = item.url || buildAmazonUrl(item.query, minB, maxB);
+        const isFav = favIds.has(item.id);
+        const waText = encodeURIComponent(`${item.emoji} ${item.title} — ${item.reason}
+${url}`);
+        return `
+          <article class="gift-card">
+            <div class="gift-top">
+              <div class="gift-ico">${item.emoji}</div>
+              <div class="gift-meta">
+                <div class="gift-badges">
+                  <span class="match-badge">${tr.match(item.matchPct || 94)}</span>
+                  ${item.isAi ? `<span class="ai-badge">${tr.aiTag}</span>` : ''}
+                </div>
+                <h3 class="gift-title">${escapeHtml(item.title)}</h3>
+                <p class="gift-reason">${escapeHtml(item.reason)}</p>
+              </div>
+            </div>
+            <div class="gift-actions">
+              <a class="amz-btn" href="${url}" target="_blank" rel="noopener noreferrer sponsored">🛒 ${tr.amzBtn}</a>
+              <button class="act-btn" data-copy="${encodeURIComponent(url)}" title="Link kopieren">📋</button>
+              <button class="act-btn ${isFav ? 'faved' : ''}" data-fav="${encodeURIComponent(JSON.stringify({ id: item.id, emoji: item.emoji, title: item.title, reason: item.reason, query: item.query, url }))}" title="Merken">${isFav ? '❤️' : '🤍'}</button>
+              <a class="act-btn" style="text-decoration:none" href="https://wa.me/?text=${waText}" target="_blank" rel="noopener noreferrer" title="WhatsApp">💬</a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function escapeHtml(str) {
+      return String(str || '').replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
+
+    function runThinkingAndShow(durationMs = 2100, customItems = null) {
+      const tr = t();
+      const { minB, maxB } = getBudgetBounds();
+      state.prompt = $('main-hint').value.trim();
+
+      $('modal-results').classList.add('open');
+      $('phase-thinking').style.display = 'block';
+      $('phase-results').style.display = 'none';
+      $('res-modal-title').textContent = tr.thinkTitle;
+      $('think-headline').textContent = tr.thinkHead;
+      $('ai-status').textContent = '';
+
+      const steps = tr.steps(state, minB, maxB);
+      $('think-steps').innerHTML = steps.map((s, i) =>
+        `<div class="t-step" id="ts-${i}"><span>⏳</span> <span>${escapeHtml(s)}</span></div>`
+      ).join('');
+      $('prog-fill').style.width = '8%';
+
+      const stepInterval = Math.floor(durationMs / steps.length);
+      steps.forEach((_, idx) => {
+        setTimeout(() => {
+          const el = $(`ts-${idx}`);
+          if (el) {
+            el.classList.add('done');
+            el.firstElementChild.textContent = '✅';
+          }
+          $('prog-fill').style.width = `${Math.min(100, Math.round(((idx + 1) / steps.length) * 100))}%`;
+        }, Math.max(120, idx * stepInterval + 140));
+      });
+
+      setTimeout(() => {
+        const picks = customItems || scoreAndPickLocal();
+        $('res-modal-title').textContent = tr.resTitle;
+        $('phase-thinking').style.display = 'none';
+        $('phase-results').style.display = 'block';
+
+        const tags = [
+          tr.genders[state.gender],
+          `${state.age} ${tr.years}`,
+          tr.relations[state.relation],
+          tr.occasions[state.occasion],
+          `${minB}–${maxB} €`
+        ];
+        state.hobbies.forEach(h => tags.push(tr.hobbies[h]));
+        $('profile-bar').innerHTML = tags.map(x => `<span class="ptag">${escapeHtml(x)}</span>`).join('');
+        renderGiftCards(picks, $('gift-list'));
+      }, durationMs + 150);
+    }
+
+    async function askLiveAI() {
+      const tr = t();
+      const extra = $('modal-ai-input').value.trim() || state.prompt;
+      const { minB, maxB } = getBudgetBounds();
+      $('ai-status').textContent = tr.aiLoading;
+      $('btn-live-ai').disabled = true;
+
+      try {
+        const res = await fetch('/api/suggest', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            lang: currentLang,
+            gender: state.gender,
+            age: state.age,
+            relation: state.relation,
+            occasion: state.occasion,
+            hobbies: Array.from(state.hobbies),
+            minBudget: minB,
+            maxBudget: maxB,
+            prompt: extra
+          })
+        });
+        if (!res.ok) throw new Error('API unavailable');
+        const data = await res.json();
+        if (!Array.isArray(data.items) || !data.items.length) throw new Error('Empty AI items');
+        const formatted = data.items.map((it, idx) => ({
+          ...it,
+          matchPct: Math.max(90, 99 - idx * 2),
+          isAi: true
+        }));
+        renderGiftCards(formatted, $('gift-list'));
+        $('ai-status').textContent = tr.aiReady;
+      } catch {
+        const fallback = scoreAndPickLocal(extra);
+        renderGiftCards(fallback, $('gift-list'));
+        $('ai-status').textContent = tr.aiFallback;
+      } finally {
+        $('btn-live-ai').disabled = false;
+      }
+    }
+
+    function renderFavModal() {
+      const favs = getFavs();
+      const box = $('fav-list');
+      if (!favs.length) {
+        box.innerHTML = `<p style="color:var(--muted);text-align:center;padding:18px 0">${t().favEmpty}</p>`;
+        return;
+      }
+      renderGiftCards(favs, box);
+    }
+
+    // Load external ./gifts.json if deployed on Vercel / web server
+    async function loadExternalDatabase() {
+      try {
+        const res = await fetch('./gifts.json', { cache: 'default' });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          GIFTS_DB = data;
+          $('db-count-badge').textContent = t().dbInfo(GIFTS_DB.length);
+        }
+      } catch {
+        // Silent fallback to built-in 36 items when opened offline
+      }
+    }
+
+    // Event delegation
+    document.addEventListener('click', (e) => {
+      const gBtn = e.target.closest('[data-gender]');
+      if (gBtn) { state.gender = gBtn.dataset.gender; renderFormControls(); return; }
+
+      const aBtn = e.target.closest('[data-age]');
+      if (aBtn) { state.age = Number(aBtn.dataset.age); updateAgeUI(); return; }
+
+      const rBtn = e.target.closest('[data-rel]');
+      if (rBtn) { state.relation = rBtn.dataset.rel; renderFormControls(); return; }
+
+      const oBtn = e.target.closest('[data-occ]');
+      if (oBtn) { state.occasion = oBtn.dataset.occ; renderFormControls(); return; }
+
+      const hBtn = e.target.closest('[data-hob]');
+      if (hBtn) {
+        const h = hBtn.dataset.hob;
+        if (state.hobbies.has(h)) state.hobbies.delete(h); else state.hobbies.add(h);
+        hBtn.classList.toggle('active');
+        return;
+      }
+
+      const tolBtn = e.target.closest('[data-tol]');
+      if (tolBtn) {
+        state.tolerance = Number(tolBtn.dataset.tol);
+        document.querySelectorAll('.tol-btn').forEach(b => b.classList.toggle('active', b === tolBtn));
+        updateBudgetUI();
+        return;
+      }
+
+      const copyBtn = e.target.closest('[data-copy]');
+      if (copyBtn) {
+        const url = decodeURIComponent(copyBtn.dataset.copy);
+        navigator.clipboard?.writeText(url).then(() => showToast(t().copied)).catch(() => showToast(t().copied));
+        return;
+      }
+
+      const favBtn = e.target.closest('[data-fav]');
+      if (favBtn) {
+        const item = JSON.parse(decodeURIComponent(favBtn.dataset.fav));
+        let favs = getFavs();
+        const exists = favs.some(f => f.id === item.id);
+        if (exists) {
+          favs = favs.filter(f => f.id !== item.id);
+          favBtn.classList.remove('faved');
+          favBtn.textContent = '🤍';
+          showToast(t().removed);
+        } else {
+          favs.unshift(item);
+          favBtn.classList.add('faved');
+          favBtn.textContent = '❤️';
+          showToast(t().saved);
+        }
+        saveFavs(favs);
+        if ($('modal-favs').classList.contains('open')) renderFavModal();
+        return;
+      }
+
+      const closeBtn = e.target.closest('[data-close]');
+      if (closeBtn) { $(closeBtn.dataset.close).classList.remove('open'); return; }
+
+      if (e.target.classList.contains('overlay')) { e.target.classList.remove('open'); }
+    });
+
+    $('age-slider').addEventListener('input', (e) => { state.age = Number(e.target.value); updateAgeUI(); });
+    $('bud-slider').addEventListener('input', (e) => { state.budget = Number(e.target.value); updateBudgetUI(); });
+    $('btn-find-main').addEventListener('click', () => runThinkingAndShow(2100));
+    $('btn-find-sticky').addEventListener('click', () => runThinkingAndShow(2100));
+    $('btn-recalc').addEventListener('click', () => runThinkingAndShow(950));
+    $('btn-live-ai').addEventListener('click', askLiveAI);
+
+    $('btn-lang').addEventListener('click', () => {
+      const order = ['de', 'ru', 'en'];
+      currentLang = order[(order.indexOf(currentLang) + 1) % order.length];
+      localStorage.setItem('ki_gf_lang', currentLang);
+      renderFormControls();
+    });
+
+    $('btn-theme').addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme();
+    });
+
+    $('btn-favs').addEventListener('click', () => {
+      renderFavModal();
+      $('modal-favs').classList.add('open');
+    });
+
+    $('btn-fav-clear').addEventListener('click', () => {
+      saveFavs([]);
+      renderFavModal();
+    });
+
+    $('btn-fav-wa').addEventListener('click', () => {
+      const favs = getFavs();
+      if (!favs.length) return;
+      const lines = favs.map(f => `${f.emoji} ${f.title}
+${f.url}`).join('
+
+');
+      window.open(`https://wa.me/?text=${encodeURIComponent(lines)}`, '_blank', 'noopener');
+    });
+
+    $('open-impressum').addEventListener('click', () => {
+      $('legal-title').textContent = 'Impressum';
+      $('legal-body').innerHTML = t().impressum;
+      $('modal-legal').classList.add('open');
+    });
+
+    $('open-datenschutz').addEventListener('click', () => {
+      $('legal-title').textContent = 'Datenschutz';
+      $('legal-body').innerHTML = t().datenschutz;
+      $('modal-legal').classList.add('open');
+    });
+
+    applyTheme();
+    renderFormControls();
+    loadExternalDatabase();
+  </script>
+</body>
+</html>

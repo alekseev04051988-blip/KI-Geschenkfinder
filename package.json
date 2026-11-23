@@ -1,0 +1,7 @@
+{
+  "name": "ki-geschenkfinder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "KI Geschenkfinder — Interaktiver Geschenkideen-Finder für Amazon.de"
+}

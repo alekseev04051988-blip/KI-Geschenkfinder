@@ -1,0 +1,6271 @@
+[
+  {
+    "id": "kid01",
+    "emoji": "🧲",
+    "gender": "all",
+    "minAge": 3,
+    "maxAge": 10,
+    "price": 28,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "diy",
+      "cozy"
+    ],
+    "query": "Magnetbausteine Kinder Lernspielzeug",
+    "title": {
+      "de": "Magnetbausteine Kreativ-Set",
+      "ru": "Набор магнитного конструктора",
+      "en": "Magnetic Building Tiles Set"
+    },
+    "reason": {
+      "de": "Fördert räumliches Denken und beschäftigt Kinder stundenlang kreativ.",
+      "ru": "Развивает пространственное мышление и увлекает ребёнка на часы.",
+      "en": "Boosts spatial thinking and keeps kids creatively engaged for hours."
+    }
+  },
+  {
+    "id": "kid02",
+    "emoji": "🌌",
+    "gender": "all",
+    "minAge": 3,
+    "maxAge": 14,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy",
+      "tech"
+    ],
+    "query": "Sternenhimmel Projektor Nachtlicht Kinder",
+    "title": {
+      "de": "Galaxie-Nachtlicht Projektor",
+      "ru": "Ночник-проектор звёздного неба",
+      "en": "Galaxy Star Nightlight Projector"
+    },
+    "reason": {
+      "de": "Verwandelt das Kinderzimmer abends in einen magischen Sternenhimmel.",
+      "ru": "Превращает детскую комнату вечером в волшебное звёздное небо.",
+      "en": "Turns the bedroom ceiling into a soothing starry galaxy at night."
+    }
+  },
+  {
+    "id": "kid03",
+    "emoji": "🔬",
+    "gender": "all",
+    "minAge": 7,
+    "maxAge": 14,
+    "price": 35,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "tech",
+      "diy"
+    ],
+    "query": "Kinder Mikroskop Set Experimente",
+    "title": {
+      "de": "Entdecker-Mikroskop für Kinder",
+      "ru": "Детский микроскоп с набором опытов",
+      "en": "Kids Explorer Microscope Kit"
+    },
+    "reason": {
+      "de": "Weckt echte Forscherlust mit fertigen Präparaten zum Sofort-Loslegen.",
+      "ru": "Пробуждает интерес к науке — готовые образцы уже в комплекте.",
+      "en": "Sparks real curiosity with ready-to-view slides out of the box."
+    }
+  },
+  {
+    "id": "kid04",
+    "emoji": "📻",
+    "gender": "all",
+    "minAge": 5,
+    "maxAge": 12,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "sport",
+      "tech"
+    ],
+    "query": "Kinder Walkie Talkie Aufladbar",
+    "title": {
+      "de": "Wiederaufladbare Walkie-Talkies",
+      "ru": "Детские рации с подзарядкой",
+      "en": "Rechargeable Kids Walkie Talkies"
+    },
+    "reason": {
+      "de": "Perfekt für Abenteuer im Garten, Park oder im Familienurlaub.",
+      "ru": "Идеально для игр во дворе, парке и семейных поездок.",
+      "en": "Great for backyard adventures, park games, and family trips."
+    }
+  },
+  {
+    "id": "kid05",
+    "emoji": "🎨",
+    "gender": "all",
+    "minAge": 4,
+    "maxAge": 12,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "diy",
+      "cozy"
+    ],
+    "query": "Kinder Malkoffer Komplettset Buntstifte",
+    "title": {
+      "de": "Großer Künstler-Malkoffer",
+      "ru": "Большой чемоданчик для рисования",
+      "en": "Deluxe Kids Art Case"
+    },
+    "reason": {
+      "de": "Alles ordentlich verstaut für kleine Künstler – sofort startklar.",
+      "ru": "Всё аккуратно разложено для юного художника — можно рисовать сразу.",
+      "en": "Everything neatly packed for young artists to start right away."
+    }
+  },
+  {
+    "id": "kid06",
+    "emoji": "🏎️",
+    "gender": "all",
+    "minAge": 6,
+    "maxAge": 13,
+    "price": 38,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "auto",
+      "tech"
+    ],
+    "query": "Ferngesteuertes Stunt Auto 360 Grad",
+    "title": {
+      "de": "RC Stunt-Auto mit 360°-Drehung",
+      "ru": "Радиоуправляемая машинка-перевёртыш",
+      "en": "360° RC Stunt Car"
+    },
+    "reason": {
+      "de": "Fährt über Hindernisse, dreht sich blitzschnell und sorgt für Action.",
+      "ru": "Легко преодолевает препятствия, крутится на 360° и дарит море драйва.",
+      "en": "Handles obstacles easily, flips 360°, and delivers nonstop action."
+    }
+  },
+  {
+    "id": "kid07",
+    "emoji": "🧪",
+    "gender": "all",
+    "minAge": 8,
+    "maxAge": 14,
+    "price": 30,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "diy",
+      "tech"
+    ],
+    "query": "Experimentierkasten Kinder Wissenschaft",
+    "title": {
+      "de": "Spannender Experimentierkasten",
+      "ru": "Набор научных экспериментов",
+      "en": "Science Experiment Kit for Kids"
+    },
+    "reason": {
+      "de": "Spielerisches Lernen mit beeindruckenden Aha-Effekten zu Hause.",
+      "ru": "Обучение через игру с эффектными домашними опытами.",
+      "en": "Hands-on learning packed with impressive at-home experiments."
+    }
+  },
+  {
+    "id": "kid08",
+    "emoji": "🛤️",
+    "gender": "all",
+    "minAge": 8,
+    "maxAge": 15,
+    "price": 48,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "diy",
+      "gaming"
+    ],
+    "query": "GraviTrax Kugelbahn Starter Set",
+    "title": {
+      "de": "Interaktive Kugelbahn Starter-Set",
+      "ru": "Интерактивный конструктор-трек",
+      "en": "Interactive Marble Run Starter Set"
+    },
+    "reason": {
+      "de": "Fesselndes Bausystem rund um Schwerkraft, das immer erweiterbar ist.",
+      "ru": "Захватывающий трек с законами физики, который можно бесконечно расширять.",
+      "en": "Addictive gravity track system that expands endlessly."
+    }
+  },
+  {
+    "id": "kid09",
+    "emoji": "📷",
+    "gender": "all",
+    "minAge": 5,
+    "maxAge": 11,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "tech",
+      "travel"
+    ],
+    "query": "Kinderkamera Digital Sofortbild Thermodruck",
+    "title": {
+      "de": "Kinder-Sofortbildkamera",
+      "ru": "Детский фотоаппарат с мгновенной печатью",
+      "en": "Kids Instant Print Camera"
+    },
+    "reason": {
+      "de": "Druckt Schnappschüsse sofort auf günstiges Thermopapier zum Ausmalen.",
+      "ru": "Печатает снимки на недорогую термобумагу — фото можно даже раскрашивать.",
+      "en": "Prints snapshots instantly on affordable paper kids can color."
+    }
+  },
+  {
+    "id": "kid10",
+    "emoji": "🧸",
+    "gender": "all",
+    "minAge": 3,
+    "maxAge": 9,
+    "price": 18,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Wärmekissen Kuscheltier Mikrowelle Kinder",
+    "title": {
+      "de": "Kuscheliges Wärme-Stofftier",
+      "ru": "Мягкая игрушка-грелка",
+      "en": "Warmable Plush Toy"
+    },
+    "reason": {
+      "de": "Spendet angenehme Wärme beim Einschlafen und tröstet an kalten Tagen.",
+      "ru": "Дарит мягкое тепло перед сном и уют в прохладные вечера.",
+      "en": "Gives soothing warmth at bedtime and comfort on chilly days."
+    }
+  },
+  {
+    "id": "kid11",
+    "emoji": "🖍️",
+    "gender": "all",
+    "minAge": 4,
+    "maxAge": 10,
+    "price": 14,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "diy",
+      "travel"
+    ],
+    "query": "LCD Schreibtafel Kinder Zeichentablet",
+    "title": {
+      "de": "Bunte LCD-Zeichentafel",
+      "ru": "Цветной LCD-планшет для рисования",
+      "en": "Colorful LCD Drawing Tablet"
+    },
+    "reason": {
+      "de": "Kein Papierchaos mehr – genial für lange Autofahrten und Restaurants.",
+      "ru": "Никакого беспорядка с бумагой — спасение в дороге и в кафе.",
+      "en": "Mess-free sketching that saves road trips and restaurant waits."
+    }
+  },
+  {
+    "id": "kid12",
+    "emoji": "⛺",
+    "gender": "all",
+    "minAge": 3,
+    "maxAge": 8,
+    "price": 36,
+    "adultOnly": false,
+    "relations": [
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel"
+    ],
+    "query": "Kinder Spielzelt Tipi Indoor",
+    "title": {
+      "de": "Gemütliches Kinder-Spielzelt",
+      "ru": "Уютная детская палатка-вигвам",
+      "en": "Cozy Kids Play Tent"
+    },
+    "reason": {
+      "de": "Der eigene kleine Rückzugsort zum Lesen, Spielen und Träumen.",
+      "ru": "Свой уютный уголок в комнате для игр, сказок и секретов.",
+      "en": "A cozy little hideaway for reading, play, and imagination."
+    }
+  },
+  {
+    "id": "kid13",
+    "emoji": "🛴",
+    "gender": "all",
+    "minAge": 5,
+    "maxAge": 12,
+    "price": 68,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "sport",
+      "travel"
+    ],
+    "query": "Kinder Tretroller LED Rollen Klappbar",
+    "title": {
+      "de": "Klappbarer Kinder-Scooter mit LED",
+      "ru": "Складной самокат со светящимися колёсами",
+      "en": "Foldable Kids LED Scooter"
+    },
+    "reason": {
+      "de": "Leuchtende Rollen motivieren zu mehr Bewegung an der frischen Luft.",
+      "ru": "Светящиеся колёса вызывают восторг и выманивают на прогулку.",
+      "en": "Light-up wheels make outdoor rides exciting every single day."
+    }
+  },
+  {
+    "id": "kid14",
+    "emoji": "🎲",
+    "gender": "all",
+    "minAge": 6,
+    "maxAge": 13,
+    "price": 19,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "gaming",
+      "humor"
+    ],
+    "query": "Familienspiel Gesellschaftsspiel Kinder ab 6",
+    "title": {
+      "de": "Kurzweiliges Familienspiel",
+      "ru": "Весёлая семейная настольная игра",
+      "en": "Fast-Paced Family Board Game"
+    },
+    "reason": {
+      "de": "Schnell erklärt und bringt Kinder und Erwachsene an einen Tisch.",
+      "ru": "Объясняется за минуту и собирает всю семью за одним столом.",
+      "en": "Quick to learn and brings kids and adults laughing together."
+    }
+  },
+  {
+    "id": "kid15",
+    "emoji": "🤖",
+    "gender": "all",
+    "minAge": 8,
+    "maxAge": 14,
+    "price": 42,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "tech",
+      "diy"
+    ],
+    "query": "Solar Roboter Bausatz Kinder Lernspielzeug",
+    "title": {
+      "de": "Solar-Roboter Bausatz",
+      "ru": "Конструктор робота на солнечной батарее",
+      "en": "Solar Robot STEM Building Kit"
+    },
+    "reason": {
+      "de": "Mehrere Modelle baubar – Technikverständnis ganz ohne Batterien.",
+      "ru": "Несколько моделей в одном наборе — знакомство с техникой без батареек.",
+      "en": "Build multiple moving robots powered purely by sunlight."
+    }
+  },
+  {
+    "id": "kid16",
+    "emoji": "🎧",
+    "gender": "all",
+    "minAge": 5,
+    "maxAge": 12,
+    "price": 25,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "travel"
+    ],
+    "query": "Kinder Kopfhörer Lautstärkebegrenzung Bluetooth",
+    "title": {
+      "de": "Kinder-Kopfhörer mit Gehörschutz",
+      "ru": "Детские наушники с ограничением громкости",
+      "en": "Safe Volume Kids Headphones"
+    },
+    "reason": {
+      "de": "Begrenzte Lautstärke schützt Kinderohren bei Hörspielen und Reisen.",
+      "ru": "Безопасный уровень громкости бережёт слух в поездках и дома.",
+      "en": "Volume-limited audio protects young ears during stories and trips."
+    }
+  },
+  {
+    "id": "kid17",
+    "emoji": "🦕",
+    "gender": "all",
+    "minAge": 5,
+    "maxAge": 11,
+    "price": 16,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "diy",
+      "humor"
+    ],
+    "query": "Ausgrabungsset Dinosaurier Fossilien Kinder",
+    "title": {
+      "de": "Dino-Ausgrabungsset",
+      "ru": "Набор раскопок динозавра",
+      "en": "Dinosaur Fossil Dig Kit"
+    },
+    "reason": {
+      "de": "Spannendes Buddeln wie echte Archäologen – super Mitbringsel.",
+      "ru": "Настоящие раскопки как у археолога — крутой недорогой подарок.",
+      "en": "Exciting archaeological digging fun at a budget-friendly price."
+    }
+  },
+  {
+    "id": "kid18",
+    "emoji": "⚽",
+    "gender": "all",
+    "minAge": 5,
+    "maxAge": 14,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "sport",
+      "cozy"
+    ],
+    "query": "Hoverball Fußball Indoor LED Schaumstoff",
+    "title": {
+      "de": "Indoor-Schwebe-Fußball mit LED",
+      "ru": "Домашний аэромяч с мягким бампером",
+      "en": "Indoor LED Hover Soccer Ball"
+    },
+    "reason": {
+      "de": "Gleitet über glatte Böden und schont dank Schaumstoffrand die Möbel.",
+      "ru": "Скользит по полу как аэрохоккей, а мягкий обод бережёт мебель.",
+      "en": "Glides smoothly indoors with a soft bumper that protects furniture."
+    }
+  },
+  {
+    "id": "teen01",
+    "emoji": "🌈",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 22,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy",
+      "gaming"
+    ],
+    "query": "LED Strip RGBIC App Steuerung Zimmer",
+    "title": {
+      "de": "Smarte RGBIC LED-Lichterkette",
+      "ru": "Умная адресная LED-лента в комнату",
+      "en": "Smart RGBIC LED Strip Lights"
+    },
+    "reason": {
+      "de": "Reagiert auf Musik und verleiht dem Zimmer sofort modernen Vibe.",
+      "ru": "Реагирует на музыку и мгновенно преображает комнату.",
+      "en": "Syncs to music and instantly upgrades room ambiance."
+    }
+  },
+  {
+    "id": "teen02",
+    "emoji": "📸",
+    "gender": "all",
+    "minAge": 13,
+    "maxAge": 28,
+    "price": 78,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "travel",
+      "cozy",
+      "tech"
+    ],
+    "query": "Sofortbildkamera Instax Mini Set",
+    "title": {
+      "de": "Sofortbildkamera für Erinnerungen",
+      "ru": "Камера мгновенной печати снимков",
+      "en": "Instant Film Camera"
+    },
+    "reason": {
+      "de": "Hält Freundschaftsmomente als echte Fotos zum Aufhängen fest.",
+      "ru": "Печатает живые карточки-воспоминания, которые классно вешать на стену.",
+      "en": "Captures real physical snapshots perfect for wall collages."
+    }
+  },
+  {
+    "id": "teen03",
+    "emoji": "🧥",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 45,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "partner",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy",
+      "gaming"
+    ],
+    "query": "Oversize Hoodie Decke Sherpa Fleece",
+    "title": {
+      "de": "Kuschelige Oversize-Hoodie-Decke",
+      "ru": "Огромное худи-плед с мягким мехом",
+      "en": "Oversized Sherpa Hoodie Blanket"
+    },
+    "reason": {
+      "de": "Ultimativer Kuschelfaktor für Serienabende, Zocken und kalte Tage.",
+      "ru": "Максимум уюта для сериалов, игр и холодных вечеров.",
+      "en": "Peak cozy comfort for movie nights, gaming, and chilly days."
+    }
+  },
+  {
+    "id": "teen04",
+    "emoji": "🧊",
+    "gender": "all",
+    "minAge": 10,
+    "maxAge": 30,
+    "price": 15,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend",
+      "colleague"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "gaming",
+      "humor"
+    ],
+    "query": "Speedcube Zauberwürfel Magnetisch 3x3",
+    "title": {
+      "de": "Magnetischer Profi-Speedcube",
+      "ru": "Магнитный скоростной кубик Рубика",
+      "en": "Magnetic Speed Cube 3x3"
+    },
+    "reason": {
+      "de": "Dreht butterweich, entspannt den Kopf und macht erstaunlich süchtig.",
+      "ru": "Крутится мягко как по маслу, разгружает голову и затягивает.",
+      "en": "Silky smooth magnetic turns that relieve stress and hook you fast."
+    }
+  },
+  {
+    "id": "teen05",
+    "emoji": "🔋",
+    "gender": "all",
+    "minAge": 13,
+    "maxAge": 60,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend",
+      "partner",
+      "colleague"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "travel"
+    ],
+    "query": "Mini Powerbank USB C Schnellladen 10000mAh",
+    "title": {
+      "de": "Kompakte Schnelllade-Powerbank",
+      "ru": "Компактный пауэрбанк с быстрой зарядкой",
+      "en": "Compact Fast-Charge Power Bank"
+    },
+    "reason": {
+      "de": "Passt in jede Jackentasche und rettet zuverlässig vor leerem Akku.",
+      "ru": "Помещается в карман и всегда спасает от севшего телефона.",
+      "en": "Fits any pocket and rescues low batteries on the go."
+    }
+  },
+  {
+    "id": "teen06",
+    "emoji": "🎵",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 45,
+    "price": 44,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "travel",
+      "sport"
+    ],
+    "query": "Bluetooth Lautsprecher Wasserdicht Kompakt",
+    "title": {
+      "de": "Wasserdichter Bluetooth-Speaker",
+      "ru": "Водонепроницаемая Bluetooth-колонка",
+      "en": "Waterproof Portable Bluetooth Speaker"
+    },
+    "reason": {
+      "de": "Satter Sound für Park, Strand, Dusche oder spontane Treffen.",
+      "ru": "Сочный звук для парка, пляжа, душа и встреч с друзьями.",
+      "en": "Punchy sound built for parks, showers, and spontaneous hangouts."
+    }
+  },
+  {
+    "id": "teen07",
+    "emoji": "🖱️",
+    "gender": "all",
+    "minAge": 13,
+    "maxAge": 38,
+    "price": 25,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech"
+    ],
+    "query": "XXL Gaming Mauspad RGB Schreibtischunterlage",
+    "title": {
+      "de": "XXL RGB-Gaming-Mauspad",
+      "ru": "Огромный игровой коврик с RGB-подсветкой",
+      "en": "XXL RGB Gaming Desk Mat"
+    },
+    "reason": {
+      "de": "Schützt den Schreibtisch und setzt das gesamte Setup perfekt in Szene.",
+      "ru": "Защищает стол и сразу делает компьютерное место стильным.",
+      "en": "Protects the desk while elevating any gaming or study setup."
+    }
+  },
+  {
+    "id": "teen08",
+    "emoji": "🥤",
+    "gender": "all",
+    "minAge": 13,
+    "maxAge": 55,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "child",
+      "sibling",
+      "friend",
+      "partner",
+      "colleague"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "sport",
+      "travel",
+      "cozy"
+    ],
+    "query": "Edelstahl Trinkflasche Isoliert Thermosflasche",
+    "title": {
+      "de": "Stylische Isolier-Trinkflasche",
+      "ru": "Стильная термобутылка из нержавеющей стали",
+      "en": "Insulated Stainless Steel Bottle"
+    },
+    "reason": {
+      "de": "Hält Getränke 24 Stunden eiskalt oder 12 Stunden angenehm heiß.",
+      "ru": "Держит напиток ледяным сутки или горячим до 12 часов.",
+      "en": "Keeps drinks ice-cold for 24h or steaming hot for 12h."
+    }
+  },
+  {
+    "id": "auto01",
+    "emoji": "💨",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 49,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "auto",
+      "tech",
+      "diy"
+    ],
+    "query": "Akku Luftpumpe Auto Kompressor Digital",
+    "title": {
+      "de": "Digitaler Akku-Minikompressor",
+      "ru": "Портативный электронасос-компрессор",
+      "en": "Cordless Digital Tire Inflator"
+    },
+    "reason": {
+      "de": "Prüft und füllt Auto-, Fahrrad- und Rollerreifen in Sekunden auf.",
+      "ru": "Подкачивает колёса авто, велосипеда и самоката за секунды без проводов.",
+      "en": "Checks and inflates car, bike, and scooter tires effortlessly."
+    }
+  },
+  {
+    "id": "auto02",
+    "emoji": "🧽",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "auto",
+      "diy"
+    ],
+    "query": "Auto Pflege Set Reinigung Innenraum Außen",
+    "title": {
+      "de": "Komplettes Autopflege-Set",
+      "ru": "Подарочный набор для ухода за авто",
+      "en": "Complete Car Detailing Kit"
+    },
+    "reason": {
+      "de": "Alles für strahlenden Lack und sauberen Innenraum in einer Tasche.",
+      "ru": "Всё для блеска кузова и чистоты салона в удобной сумке.",
+      "en": "Everything needed for a showroom shine inside and out."
+    }
+  },
+  {
+    "id": "auto03",
+    "emoji": "🧹",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 44,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "auto",
+      "tech"
+    ],
+    "query": "Auto Handstaubsauger Kabellos Stark Akku",
+    "title": {
+      "de": "Starker kabelloser Auto-Staubsauger",
+      "ru": "Мощный беспроводной автопылесос",
+      "en": "Cordless High-Power Car Vacuum"
+    },
+    "reason": {
+      "de": "Beseitigt Krümel und Staub im Fußraum blitzschnell ohne Kabelsalat.",
+      "ru": "За минуту убирает крошки и песок в салоне без возни с проводами.",
+      "en": "Clears crumbs and dust from car seats in seconds without cords."
+    }
+  },
+  {
+    "id": "auto04",
+    "emoji": "⚡",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 69,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "auto",
+      "tech",
+      "travel"
+    ],
+    "query": "Starthilfe Powerbank Auto Jump Starter",
+    "title": {
+      "de": "Auto-Starthilfe & Powerbank",
+      "ru": "Пусковое устройство-пауэрбанк для авто",
+      "en": "Car Jump Starter Power Bank"
+    },
+    "reason": {
+      "de": "Rettet im Winter bei leerer Batterie – Sicherheit für jedes Handschuhfach.",
+      "ru": "Заведёт машину в мороз при севшем аккумуляторе — спокойствие в бардачке.",
+      "en": "Rescues dead batteries in winter—peace of mind for any glovebox."
+    }
+  },
+  {
+    "id": "auto05",
+    "emoji": "📱",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "auto",
+      "tech"
+    ],
+    "query": "Magnetische Handyhalterung Auto MagSafe Lüftung",
+    "title": {
+      "de": "Magnet-Handyhalterung fürs Auto",
+      "ru": "Магнитный держатель телефона в авто",
+      "en": "Magnetic Car Phone Mount"
+    },
+    "reason": {
+      "de": "Hält das Smartphone bombenfest mit nur einer Handbewegung.",
+      "ru": "Держит смартфон намертво и крепится буквально одним движением.",
+      "en": "Locks your phone securely in place with a single effortless tap."
+    }
+  },
+  {
+    "id": "auto06",
+    "emoji": "🗂️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 27,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "auto",
+      "travel"
+    ],
+    "query": "Kofferraum Organizer Faltbar Stabil Auto",
+    "title": {
+      "de": "Faltbarer Kofferraum-Organizer",
+      "ru": "Складной органайзер в багажник",
+      "en": "Foldable Trunk Organizer"
+    },
+    "reason": {
+      "de": "Schluss mit rollenden Einkäufen – endlich dauerhaft Ordnung im Kofferraum.",
+      "ru": "Конец катающимся пакетам — идеальный порядок в багажнике.",
+      "en": "No more rolling groceries—keeps any car trunk tidy all year."
+    }
+  },
+  {
+    "id": "auto07",
+    "emoji": "🚗",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 16,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "auto",
+      "humor"
+    ],
+    "query": "Auto Reinigungsgel Lüftungsschlitze Detail Pinsel",
+    "title": {
+      "de": "Detail-Reinigungsgel & Pinsel-Set",
+      "ru": "Гель-слайм и кисти для чистки салона",
+      "en": "Car Vent Cleaning Gel & Brush Kit"
+    },
+    "reason": {
+      "de": "Holt Staub aus jeder kleinsten Ritze – erstaunlich befriedigend.",
+      "ru": "Вытягивает пыль из всех кнопок и дефлекторов — странно, но кайфово.",
+      "en": "Lifts dust out of tight vents and crevices—strangely satisfying."
+    }
+  },
+  {
+    "id": "auto08",
+    "emoji": "🔌",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 58,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "auto",
+      "tech"
+    ],
+    "query": "Wireless CarPlay Android Auto Adapter Dongle",
+    "title": {
+      "de": "Kabelloser CarPlay / Android Auto Adapter",
+      "ru": "Беспроводной адаптер CarPlay / Android Auto",
+      "en": "Wireless CarPlay & Android Auto Adapter"
+    },
+    "reason": {
+      "de": "Verbindet das Handy automatisch ohne lästiges Kabel im Cockpit.",
+      "ru": "Подключает телефон к экрану машины сам — без лишних проводов в салоне.",
+      "en": "Connects your phone automatically with zero dashboard cable clutter."
+    }
+  },
+  {
+    "id": "auto09",
+    "emoji": "🧊",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 19,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "auto",
+      "travel"
+    ],
+    "query": "Elektrischer Eiskratzer Auto USB Akku",
+    "title": {
+      "de": "Elektrischer Akku-Eiskratzer",
+      "ru": "Электрический скребок для льда с USB",
+      "en": "Electric Rechargeable Ice Scraper"
+    },
+    "reason": {
+      "de": "Befreit vereiste Scheiben morgens in Sekunden ohne kalte Finger.",
+      "ru": "Счищает лёд со стёкол за секунды без обмороженных пальцев.",
+      "en": "Clears frozen windshields in seconds without freezing your hands."
+    }
+  },
+  {
+    "id": "auto10",
+    "emoji": "🎥",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 95,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "auto",
+      "tech"
+    ],
+    "query": "Dashcam Auto Vorne Hinten Nachtsicht",
+    "title": {
+      "de": "Full-HD Dashcam mit Nachtsicht",
+      "ru": "Видеорегистратор с ночной съёмкой",
+      "en": "Full-HD Night Vision Dashcam"
+    },
+    "reason": {
+      "de": "Sorgt für klare Beweise im Straßenverkehr und ein ruhiges Gefühl.",
+      "ru": "Чёткая запись днём и ночью — спокойствие и защита на дороге.",
+      "en": "Crisp day-and-night recording for extra confidence on the road."
+    }
+  },
+  {
+    "id": "auto11",
+    "emoji": "☕",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "auto",
+      "kitchen",
+      "travel"
+    ],
+    "query": "Thermobecher Auto Auslaufsicher Edelstahl",
+    "title": {
+      "de": "Auslaufsicherer Auto-Thermobecher",
+      "ru": "Непроливайка-термокружка в подстаканник",
+      "en": "Leakproof Car Travel Mug"
+    },
+    "reason": {
+      "de": "Passt perfekt in den Getränkehalter und hält den Kaffee lange heiß.",
+      "ru": "Идеально встаёт в подстаканник и держит кофе горячим всю дорогу.",
+      "en": "Fits standard cup holders and keeps coffee hot for the whole commute."
+    }
+  },
+  {
+    "id": "tech01",
+    "emoji": "📍",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 75,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "tech",
+      "travel",
+      "auto"
+    ],
+    "query": "Smart Tracker Schlüsselfinder Bluetooth",
+    "title": {
+      "de": "Smarter Schlüsselfinder-Tracker",
+      "ru": "Умный Bluetooth-трекер для ключей",
+      "en": "Smart Bluetooth Key & Bag Tracker"
+    },
+    "reason": {
+      "de": "Findet Schlüssel, Rucksack oder Koffer in Sekunden per Smartphone.",
+      "ru": "За секунду находит ключи, рюкзак или чемодан через телефон.",
+      "en": "Locates keys, backpacks, or luggage in seconds via smartphone."
+    }
+  },
+  {
+    "id": "tech02",
+    "emoji": "🔋",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 42,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy"
+    ],
+    "query": "3 in 1 Kabellose Ladestation Faltbar Smartphone Uhr",
+    "title": {
+      "de": "Faltbare 3-in-1 Ladestation",
+      "ru": "Складная беспроводная станция 3-в-1",
+      "en": "Foldable 3-in-1 Wireless Charger"
+    },
+    "reason": {
+      "de": "Lädt Handy, Uhr und Kopfhörer gleichzeitig ohne Kabelchaos am Bett.",
+      "ru": "Заряжает телефон, часы и наушники разом — без паутины проводов.",
+      "en": "Charges phone, watch, and earbuds together with zero bedside clutter."
+    }
+  },
+  {
+    "id": "tech03",
+    "emoji": "💡",
+    "gender": "all",
+    "minAge": 15,
+    "maxAge": 65,
+    "price": 36,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy"
+    ],
+    "query": "Smarte Nachttischlampe RGB Dimmbar App",
+    "title": {
+      "de": "Smarte Stimmungs- & Nachttischlampe",
+      "ru": "Умная прикроватная RGB-лампа",
+      "en": "Smart Dimmable Ambient Lamp"
+    },
+    "reason": {
+      "de": "Zaubert warmes Leselicht oder bunte Farben direkt per App.",
+      "ru": "Создаёт тёплый свет для чтения или цветную атмосферу со смартфона.",
+      "en": "Switches effortlessly from warm reading light to vibrant room colors."
+    }
+  },
+  {
+    "id": "tech04",
+    "emoji": "🎧",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 89,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "tech",
+      "travel",
+      "sport"
+    ],
+    "query": "Over Ear Kopfhörer Active Noise Cancelling Bluetooth",
+    "title": {
+      "de": "ANC Bluetooth-Kopfhörer",
+      "ru": "Беспроводные наушники с шумоподавлением",
+      "en": "Active Noise Cancelling Headphones"
+    },
+    "reason": {
+      "de": "Blenden Fluglärm und Bürostress aus – pures Musikvergnügen.",
+      "ru": "Отсекают шум самолёта и офиса — чистое удовольствие от звука.",
+      "en": "Blocks out flight noise and office buzz for pure listening bliss."
+    }
+  },
+  {
+    "id": "tech05",
+    "emoji": "🖥️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 60,
+    "price": 39,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "tech",
+      "gaming"
+    ],
+    "query": "Monitor Lichtleiste Schreibtischlampe USB Augen",
+    "title": {
+      "de": "LED Monitor-Lichtleiste",
+      "ru": "Светодиодная лампа на монитор",
+      "en": "LED Monitor Light Bar"
+    },
+    "reason": {
+      "de": "Beleuchtet die Tastatur blendfrei und schont die Augen am Abend.",
+      "ru": "Освещает стол без бликов на экране и бережёт глаза по вечерам.",
+      "en": "Lights your desk without screen glare and reduces late-night eye strain."
+    }
+  },
+  {
+    "id": "tech06",
+    "emoji": "📽️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 115,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy",
+      "gaming"
+    ],
+    "query": "Mini Beamer Heimkino WLAN Bluetooth Full HD",
+    "title": {
+      "de": "Kompakter Mini-Heimkino-Beamer",
+      "ru": "Компактный мини-проектор для дома",
+      "en": "Portable Home Cinema Mini Projector"
+    },
+    "reason": {
+      "de": "Verwandelt jede weiße Wand im Handumdrehen in ein privates Kino.",
+      "ru": "За минуту превращает любую светлую стену в домашний кинотеатр.",
+      "en": "Turns any blank wall into a cozy private movie theater."
+    }
+  },
+  {
+    "id": "tech07",
+    "emoji": "🔌",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "tech",
+      "travel"
+    ],
+    "query": "GaN Schnellladegerät 65W USB C 3 Port",
+    "title": {
+      "de": "Kompaktes 65W GaN-Schnellladegerät",
+      "ru": "Компактная GaN-зарядка 65W на 3 порта",
+      "en": "Compact 65W GaN 3-Port Charger"
+    },
+    "reason": {
+      "de": "Ein winziger Stecker lädt Laptop, Tablet und Handy gleichzeitig.",
+      "ru": "Один крошечный блок заряжает ноутбук, планшет и телефон сразу.",
+      "en": "One tiny charger powers laptop, tablet, and phone simultaneously."
+    }
+  },
+  {
+    "id": "tech08",
+    "emoji": "🧼",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 65,
+    "price": 13,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "gaming"
+    ],
+    "query": "Reinigungsset Elektronik Kopfhörer Tastatur Stift",
+    "title": {
+      "de": "Multifunktions-Tech-Reinigungsset",
+      "ru": "Набор для чистки наушников и клавиатуры",
+      "en": "Multi-Tool Tech Cleaning Kit"
+    },
+    "reason": {
+      "de": "Macht Kopfhörer, Tastatur und Bildschirm wieder blitzsauber.",
+      "ru": "Возвращает наушникам, экрану и клавиатуре вид как из магазина.",
+      "en": "Gets earbuds, keyboards, and screens spotless in seconds."
+    }
+  },
+  {
+    "id": "tech09",
+    "emoji": "🌤️",
+    "gender": "all",
+    "minAge": 25,
+    "maxAge": 85,
+    "price": 48,
+    "adultOnly": false,
+    "relations": [
+      "parents",
+      "grandparents",
+      "partner",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy",
+      "grill"
+    ],
+    "query": "Funk Wetterstation Farbdisplay Außensensor",
+    "title": {
+      "de": "Wetterstation mit Farbdisplay",
+      "ru": "Беспроводная метеостанция с цветным экраном",
+      "en": "Color Display Weather Station"
+    },
+    "reason": {
+      "de": "Zeigt präzise Innen- und Außentemperatur samt Wettertrend auf einen Blick.",
+      "ru": "Точная температура дома и на улице плюс прогноз на ярком экране.",
+      "en": "Shows indoor/outdoor temperatures and forecasts at a glance."
+    }
+  },
+  {
+    "id": "tech10",
+    "emoji": "🖼️",
+    "gender": "all",
+    "minAge": 25,
+    "maxAge": 85,
+    "price": 79,
+    "adultOnly": false,
+    "relations": [
+      "parents",
+      "grandparents",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wedding",
+      "anniversary"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy"
+    ],
+    "query": "Digitaler Bilderrahmen WLAN App Fotos",
+    "title": {
+      "de": "WLAN Digitaler Bilderrahmen",
+      "ru": "Цифровая фоторамка с загрузкой через Wi-Fi",
+      "en": "Wi-Fi Digital Photo Frame"
+    },
+    "reason": {
+      "de": "Familienfotos landen direkt vom Handy im Wohnzimmer der Liebsten.",
+      "ru": "Новые семейные фото мгновенно появляются в рамке прямо с телефона.",
+      "en": "Send family photos straight from your phone to their living room."
+    }
+  },
+  {
+    "id": "tech11",
+    "emoji": "🔌",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "tech",
+      "diy"
+    ],
+    "query": "Smarte Steckdose Strommessung WLAN 2er Set",
+    "title": {
+      "de": "Smarte WLAN-Steckdosen mit Strommessung",
+      "ru": "Умные розетки с энергомонитором",
+      "en": "Smart Energy-Monitoring Plugs"
+    },
+    "reason": {
+      "de": "Steuert Lampen per App und entlarvt heimliche Stromfresser.",
+      "ru": "Управляет техникой со смартфона и находит скрытых пожирателей электричества.",
+      "en": "Controls lamps from your phone and spots hidden energy hogs."
+    }
+  },
+  {
+    "id": "tech12",
+    "emoji": "⌚",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 145,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "tech",
+      "sport"
+    ],
+    "query": "Fitness Tracker Smartwatch GPS AMOLED",
+    "title": {
+      "de": "AMOLED Fitness-Smartwatch",
+      "ru": "Спортивные смарт-часы с AMOLED-экраном",
+      "en": "AMOLED GPS Fitness Smartwatch"
+    },
+    "reason": {
+      "de": "Trackt Schlaf, Puls und Schritte mit starker Akkulaufzeit.",
+      "ru": "Отслеживает сон, пульс и тренировки и долго держит заряд.",
+      "en": "Tracks sleep, heart rate, and workouts with long battery life."
+    }
+  },
+  {
+    "id": "kit01",
+    "emoji": "☕",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 38,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Elektrischer Milchaufschäumer Induktion Edelstahl",
+    "title": {
+      "de": "Barista Milchaufschäumer",
+      "ru": "Электрический капучинатор из стали",
+      "en": "Barista Electric Milk Frother"
+    },
+    "reason": {
+      "de": "Zaubert cremigen Cappuccino-Schaum wie im Lieblingscafé zu Hause.",
+      "ru": "Делает плотную кремовую пенку как в хорошей кофейне за минуту.",
+      "en": "Whips up café-quality creamy foam for lattes at home."
+    }
+  },
+  {
+    "id": "kit02",
+    "emoji": "🫘",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Handkaffeemühle Edelstahl Kegelmahlwerk",
+    "title": {
+      "de": "Manuelle Kaffeemühle mit Mahlwerk",
+      "ru": "Ручная кофемолка со стальными жерновами",
+      "en": "Manual Burr Coffee Grinder"
+    },
+    "reason": {
+      "de": "Frisch gemahlener Kaffee weckt jedes Aroma – ideal auch für unterwegs.",
+      "ru": "Свежемолотый кофе раскрывает настоящий аромат — удобно и дома, и в поездке.",
+      "en": "Freshly ground beans unlock rich aroma at home or while traveling."
+    }
+  },
+  {
+    "id": "kit03",
+    "emoji": "🌶️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "kitchen",
+      "grill"
+    ],
+    "query": "Elektrische Salz Pfeffermühle Set LED Edelstahl",
+    "title": {
+      "de": "Elektrische Gewürzmühlen im Set",
+      "ru": "Набор электромельниц для соли и перца",
+      "en": "Electric Salt & Pepper Mill Set"
+    },
+    "reason": {
+      "de": "Einhand-Bedienung mit Licht – edler Hingucker auf jedem Esstisch.",
+      "ru": "Работают одной рукой и подсвечивают блюдо — стильно смотрятся на столе.",
+      "en": "One-handed grinding with LED light—sleek upgrade for any dinner table."
+    }
+  },
+  {
+    "id": "kit04",
+    "emoji": "🔪",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 62,
+    "adultOnly": true,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "kitchen",
+      "grill"
+    ],
+    "query": "Damast Kochmesser Japanisch Geschenkbox",
+    "title": {
+      "de": "Scharfes Kochmesser in Geschenkbox",
+      "ru": "Японский шеф-нож в подарочной коробке",
+      "en": "Japanese Chef Knife Gift Box"
+    },
+    "reason": {
+      "de": "Macht das Schneiden von Gemüse und Fleisch zum echten Genuss.",
+      "ru": "Превращает нарезку продуктов в удовольствие — идеален для любителей готовки.",
+      "en": "Turns everyday chopping into pure joy for anyone who loves cooking."
+    }
+  },
+  {
+    "id": "kit05",
+    "emoji": "🍵",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Matcha Tee Set Bambusbesen Schale Keramik",
+    "title": {
+      "de": "Authentisches Matcha-Zeremonie-Set",
+      "ru": "Набор для приготовления чая матча",
+      "en": "Authentic Matcha Tea Whisk Set"
+    },
+    "reason": {
+      "de": "Bringt entspannte Café-Kultur mit Schale und Bambusbesen nach Hause.",
+      "ru": "Чаша и бамбуковый венчик создают уютный ритуал прямо на кухне.",
+      "en": "Brings a calming café ritual home with ceramic bowl and bamboo whisk."
+    }
+  },
+  {
+    "id": "kit06",
+    "emoji": "🍕",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "kitchen",
+      "grill"
+    ],
+    "query": "Pizzastein Cordierit Backofen Grill Pizzaschieber",
+    "title": {
+      "de": "Pizzastein mit Pizzaschieber",
+      "ru": "Камень для пиццы с лопаткой",
+      "en": "Cordierite Pizza Stone with Peel"
+    },
+    "reason": {
+      "de": "Knuspriger Boden wie aus dem Steinofen – für Backofen und Grill.",
+      "ru": "Хрустящая корочка как из итальянской печи — для духовки и гриля.",
+      "en": "Delivers crispy pizzeria-style crusts in any home oven or grill."
+    }
+  },
+  {
+    "id": "kit07",
+    "emoji": "🍳",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 89,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Heißluftfritteuse Airfryer Digital Kompakt",
+    "title": {
+      "de": "Digitale Heißluftfritteuse",
+      "ru": "Цифровой аэрогриль (Airfryer)",
+      "en": "Digital Compact Air Fryer"
+    },
+    "reason": {
+      "de": "Knusprige Gerichte in Minuten mit kaum Öl – der Küchen-Liebling.",
+      "ru": "Хрустящие блюда за минуты почти без масла — главный хит кухни.",
+      "en": "Crispy meals in minutes with minimal oil—an instant kitchen favorite."
+    }
+  },
+  {
+    "id": "kit08",
+    "emoji": "🧀",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 36,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding",
+      "anniversary"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Käsebrett Set Bambus Messer Schalen Geschenk",
+    "title": {
+      "de": "Edles Käse- & Tapas-Brett Set",
+      "ru": "Сырная доска из бамбука с приборами",
+      "en": "Bamboo Cheese & Charcuterie Board"
+    },
+    "reason": {
+      "de": "Perfekt für gemütliche Abende mit Freunden, Wein und Snacks.",
+      "ru": "Идеально для уютных вечеров с закусками и хорошей компанией.",
+      "en": "Made for cozy wine-and-snack nights with friends or family."
+    }
+  },
+  {
+    "id": "kit09",
+    "emoji": "🫖",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 28,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Glaskanne Teekanne Stövchen Edelstahlsieb",
+    "title": {
+      "de": "Glas-Teekanne mit Stövchen",
+      "ru": "Стеклянный заварочный чайник с подставкой",
+      "en": "Glass Teapot with Warmer Base"
+    },
+    "reason": {
+      "de": "Hält losen Lieblingstee stundenlang warm und sieht wunderschön aus.",
+      "ru": "Держит чай горячим весь вечер и красиво смотрится со свечой.",
+      "en": "Keeps loose-leaf tea warm for hours with a glowing candle base."
+    }
+  },
+  {
+    "id": "kit10",
+    "emoji": "🧊",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 65,
+    "price": 22,
+    "adultOnly": true,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "newyear"
+    ],
+    "hobbies": [
+      "kitchen",
+      "humor"
+    ],
+    "query": "Whisky Steine Set Gläser Holzbox Geschenk",
+    "title": {
+      "de": "Kühlsteine-Set in Holzbox",
+      "ru": "Камни для охлаждения напитков в шкатулке",
+      "en": "Chilling Stones Gift Box Set"
+    },
+    "reason": {
+      "de": "Kühlt edle Drinks, ohne sie wie schmelzendes Eis zu verwässern.",
+      "ru": "Охлаждает напитки, не разбавляя их талой водой.",
+      "en": "Chills fine drinks without watering them down like ice cubes."
+    }
+  },
+  {
+    "id": "kit11",
+    "emoji": "⚖️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "kitchen",
+      "tech"
+    ],
+    "query": "Digitale Kaffeewaage Timer Espresso Präzision",
+    "title": {
+      "de": "Präzisions-Kaffeewaage mit Timer",
+      "ru": "Кофейные весы с таймером",
+      "en": "Precision Coffee Scale with Timer"
+    },
+    "reason": {
+      "de": "Auf 0,1 Gramm genau – ein Traum für Espresso- und Filterkaffee-Fans.",
+      "ru": "Точность до 0,1 грамма — мечта каждого фаната кофе.",
+      "en": "0.1g accuracy with a built-in timer—a dream for coffee geeks."
+    }
+  },
+  {
+    "id": "kit12",
+    "emoji": "🍫",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 75,
+    "price": 27,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear",
+      "anniversary"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Schokoladen Fondue Set Keramik Teelicht Gabeln",
+    "title": {
+      "de": "Schoko-Fondue-Set für zwei",
+      "ru": "Набор для шоколадного фондю",
+      "en": "Ceramic Chocolate Fondue Set"
+    },
+    "reason": {
+      "de": "Süßer Genuss für romantische Abende oder gesellige Runden.",
+      "ru": "Сладкое удовольствие для романтического вечера или гостей.",
+      "en": "Sweet indulgence for cozy date nights or dessert with friends."
+    }
+  },
+  {
+    "id": "kit13",
+    "emoji": "🌶️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 25,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "kitchen",
+      "grill",
+      "humor"
+    ],
+    "query": "Chili Saucen Probier Set Scharf Geschenkbox",
+    "title": {
+      "de": "Scharfes Chili-Saucen Probier-Set",
+      "ru": "Набор острых соусов для гурманов",
+      "en": "Hot Sauce Tasting Gift Set"
+    },
+    "reason": {
+      "de": "Von fruchtig-mild bis feurig-scharf – perfekt für Mutige am Tisch.",
+      "ru": "От пряных до огненно-острых — восторг для любителей погорячее.",
+      "en": "From tangy to fiery—an exciting flavor challenge for spice fans."
+    }
+  },
+  {
+    "id": "kit14",
+    "emoji": "🍹",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 60,
+    "price": 42,
+    "adultOnly": true,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "colleague"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear",
+      "housewarming"
+    ],
+    "hobbies": [
+      "kitchen",
+      "humor"
+    ],
+    "query": "Cocktail Shaker Set Edelstahl Bar Zubehör Ständer",
+    "title": {
+      "de": "Barkeeper Cocktail-Shaker-Set",
+      "ru": "Набор бармена с шейкером на подставке",
+      "en": "Stainless Cocktail Shaker Bar Set"
+    },
+    "reason": {
+      "de": "Bringt echtes Cocktailbar-Feeling auf jede Hausparty und Silvester.",
+      "ru": "Превращает домашнюю вечеринку или Новый год в настоящий коктейль-бар.",
+      "en": "Brings sleek cocktail-bar flair to house parties and New Year's Eve."
+    }
+  },
+  {
+    "id": "grl01",
+    "emoji": "🌡️",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 45,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen",
+      "tech"
+    ],
+    "query": "Bluetooth Grillthermometer Funk Fleischthermometer",
+    "title": {
+      "de": "Smartes Bluetooth-Grillthermometer",
+      "ru": "Умный Bluetooth-термометр для мяса",
+      "en": "Smart Bluetooth Meat Thermometer"
+    },
+    "reason": {
+      "de": "Meldet aufs Handy, wann Steak oder Braten auf den Punkt perfekt sind.",
+      "ru": "Сообщает на телефон, когда стейк или шашлык идеально прожарились.",
+      "en": "Alerts your phone the exact second steak or roast hits perfection."
+    }
+  },
+  {
+    "id": "grl02",
+    "emoji": "🔥",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 38,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen"
+    ],
+    "query": "Grillbesteck Set Edelstahl Koffer BBQ",
+    "title": {
+      "de": "Profi-Grillbesteck im Alukoffer",
+      "ru": "Набор для гриля в алюминиевом кейсе",
+      "en": "BBQ Grill Tool Set in Case"
+    },
+    "reason": {
+      "de": "Robuste Zange, Wender und Bürste – immer ordentlich verstaut.",
+      "ru": "Крепкие щипцы, лопатка и щётка — всё аккуратно хранится в кейсе.",
+      "en": "Heavy-duty tongs, spatula, and brush neatly packed for every BBQ."
+    }
+  },
+  {
+    "id": "grl03",
+    "emoji": "🧂",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "housewarming"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen"
+    ],
+    "query": "BBQ Gewürzset Grillgewürze Geschenkbox Rubs",
+    "title": {
+      "de": "Gourmet BBQ-Gewürzbox",
+      "ru": "Подарочный набор специй для гриля",
+      "en": "Gourmet BBQ Spice Rubs Box"
+    },
+    "reason": {
+      "de": "Bringt rauchige Steakhouse-Aromen auf Fleisch, Fisch und Gemüse.",
+      "ru": "Придаёт мясу и овощам аромат настоящего стейкхауса.",
+      "en": "Adds bold smokehouse flavors to meat, veggies, and skewers."
+    }
+  },
+  {
+    "id": "grl04",
+    "emoji": "🧤",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 21,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "grill",
+      "diy"
+    ],
+    "query": "Grillhandschuhe Hitzebeständig Aramid Leder",
+    "title": {
+      "de": "Hitzefeste Profi-Grillhandschuhe",
+      "ru": "Жаростойкие перчатки для гриля",
+      "en": "Heat-Resistant BBQ Gloves"
+    },
+    "reason": {
+      "de": "Sicher am heißen Rost und Backofen hantieren ohne verbrannte Finger.",
+      "ru": "Спокойно берите горячие решётки и шампуры без риска обжечься.",
+      "en": "Handle blazing grates and hot pans safely with total grip."
+    }
+  },
+  {
+    "id": "grl05",
+    "emoji": "🌿",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Kräutergarten Anzuchtset Fensterbank Küche Geschenk",
+    "title": {
+      "de": "Indoor-Kräutergarten Anzuchtset",
+      "ru": "Набор для выращивания зелени на окне",
+      "en": "Indoor Herb Garden Starter Kit"
+    },
+    "reason": {
+      "de": "Frisches Basilikum und Koriander das ganze Jahr direkt auf der Fensterbank.",
+      "ru": "Свежий базилик и пряные травы круглый год прямо на подоконнике.",
+      "en": "Grow fresh culinary herbs right on the kitchen windowsill all year."
+    }
+  },
+  {
+    "id": "grl06",
+    "emoji": "🔥",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 75,
+    "price": 59,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "grill",
+      "cozy"
+    ],
+    "query": "Tischfeuer Bioethanol Indoor Outdoor Beton",
+    "title": {
+      "de": "Stylisches Tischfeuer für Balkon & Wohnzimmer",
+      "ru": "Настольный биокамин для дома и балкона",
+      "en": "Tabletop Bioethanol Fire Pit"
+    },
+    "reason": {
+      "de": "Echte Flammen ganz ohne Rauch – magische Atmosphäre auf Tisch oder Balkon.",
+      "ru": "Живой огонь без дыма и запаха — вау-уют на столе или балконе.",
+      "en": "Real smokeless flames for instant magic on a balcony or coffee table."
+    }
+  },
+  {
+    "id": "grl07",
+    "emoji": "🍔",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 23,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen"
+    ],
+    "query": "Burgerpresse Gusseisen Smash Burger Set",
+    "title": {
+      "de": "Gusseisen Smash-Burger-Presse",
+      "ru": "Чугунный пресс для сочных бургеров",
+      "en": "Cast Iron Smash Burger Press"
+    },
+    "reason": {
+      "de": "Für knusprige, perfekt geformte Burger wie aus dem American Diner.",
+      "ru": "Делает ровные бургеры с идеальной хрустящей корочкой.",
+      "en": "Presses crispy, evenly seared diner-style smash burgers in seconds."
+    }
+  },
+  {
+    "id": "grl08",
+    "emoji": "🏮",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 80,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "grill",
+      "cozy"
+    ],
+    "query": "Solar Gartenleuchte Laterne Warmweiß Metall",
+    "title": {
+      "de": "Solar-Gartenlaterne mit Lichtspiel",
+      "ru": "Садовый фонарь на солнечной батарее",
+      "en": "Solar Outdoor Lantern"
+    },
+    "reason": {
+      "de": "Lädt sich tagsüber selbst auf und taucht Garten oder Balkon in warmes Licht.",
+      "ru": "Заряжается от солнца днём и создаёт уютные узоры света вечером.",
+      "en": "Charges by sunlight and casts warm patterned light across any patio."
+    }
+  },
+  {
+    "id": "grl09",
+    "emoji": "🍖",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen"
+    ],
+    "query": "Schaschlik Spieße Edelstahl Set Flach Grill",
+    "title": {
+      "de": "Edelstahl Schaschlik-Spieße Set",
+      "ru": "Набор широких шампуров из нержавейки",
+      "en": "Heavy-Duty Stainless BBQ Skewers"
+    },
+    "reason": {
+      "de": "Flache Klingen verhindern das Durchdrehen – für perfekt gleichmäßiges Grillen.",
+      "ru": "Широкие и прочные — мясо не прокручивается и прожаривается равномерно.",
+      "en": "Flat blades stop meat from spinning so every skewer cooks evenly."
+    }
+  },
+  {
+    "id": "grl10",
+    "emoji": "🐦",
+    "gender": "all",
+    "minAge": 25,
+    "maxAge": 85,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "parents",
+      "grandparents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "grill",
+      "pets",
+      "cozy"
+    ],
+    "query": "Vogelfutterhaus Fenster Transparent Acryl Saugnapf",
+    "title": {
+      "de": "Fenster-Vogelhaus zum Beobachten",
+      "ru": "Прозрачная кормушка для птиц на окно",
+      "en": "Clear Window Bird Feeder"
+    },
+    "reason": {
+      "de": "Natur hautnah direkt vor der Fensterscheibe erleben.",
+      "ru": "Живая природа прямо за стеклом — за птицами можно наблюдать вблизи.",
+      "en": "Brings up-close birdwatching right to your windowpane."
+    }
+  },
+  {
+    "id": "grl11",
+    "emoji": "🪵",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 75,
+    "price": 65,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen"
+    ],
+    "query": "Dutch Oven Feuertopf Gusseisen Deckelheber",
+    "title": {
+      "de": "Gusseiserner Dutch Oven Feuertopf",
+      "ru": "Чугунный казан-жаровня Dutch Oven",
+      "en": "Cast Iron Dutch Oven Pot"
+    },
+    "reason": {
+      "de": "Unverwüstlicher Alleskönner für Schmorgerichte, Brot und Lagerfeuer.",
+      "ru": "Неубиваемая чугунная классика для плова, рагу и готовки на углях.",
+      "en": "Indestructible cast-iron classic for stews, bread, and open-fire cooking."
+    }
+  },
+  {
+    "id": "spt01",
+    "emoji": "💆",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 52,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "sport",
+      "tech",
+      "cozy"
+    ],
+    "query": "Mini Massagepistole Muskelentspannung USB C",
+    "title": {
+      "de": "Kompakte Mini-Massagepistole",
+      "ru": "Компактный перкуссионный массажёр",
+      "en": "Mini Percussion Massage Gun"
+    },
+    "reason": {
+      "de": "Löst Verspannungen nach dem Training oder langen Arbeitstagen sofort.",
+      "ru": "Быстро снимает зажимы в мышцах после тренировки или рабочего дня.",
+      "en": "Melts away muscle tension after workouts or long desk days."
+    }
+  },
+  {
+    "id": "spt02",
+    "emoji": "🧘",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 31,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear"
+    ],
+    "hobbies": [
+      "sport",
+      "cozy"
+    ],
+    "query": "Akupressurmatte Set Kissen Entspannung Rücken",
+    "title": {
+      "de": "Akupressurmatte mit Kissen",
+      "ru": "Акупунктурный коврик с подушкой",
+      "en": "Acupressure Mat & Pillow Set"
+    },
+    "reason": {
+      "de": "15 Minuten am Abend entspannen Rücken und Nacken spürbar.",
+      "ru": "15 минут вечером ощутимо расслабляют спину и снимают усталость.",
+      "en": "15 minutes in the evening noticeably relaxes neck and back tension."
+    }
+  },
+  {
+    "id": "spt03",
+    "emoji": "🏋️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear",
+      "wichteln"
+    ],
+    "hobbies": [
+      "sport",
+      "travel"
+    ],
+    "query": "Fitnessbänder Set Stoff Rutschfest Training",
+    "title": {
+      "de": "Rutschfeste Stoff-Fitnessbänder",
+      "ru": "Тканевые фитнес-резинки (набор)",
+      "en": "Non-Slip Fabric Resistance Bands"
+    },
+    "reason": {
+      "de": "Effektives Ganzkörper-Workout zu Hause oder im Urlaub ohne Rollen.",
+      "ru": "Не скручиваются и подходят для полноценных тренировок дома и в поездках.",
+      "en": "No-roll fabric bands for full-body workouts at home or on the road."
+    }
+  },
+  {
+    "id": "spt04",
+    "emoji": "🪢",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 55,
+    "price": 18,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear",
+      "wichteln"
+    ],
+    "hobbies": [
+      "sport"
+    ],
+    "query": "Springseil Profi Kugellager Kalorienzähler",
+    "title": {
+      "de": "Speed-Springseil mit Zähler",
+      "ru": "Скоростная скакалка со счётчиком",
+      "en": "Smart Weighted Jump Rope"
+    },
+    "reason": {
+      "de": "Verbrennt maximal Kalorien in nur 10 Minuten – passt in jede Tasche.",
+      "ru": "Эффективное кардио за 10 минут — легко брать с собой куда угодно.",
+      "en": "Torches calories in 10-minute sessions and packs into any bag."
+    }
+  },
+  {
+    "id": "spt05",
+    "emoji": "🧊",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 15,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "sport",
+      "travel"
+    ],
+    "query": "Kühlhandtuch Sport Mikrofaser Set Fitness",
+    "title": {
+      "de": "Kühlendes Mikrofaser-Sporthandtuch",
+      "ru": "Охлаждающее спортивное полотенце",
+      "en": "Instant Cooling Microfiber Towel"
+    },
+    "reason": {
+      "de": "Einfach nass machen, ausschütteln – kühlt beim Sport sofort spürbar.",
+      "ru": "Намочи, встряхни — и оно мгновенно приятно охлаждает на тренировке.",
+      "en": "Wet and snap for instant cooling relief during intense workouts."
+    }
+  },
+  {
+    "id": "spt06",
+    "emoji": "🚴",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "sport",
+      "tech",
+      "travel"
+    ],
+    "query": "Fahrradlicht Set LED StVZO USB Aufladbar",
+    "title": {
+      "de": "StVZO LED-Fahrradlicht-Set USB",
+      "ru": "Яркие USB-фонари для велосипеда (StVZO)",
+      "en": "StVZO USB Rechargeable Bike Lights"
+    },
+    "reason": {
+      "de": "Zugelassen für deutsche Straßen – hell, sicher und blitzschnell aufgeladen.",
+      "ru": "Сертифицированы для дорог Германии (StVZO), яркие и на USB-зарядке.",
+      "en": "German road-legal (StVZO) bright LED lights with easy USB charging."
+    }
+  },
+  {
+    "id": "spt07",
+    "emoji": "🎒",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 38,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear"
+    ],
+    "hobbies": [
+      "sport",
+      "travel"
+    ],
+    "query": "Sporttasche Schuhfach Nassfach Gym Tasche",
+    "title": {
+      "de": "Sporttasche mit Schuh- & Nassfach",
+      "ru": "Спортивная сумка с отсеком для обуви",
+      "en": "Gym Duffel with Shoe Compartment"
+    },
+    "reason": {
+      "de": "Trennt verschwitzte Kleidung und Schuhe sauber vom Rest.",
+      "ru": "Отдельный карман для кроссовок и влажных вещей держит всё в чистоте.",
+      "en": "Keeps shoes and damp gear neatly separated from clean clothes."
+    }
+  },
+  {
+    "id": "spt08",
+    "emoji": "💪",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear"
+    ],
+    "hobbies": [
+      "sport",
+      "diy"
+    ],
+    "query": "Liegestützbrett Faltbar Multifunktional Training",
+    "title": {
+      "de": "Multifunktions-Liegestützbrett",
+      "ru": "Складная доска для отжиманий",
+      "en": "Foldable Push-Up Training Board"
+    },
+    "reason": {
+      "de": "Farbcodierte Positionen trainieren gezielt Brust, Schultern und Arme.",
+      "ru": "Цветовая разметка помогает прорабатывать разные группы мышц дома.",
+      "en": "Color-coded grips target chest, shoulders, and arms at home."
+    }
+  },
+  {
+    "id": "spt09",
+    "emoji": "🧊",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 27,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "sport",
+      "kitchen"
+    ],
+    "query": "Elektrischer Protein Shaker USB Mixer Flasche",
+    "title": {
+      "de": "Elektrischer USB-Shaker",
+      "ru": "Электрический шейкер-миксер с USB",
+      "en": "USB Electric Vortex Shaker"
+    },
+    "reason": {
+      "de": "Mixt Shakes in Sekunden absolut klumpenfrei auf Knopfdruck.",
+      "ru": "Взбивает коктейль без единого комочка по нажатию одной кнопки.",
+      "en": "Blends silky, clump-free shakes in seconds at the press of a button."
+    }
+  },
+  {
+    "id": "spt10",
+    "emoji": "🚶",
+    "gender": "all",
+    "minAge": 25,
+    "maxAge": 80,
+    "price": 42,
+    "adultOnly": false,
+    "relations": [
+      "parents",
+      "grandparents",
+      "partner",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "sport",
+      "travel"
+    ],
+    "query": "Wanderstöcke Faltbar Aluminium Korkgriff",
+    "title": {
+      "de": "Leichte Falt-Wanderstöcke",
+      "ru": "Складные треккинговые палки с пробкой",
+      "en": "Foldable Cork-Grip Trekking Poles"
+    },
+    "reason": {
+      "de": "Entlasten Knie und Gelenke bei jeder Wanderung und passen in den Rucksack.",
+      "ru": "Разгружают колени на прогулках и компактно складываются в рюкзак.",
+      "en": "Take pressure off knees on trails and fold neatly into any pack."
+    }
+  },
+  {
+    "id": "gam01",
+    "emoji": "🎮",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 45,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech"
+    ],
+    "query": "Controller Halterung Kopfhörer Ständer Schreibtisch RGB",
+    "title": {
+      "de": "RGB Controller- & Headset-Ständer",
+      "ru": "Подставка для геймпада и наушников с RGB",
+      "en": "RGB Controller & Headset Stand"
+    },
+    "reason": {
+      "de": "Schafft Ordnung auf dem Gaming-Desk und sieht im Dunkeln stark aus.",
+      "ru": "Наводит порядок на игровом столе и круто светится в темноте.",
+      "en": "Keeps controllers and headsets organized with sleek desk lighting."
+    }
+  },
+  {
+    "id": "gam02",
+    "emoji": "⌨️",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 45,
+    "price": 58,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech"
+    ],
+    "query": "Mechanische Gaming Tastatur Kompakt RGB Deutsch QWERTZ",
+    "title": {
+      "de": "Kompakte Mechanische Tastatur (QWERTZ)",
+      "ru": "Механическая игровая клавиатура RGB",
+      "en": "Compact Mechanical Gaming Keyboard"
+    },
+    "reason": {
+      "de": "Präzises Tippgefühl, sattes Feedback und beeindruckende Lichteffekte.",
+      "ru": "Чёткий отклик клавиш и эффектная подсветка для игр и работы.",
+      "en": "Crisp tactile switches and vibrant lighting for gaming or typing."
+    }
+  },
+  {
+    "id": "gam03",
+    "emoji": "🖱️",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 45,
+    "price": 49,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech"
+    ],
+    "query": "Kabellose Gaming Maus Leichtgewicht Sensor",
+    "title": {
+      "de": "Ultraleichte Wireless Gaming-Maus",
+      "ru": "Ультралёгкая беспроводная игровая мышь",
+      "en": "Ultralight Wireless Gaming Mouse"
+    },
+    "reason": {
+      "de": "Blitzschnelle Reaktion ohne störendes Kabel für lange Sessions.",
+      "ru": "Молниеносный отклик и невесомость в руке без мешающего провода.",
+      "en": "Pinpoint response and featherweight glide without cable drag."
+    }
+  },
+  {
+    "id": "gam04",
+    "emoji": "🕹️",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 55,
+    "price": 46,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "gaming",
+      "humor",
+      "travel"
+    ],
+    "query": "Retro Handheld Spielkonsole Mini Klassiker",
+    "title": {
+      "de": "Retro-Handheld Mini-Konsole",
+      "ru": "Карманная ретро-консоль с классикой",
+      "en": "Retro Pocket Handheld Console"
+    },
+    "reason": {
+      "de": "Sofortiger Nostalgie-Kick für Pausen, Zugfahrten und gemütliche Abende.",
+      "ru": "Мгновенный заряд ностальгии для дороги и уютных вечеров.",
+      "en": "Instant retro nostalgia built for commutes and relaxing evenings."
+    }
+  },
+  {
+    "id": "gam05",
+    "emoji": "💡",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 45,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech",
+      "cozy"
+    ],
+    "query": "LED Hexagon Wandleuchten Gaming App Steuerung",
+    "title": {
+      "de": "Modulare LED Hexagon-Wandlichter",
+      "ru": "Модульные LED-соты на стену",
+      "en": "Modular LED Hexagon Wall Panels"
+    },
+    "reason": {
+      "de": "Beliebig an der Wand kombinierbar – macht jedes Zimmer zum Studio.",
+      "ru": "Собираются в любые узоры на стене и делают комнату как у стримера.",
+      "en": "Arrange custom glowing wall patterns for an instant studio vibe."
+    }
+  },
+  {
+    "id": "gam06",
+    "emoji": "👓",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 55,
+    "price": 21,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech"
+    ],
+    "query": "Blaulichtfilter Brille Gaming Computer Ohne Sehstärke",
+    "title": {
+      "de": "Blaulichtfilter-Brille für Gamer",
+      "ru": "Очки с защитой от синего света",
+      "en": "Blue Light Blocking Gaming Glasses"
+    },
+    "reason": {
+      "de": "Schützt die Augen bei langen Abenden vor Monitor und Konsole.",
+      "ru": "Снижают усталость глаз во время долгих ночных каток и работы за ПК.",
+      "en": "Reduces eye fatigue during marathon gaming or late-night screen time."
+    }
+  },
+  {
+    "id": "gam07",
+    "emoji": "🎲",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear",
+      "housewarming"
+    ],
+    "hobbies": [
+      "gaming",
+      "humor"
+    ],
+    "query": "Exit Escape Room Spiel Erwachsene Rätsel",
+    "title": {
+      "de": "Spannendes Escape-Room Spielpaket",
+      "ru": "Настольный квест-игра Escape Room",
+      "en": "Home Escape Room Game Pack"
+    },
+    "reason": {
+      "de": "Knifflige Rätsel-Atmosphäre fürs Wohnzimmer – ideal für Spieleabende.",
+      "ru": "Настоящий квест прямо в гостиной — хит для компании друзей.",
+      "en": "Thrilling puzzle-solving suspense for unforgettable game nights."
+    }
+  },
+  {
+    "id": "gam08",
+    "emoji": "🎙️",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 45,
+    "price": 54,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "gaming",
+      "tech"
+    ],
+    "query": "USB Gaming Mikrofon Tischstativ Mute Taste",
+    "title": {
+      "de": "USB-Mikrofon mit Stumm-Taste",
+      "ru": "USB-микрофон с сенсорным мьютом",
+      "en": "USB Gaming Mic with Tap-to-Mute"
+    },
+    "reason": {
+      "de": "Glasklare Stimme im Discord-Chat und bei Calls – einfach einstecken.",
+      "ru": "Кристально чистый голос в Discord и звонках — подключил и готово.",
+      "en": "Crystal-clear voice for Discord and calls—just plug and play."
+    }
+  },
+  {
+    "id": "gam09",
+    "emoji": "🧦",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 50,
+    "price": 13,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "colleague",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "gaming",
+      "humor",
+      "cozy"
+    ],
+    "query": "Gaming Socken Lustig Nicht Stören Geschenk",
+    "title": {
+      "de": "Lustige 'Nicht stören'-Gamer-Socken",
+      "ru": "Прикольные носки «Не беспокоить, я играю»",
+      "en": "Funny 'Do Not Disturb' Gamer Socks"
+    },
+    "reason": {
+      "de": "Ein witziges kleines Geschenk mit Augenzwinkern für jeden Zocker.",
+      "ru": "Весёлый недорогой подарок с намёком для каждого геймера.",
+      "en": "Playful, budget-friendly gift every gamer grins at immediately."
+    }
+  },
+  {
+    "id": "diy01",
+    "emoji": "🔧",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 42,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "diy",
+      "tech"
+    ],
+    "query": "Elektrischer Präzisionsschraubendreher Set USB Bits",
+    "title": {
+      "de": "Elektrischer Mini-Präzisionsschrauber",
+      "ru": "Электрическая мини-отвёртка с битами",
+      "en": "Electric Precision Screwdriver Set"
+    },
+    "reason": {
+      "de": "Macht Reparaturen an Handy, Brille, Laptop und Spielzeug kinderleicht.",
+      "ru": "Чинить технику, очки и гаджеты с ней — одно удовольствие.",
+      "en": "Makes fixing phones, glasses, and electronics effortless."
+    }
+  },
+  {
+    "id": "diy02",
+    "emoji": "🛠️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 36,
+    "adultOnly": true,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "diy",
+      "travel",
+      "auto"
+    ],
+    "query": "Multitool Taschenwerkzeug Edelstahl Zange Tasche",
+    "title": {
+      "de": "Robustes Edelstahl-Multitool",
+      "ru": "Стальной мультитул в чехле",
+      "en": "Heavy-Duty Stainless Multitool"
+    },
+    "reason": {
+      "de": "Zange, Schraubendreher und mehr immer griffbereit für Werkstatt & Tour.",
+      "ru": "Плоскогубцы, отвёртки и инструменты всегда под рукой — и дома, и в походе.",
+      "en": "Pliers, drivers, and tools always on hand for DIY and outdoor trips."
+    }
+  },
+  {
+    "id": "diy03",
+    "emoji": "🧲",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 16,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "diy",
+      "auto"
+    ],
+    "query": "Magnetarmband Handwerker Schrauben Halter Werkzeug",
+    "title": {
+      "de": "Magnet-Armband für Schrauben & Bits",
+      "ru": "Магнитный браслет мастера для саморезов",
+      "en": "Magnetic Wristband for Screws"
+    },
+    "reason": {
+      "de": "Hält Schrauben, Nägel und Bits direkt am Handgelenk – geniale dritte Hand.",
+      "ru": "Держит шурупы и биты прямо на запястье — гениальная «третья рука».",
+      "en": "Keeps screws, nails, and bits right on your wrist like a third hand."
+    }
+  },
+  {
+    "id": "diy04",
+    "emoji": "🔦",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 28,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "diy",
+      "auto",
+      "travel"
+    ],
+    "query": "LED Arbeitsleuchte Akku Magnetisch Werkstattlampe",
+    "title": {
+      "de": "Magnetische LED-Akku-Arbeitsleuchte",
+      "ru": "Магнитный LED-фонарь для ремонта",
+      "en": "Magnetic Rechargeable LED Work Light"
+    },
+    "reason": {
+      "de": "Haftet an Metallflächen und leuchtet dunkle Ecken taghell aus.",
+      "ru": "Крепится магнитом к металлу и заливает светом любой тёмный угол.",
+      "en": "Clings to metal surfaces and floods dark corners with bright light."
+    }
+  },
+  {
+    "id": "diy05",
+    "emoji": "📏",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 39,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "diy",
+      "tech"
+    ],
+    "query": "Laser Entfernungsmesser Digital Meter Messung",
+    "title": {
+      "de": "Digitaler Laser-Entfernungsmesser",
+      "ru": "Лазерный дальномер",
+      "en": "Digital Laser Distance Measurer"
+    },
+    "reason": {
+      "de": "Misst Räume und Möbel auf den Millimeter genau per Knopfdruck.",
+      "ru": "Мгновенно измеряет комнаты и мебель с точностью до миллиметра.",
+      "en": "Measures rooms and furniture with millimeter accuracy in one click."
+    }
+  },
+  {
+    "id": "diy06",
+    "emoji": "🔩",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "diy",
+      "auto"
+    ],
+    "query": "Universal Steckschlüssel Adapter Multifunktion Werkzeug",
+    "title": {
+      "de": "Universal-Steckschlüssel-Nuss",
+      "ru": "Универсальная головка-адаптер под любой крепёж",
+      "en": "Universal Socket Wrench Adapter"
+    },
+    "reason": {
+      "de": "Passt sich automatisch an fast jede Schraube und jeden Haken an.",
+      "ru": "Сама подстраивается под гайки, болты и крючки нестандартной формы.",
+      "en": "Automatically grips almost any bolt, nut, or odd-shaped hook."
+    }
+  },
+  {
+    "id": "diy07",
+    "emoji": "🔌",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 55,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "diy",
+      "tech"
+    ],
+    "query": "Akku Schrauber Kompakt USB C Set Koffer",
+    "title": {
+      "de": "Kompakter Akku-Schrauber im Koffer",
+      "ru": "Компактный аккумуляторный шуруповёрт",
+      "en": "Compact Cordless Screwdriver Kit"
+    },
+    "reason": {
+      "de": "Perfekt für Möbelaufbau und kleine Projekte ohne schweres Gerät.",
+      "ru": "Незаменим при сборке мебели и мелких делах по дому.",
+      "en": "Effortlessly handles furniture assembly and quick home projects."
+    }
+  },
+  {
+    "id": "diy08",
+    "emoji": "🪵",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "diy",
+      "cozy"
+    ],
+    "query": "3D Holzpuzzle Mechanisch Erwachsene Modellbau",
+    "title": {
+      "de": "Mechanisches 3D-Holzpuzzle",
+      "ru": "Механический 3D-конструктор из дерева",
+      "en": "Mechanical 3D Wooden Model Kit"
+    },
+    "reason": {
+      "de": "Entspannendes Tüfteln mit beeindruckendem Deko-Ergebnis fürs Regal.",
+      "ru": "Медитативная сборка своими руками и эффектная модель на полку.",
+      "en": "Relaxing hands-on build that becomes a stunning display piece."
+    }
+  },
+  {
+    "id": "diy09",
+    "emoji": "🔍",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 33,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "diy",
+      "auto",
+      "tech"
+    ],
+    "query": "Endoskopkamera USB C Smartphone Wasserdicht LED",
+    "title": {
+      "de": "Smartphone-Endoskopkamera mit LED",
+      "ru": "Камера-эндоскоп для смартфона с LED",
+      "en": "Waterproof Smartphone Endoscope"
+    },
+    "reason": {
+      "de": "Schaut hinter Schränke, in Rohre oder den Motorraum – genial für Tüftler.",
+      "ru": "Заглянет в трубы, за шкаф и под капот — находка для мастера.",
+      "en": "Peeks inside pipes, walls, and engines—a dream gadget for fixers."
+    }
+  },
+  {
+    "id": "diy10",
+    "emoji": "🧰",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 78,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "diy"
+    ],
+    "query": "Werkzeugkoffer Komplettset Haushalt Qualität",
+    "title": {
+      "de": "Kompletter Haushalts-Werkzeugkoffer",
+      "ru": "Полный чемодан инструментов для дома",
+      "en": "Complete Home Tool Kit Box"
+    },
+    "reason": {
+      "de": "Von Hammer bis Wasserwaage alles ordentlich bereit für die erste Wohnung.",
+      "ru": "От молотка до уровня — всё нужное в порядке, идеально на новоселье.",
+      "en": "From hammer to spirit level—everything ready for any home fix."
+    }
+  },
+  {
+    "id": "czy01",
+    "emoji": "🕯️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 85,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "newyear",
+      "wichteln",
+      "wedding",
+      "housewarming",
+      "anniversary",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Duftkerze Holzdocht Knistern Sojawachs Geschenk",
+    "title": {
+      "de": "Sojawachs-Duftkerze mit Holzdocht",
+      "ru": "Аромасвеча с трескучим деревянным фитилём",
+      "en": "Crackling Wood-Wick Soy Candle"
+    },
+    "reason": {
+      "de": "Knistern wie ein kleiner Kamin und warmer Duft für echte Entspannung.",
+      "ru": "Уютно потрескивает как мини-камин и наполняет комнату мягким ароматом.",
+      "en": "Crackles softly like a mini fireplace while filling the room with calm."
+    }
+  },
+  {
+    "id": "czy02",
+    "emoji": "🛋️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 85,
+    "price": 42,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Gewichtsdecke Kuscheldecke Baumwolle Entspannung",
+    "title": {
+      "de": "Beruhigende Gewichtsdecke",
+      "ru": "Утяжелённое одеяло для глубокого сна",
+      "en": "Calming Weighted Blanket"
+    },
+    "reason": {
+      "de": "Fühlt sich an wie eine sanfte Umarmung und sorgt für tieferen Schlaf.",
+      "ru": "Ощущается как мягкое объятие, снимает стресс и улучшает сон.",
+      "en": "Feels like a gentle hug that eases stress and deepens sleep."
+    }
+  },
+  {
+    "id": "czy03",
+    "emoji": "🌸",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "tech"
+    ],
+    "query": "Aroma Diffuser Ultraschall Holzoptik LED",
+    "title": {
+      "de": "Ultraschall Aroma-Diffuser",
+      "ru": "Ультразвуковой аромадиффузор под дерево",
+      "en": "Ultrasonic Essential Oil Diffuser"
+    },
+    "reason": {
+      "de": "Befeuchtet die Luft sanft und verwandelt das Wohnzimmer in ein Home-Spa.",
+      "ru": "Мягко увлажняет воздух и превращает комнату в домашний спа.",
+      "en": "Gently humidifies air and turns any living room into a home spa."
+    }
+  },
+  {
+    "id": "czy04",
+    "emoji": "🛁",
+    "gender": "f",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Wellness Badebomben Set Geschenkbox Naturkosmetik",
+    "title": {
+      "de": "Luxus-Badebomben Wellness-Set",
+      "ru": "Подарочный спа-набор для ванны",
+      "en": "Luxury Spa Bath Bomb Gift Set"
+    },
+    "reason": {
+      "de": "Pflegende Öle und herrliche Düfte für die wohlverdiente Auszeit.",
+      "ru": "Ароматные масла и пена для заслуженного вечера релакса.",
+      "en": "Nourishing oils and soothing scents for well-deserved me-time."
+    }
+  },
+  {
+    "id": "czy05",
+    "emoji": "☕",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 23,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy",
+      "kitchen",
+      "tech"
+    ],
+    "query": "Elektrischer Tassenwärmer Schreibtisch Abschaltautomatik",
+    "title": {
+      "de": "Elektrischer Tassenwärmer",
+      "ru": "Умная подставка с подогревом кружки",
+      "en": "Smart Desk Mug Warmer"
+    },
+    "reason": {
+      "de": "Hält Kaffee und Tee am Schreibtisch stundenlang auf perfekter Trinktemperatur.",
+      "ru": "Держит кофе и чай идеально тёплыми на рабочем столе часами.",
+      "en": "Keeps coffee and tea at the ideal sipping warmth all afternoon."
+    }
+  },
+  {
+    "id": "czy06",
+    "emoji": "🌅",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 48,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "cozy",
+      "tech"
+    ],
+    "query": "Lichtwecker Sonnenaufgang Simulation Naturklänge",
+    "title": {
+      "de": "Sonnenaufgangs-Lichtwecker",
+      "ru": "Световой будильник с имитацией рассвета",
+      "en": "Sunrise Simulation Wake-Up Light"
+    },
+    "reason": {
+      "de": "Weckt im dunklen Winter sanft mit künstlichem Sonnenaufgang statt Schock.",
+      "ru": "Будит тёмным зимним утром мягким рассветом вместо резкого звонка.",
+      "en": "Wakes you gently on dark mornings with a warm simulated sunrise."
+    }
+  },
+  {
+    "id": "czy07",
+    "emoji": "🧣",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 85,
+    "price": 36,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel"
+    ],
+    "query": "Kuscheldecke Wohndecke Flauschig Groß Sofa",
+    "title": {
+      "de": "Extra-flauschige Sofa-Wohndecke",
+      "ru": "Супермягкий плед для дивана",
+      "en": "Ultra-Plush Throw Blanket"
+    },
+    "reason": {
+      "de": "Zeitloses Geschenk, das auf jedem Sofa sofort zum Lieblingsstück wird.",
+      "ru": "Беспроигрышный уютный подарок, который сразу станет любимым дома.",
+      "en": "A timeless cozy staple that instantly becomes everyone's favorite."
+    }
+  },
+  {
+    "id": "czy08",
+    "emoji": "💆",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 80,
+    "price": 54,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "grandparents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "sport"
+    ],
+    "query": "Shiatsu Nackenmassagegerät Wärmefunktion Schulter",
+    "title": {
+      "de": "Shiatsu-Nackenmassagegerät mit Wärme",
+      "ru": "Массажёр шиацу для шеи с подогревом",
+      "en": "Heated Shiatsu Neck Massager"
+    },
+    "reason": {
+      "de": "Knetet verspannte Schultern mit wohltuender Wärme – pures Aufatmen.",
+      "ru": "Глубоко разминает шею и плечи с приятным прогревом.",
+      "en": "Kneads away stiff shoulders with soothing built-in heat."
+    }
+  },
+  {
+    "id": "czy09",
+    "emoji": "🧦",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 85,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Merinowolle Kuschelsocken Warm Geschenkbox",
+    "title": {
+      "de": "Warme Merinowolle-Socken im Set",
+      "ru": "Тёплые носки из шерсти мериноса",
+      "en": "Warm Merino Wool Cozy Socks"
+    },
+    "reason": {
+      "de": "Halten kalte Füße kuschelig warm, ohne zu kratzen oder zu schwitzen.",
+      "ru": "Греют ноги в морозы, мягкие и совсем не колются.",
+      "en": "Keeps cold feet toasty warm without itching or overheating."
+    }
+  },
+  {
+    "id": "czy10",
+    "emoji": "📖",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 85,
+    "price": 19,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "cozy",
+      "tech"
+    ],
+    "query": "Leselampe Buch Nackenlampe LED Aufladbar",
+    "title": {
+      "de": "Wiederaufladbare LED-Nacken-Leselampe",
+      "ru": "Гибкая LED-лампа на шею для чтения",
+      "en": "Rechargeable Neck Reading Light"
+    },
+    "reason": {
+      "de": "Perfektes Leselicht im Bett, ohne den Partner nebenan zu stören.",
+      "ru": "Освещает книгу в темноте и не мешает спать тому, кто рядом.",
+      "en": "Focused reading light in bed without waking the person beside you."
+    }
+  },
+  {
+    "id": "czy11",
+    "emoji": "🧺",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 80,
+    "price": 68,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend"
+    ],
+    "occasions": [
+      "wedding",
+      "anniversary",
+      "housewarming",
+      "birthday"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel",
+      "grill"
+    ],
+    "query": "Picknickkorb für 2 Personen Kühlfach Decke",
+    "title": {
+      "de": "Picknickkorb-Set mit Kühltasche",
+      "ru": "Корзина для пикника с термоотсеком",
+      "en": "2-Person Insulated Picnic Basket"
+    },
+    "reason": {
+      "de": "Lädt zu unvergesslichen Ausflügen im Park oder am See ein.",
+      "ru": "Готовый повод устроить романтический пикник в парке или у озера.",
+      "en": "Inspires unforgettable sunny afternoons in the park or by the lake."
+    }
+  },
+  {
+    "id": "czy12",
+    "emoji": "🍷",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 80,
+    "price": 39,
+    "adultOnly": true,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "colleague"
+    ],
+    "occasions": [
+      "wedding",
+      "anniversary",
+      "housewarming",
+      "christmas",
+      "newyear"
+    ],
+    "hobbies": [
+      "cozy",
+      "kitchen"
+    ],
+    "query": "Elektrischer Weinöffner Set Ausgießer Vakuumverschluss",
+    "title": {
+      "de": "Elektrisches Weinöffner-Geschenkset",
+      "ru": "Электроштопор в подарочном наборе",
+      "en": "Electric Wine Opener Gift Set"
+    },
+    "reason": {
+      "de": "Öffnet jede Flasche mühelos in Sekunden – stilvolles Geschenk zum Anstoßen.",
+      "ru": "Открывает бутылку за секунды без усилий — стильно к любому застолью.",
+      "en": "Uncorks bottles effortlessly in seconds—sleek gift for celebrations."
+    }
+  },
+  {
+    "id": "trv01",
+    "emoji": "🧳",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 75,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "cozy"
+    ],
+    "query": "Koffer Organizer Packing Cubes Kompression Set",
+    "title": {
+      "de": "Kompressions-Packing-Cubes Set",
+      "ru": "Компрессионные органайзеры в чемодан",
+      "en": "Compression Packing Cubes Set"
+    },
+    "reason": {
+      "de": "Spart enorm Platz im Koffer und hält auf Reisen alles übersichtlich.",
+      "ru": "Экономят место в чемодане и сохраняют идеальный порядок в поездке.",
+      "en": "Saves serious suitcase space and keeps every outfit organized."
+    }
+  },
+  {
+    "id": "trv02",
+    "emoji": "😴",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "travel",
+      "cozy"
+    ],
+    "query": "Memory Foam Reisekissen Nackenkissen Flugzeug Schlafmaske",
+    "title": {
+      "de": "Memory-Foam Reise-Nackenkissen",
+      "ru": "Дорожная подушка с эффектом памяти",
+      "en": "Memory Foam Travel Neck Pillow"
+    },
+    "reason": {
+      "de": "Endlich entspannt im Flugzeug, Zug oder Auto schlafen ohne Nackenschmerz.",
+      "ru": "Помогает нормально выспаться в самолёте, поезде или машине.",
+      "en": "Finally get real rest on flights and trains without a stiff neck."
+    }
+  },
+  {
+    "id": "trv03",
+    "emoji": "🗺️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "travel",
+      "cozy"
+    ],
+    "query": "Weltkarte zum Rubbeln Geschenk Groß Poster",
+    "title": {
+      "de": "Rubbel-Weltkarte für Reisefans",
+      "ru": "Скретч-карта мира для путешественников",
+      "en": "Scratch-Off World Travel Map"
+    },
+    "reason": {
+      "de": "Macht besuchte Länder sichtbar und weckt sofort Lust aufs nächste Ziel.",
+      "ru": "Стираешь страны, где побывал — и сразу хочется планировать новый отпуск.",
+      "en": "Tracks every visited country and sparks excitement for the next trip."
+    }
+  },
+  {
+    "id": "trv04",
+    "emoji": "🔌",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 27,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "travel",
+      "tech"
+    ],
+    "query": "Universal Reiseadapter Weltweit USB C Schnellladen",
+    "title": {
+      "de": "Weltweiter USB-C Reiseadapter",
+      "ru": "Универсальный тревел-адаптер с USB-C",
+      "en": "Worldwide USB-C Travel Adapter"
+    },
+    "reason": {
+      "de": "Ein einziger Stecker für über 150 Länder – lädt mehrere Geräte zugleich.",
+      "ru": "Одна вилка на 150+ стран — заряжает сразу несколько устройств.",
+      "en": "One compact plug works in 150+ countries and charges multiple devices."
+    }
+  },
+  {
+    "id": "trv05",
+    "emoji": "🏕️",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 70,
+    "price": 28,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "grill",
+      "diy"
+    ],
+    "query": "Camping Laterne LED Akku Powerbank Wasserdicht",
+    "title": {
+      "de": "LED Camping-Laterne mit Powerbank",
+      "ru": "Кемпинговый LED-фонарь с пауэрбанком",
+      "en": "Rechargeable LED Camping Lantern"
+    },
+    "reason": {
+      "de": "Leuchtet Zelt oder Balkon aus und lädt im Notfall sogar das Smartphone.",
+      "ru": "Освещает палатку или балкон и может подзарядить телефон.",
+      "en": "Brightens tents or patios and doubles as an emergency phone charger."
+    }
+  },
+  {
+    "id": "trv06",
+    "emoji": "🎒",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 52,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "tech"
+    ],
+    "query": "Handgepäck Rucksack Flugzeug 40x20x25 Laptopfach",
+    "title": {
+      "de": "Smarter Handgepäck-Reiserucksack",
+      "ru": "Рюкзак под ручную кладь с отсеком для ноутбука",
+      "en": "Cabin-Approved Travel Backpack"
+    },
+    "reason": {
+      "de": "Öffnet sich wie ein Koffer und passt exakt unter den Flugzeugsitz.",
+      "ru": "Раскрывается как чемодан и идеально проходит в ручную кладь лоукостеров.",
+      "en": "Opens suitcase-style and fits cleanly under airline seats."
+    }
+  },
+  {
+    "id": "trv07",
+    "emoji": "⚖️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 14,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "tech"
+    ],
+    "query": "Digitale Kofferwaage Reisewaage LCD Kompakt",
+    "title": {
+      "de": "Digitale Mini-Kofferwaage",
+      "ru": "Цифровые весы для багажа",
+      "en": "Compact Digital Luggage Scale"
+    },
+    "reason": {
+      "de": "Bewahrt am Flughafen zuverlässig vor teuren Übergepäck-Gebühren.",
+      "ru": "Спасает от неприятных доплат за перевес в аэропорту.",
+      "en": "Saves you from surprise overweight baggage fees at check-in."
+    }
+  },
+  {
+    "id": "trv08",
+    "emoji": "🧼",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 75,
+    "price": 23,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "cozy"
+    ],
+    "query": "Kulturbeutel zum Aufhängen Herren Damen Groß",
+    "title": {
+      "de": "Kulturbeutel zum Aufhängen",
+      "ru": "Вместительная подвесная косметичка",
+      "en": "Hanging Travel Toiletry Bag"
+    },
+    "reason": {
+      "de": "Im Hotelbad einfach aufhängen – alles griffbereit auf engstem Raum.",
+      "ru": "Вешается на крючок в отеле — все мелочи на виду и не занимают раковину.",
+      "en": "Hangs neatly on any hotel hook so essentials stay within reach."
+    }
+  },
+  {
+    "id": "trv09",
+    "emoji": "☕",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 56,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "travel",
+      "kitchen",
+      "auto"
+    ],
+    "query": "Tragbare Espressomaschine Camping Reise Manuell",
+    "title": {
+      "de": "Mobile Reise-Espressomaschine",
+      "ru": "Портативная кофеварка для поездок",
+      "en": "Portable Travel Espresso Maker"
+    },
+    "reason": {
+      "de": "Echter Espresso mit Crema auf dem Berggipfel oder im Camper.",
+      "ru": "Настоящий эспрессо с пенкой хоть в горах, хоть на парковке у трассы.",
+      "en": "Brew real crema-topped espresso on mountain trails or road trips."
+    }
+  },
+  {
+    "id": "trv10",
+    "emoji": "🏝️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "travel",
+      "cozy",
+      "grill"
+    ],
+    "query": "Reisehängematte Ultraleicht Fallschirmseide Gurte",
+    "title": {
+      "de": "Ultraleichte Reise-Hängematte",
+      "ru": "Ультралёгкий туристический гамак",
+      "en": "Ultralight Travel Hammock"
+    },
+    "reason": {
+      "de": "Wiegt fast nichts und hängt in zwei Minuten zwischen zwei Bäumen.",
+      "ru": "Весит копейки, помещается в сумку и вешается между деревьями за минуту.",
+      "en": "Packs tiny and sets up between two trees in under two minutes."
+    }
+  },
+  {
+    "id": "pet01",
+    "emoji": "🐾",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 80,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "pets",
+      "tech"
+    ],
+    "query": "Hundekamera Haustierkamera WLAN App Leckerli",
+    "title": {
+      "de": "WLAN-Haustierkamera mit App",
+      "ru": "Wi-Fi камера для наблюдения за питомцем",
+      "en": "Wi-Fi Pet Monitor Camera"
+    },
+    "reason": {
+      "de": "Jederzeit nachschauen, was Hund oder Katze zu Hause anstellen.",
+      "ru": "Можно в любой момент заглянуть со смартфона, чем занят питомец дома.",
+      "en": "Check in on your dog or cat anytime right from your phone."
+    }
+  },
+  {
+    "id": "pet02",
+    "emoji": "🐕",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 19,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "pets",
+      "travel"
+    ],
+    "query": "Hunde Trinkflasche Unterwegs Faltbar Napf",
+    "title": {
+      "de": "Reise-Trinkflasche für Hunde",
+      "ru": "Дорожная поилка для собак",
+      "en": "Portable Dog Water Dispenser"
+    },
+    "reason": {
+      "de": "Mit einem Knopfdruck frisches Wasser für Spaziergänge und Ausflüge.",
+      "ru": "Свежая вода для собаки на прогулке нажатием одной кнопки.",
+      "en": "One-button fresh water for walks, hikes, and sunny car rides."
+    }
+  },
+  {
+    "id": "pet03",
+    "emoji": "🐈",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 80,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "pets",
+      "tech"
+    ],
+    "query": "Interaktives Katzenspielzeug Automatisch Laser Ball",
+    "title": {
+      "de": "Interaktives Automatik-Katzenspielzeug",
+      "ru": "Интерактивная игрушка для кошек",
+      "en": "Automatic Interactive Cat Toy"
+    },
+    "reason": {
+      "de": "Beschäftigt Stubentiger spielerisch und sorgt für ordentlich Bewegung.",
+      "ru": "Развлекает кота сама и не даёт ему скучать дома.",
+      "en": "Keeps indoor cats entertained and active all by itself."
+    }
+  },
+  {
+    "id": "pet04",
+    "emoji": "🛏️",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 38,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "pets",
+      "cozy"
+    ],
+    "query": "Donut Hundebett Katzenbett Flauschig Waschbar",
+    "title": {
+      "de": "Flauschiges Donut-Haustierbett",
+      "ru": "Пушистая лежанка-пончик для питомца",
+      "en": "Calming Plush Donut Pet Bed"
+    },
+    "reason": {
+      "de": "Der weiche Rand gibt Hunden und Katzen maximale Geborgenheit.",
+      "ru": "Мягкие бортики дают собаке или коту чувство полного уюта.",
+      "en": "Soft raised edges give dogs and cats cloud-like comfort."
+    }
+  },
+  {
+    "id": "pet05",
+    "emoji": "🧽",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 17,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "housewarming"
+    ],
+    "hobbies": [
+      "pets",
+      "auto"
+    ],
+    "query": "Tierhaarentferner Rolle Wiederverwendbar Sofa Auto",
+    "title": {
+      "de": "Wiederverwendbarer Tierhaarentferner",
+      "ru": "Многоразовый ролик от шерсти питомцев",
+      "en": "Reusable Pet Hair Remover Roller"
+    },
+    "reason": {
+      "de": "Entfernt Tierhaare von Sofa, Bett und Autositz ganz ohne Kleberollen.",
+      "ru": "Собирает шерсть с дивана и сидений авто без сменных липких лент.",
+      "en": "Lifts pet hair off sofas and car seats with zero sticky refills."
+    }
+  },
+  {
+    "id": "pet06",
+    "emoji": "🦴",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 80,
+    "price": 24,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "pets",
+      "humor"
+    ],
+    "query": "Schnüffelteppich Hund Intelligenzspielzeug Beschäftigung",
+    "title": {
+      "de": "Hunde-Schnüffelteppich Denkspiel",
+      "ru": "Нюхательный коврик-головоломка для собак",
+      "en": "Dog Snuffle Mat Puzzle"
+    },
+    "reason": {
+      "de": "Fördert den natürlichen Spieltrieb und lastet den Hund sinnvoll aus.",
+      "ru": "Прячешь лакомства — и собака с азартом включает нос и смекалку.",
+      "en": "Hides treats to stimulate natural foraging instincts and calm energy."
+    }
+  },
+  {
+    "id": "pet07",
+    "emoji": "💧",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming"
+    ],
+    "hobbies": [
+      "pets",
+      "tech"
+    ],
+    "query": "Katzenbrunnen Trinkbrunnen Edelstahl Leise Filter",
+    "title": {
+      "de": "Leiser Edelstahl-Trinkbrunnen",
+      "ru": "Тихий питьевой фонтанчик из стали",
+      "en": "Quiet Stainless Pet Water Fountain"
+    },
+    "reason": {
+      "de": "Fließendes, gefiltertes Wasser animiert Katzen und Hunde zum Trinken.",
+      "ru": "Проточная фильтрованная вода нравится котам и мотивирует больше пить.",
+      "en": "Flowing filtered water encourages cats and dogs to stay hydrated."
+    }
+  },
+  {
+    "id": "pet08",
+    "emoji": "🐾",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 16,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "pets",
+      "cozy"
+    ],
+    "query": "Pfotenabdruck Set Hund Katze Bilderrahmen Erinnerung",
+    "title": {
+      "de": "Pfotenabdruck-Bilderrahmen Set",
+      "ru": "Рамка с отпечатком лапки питомца",
+      "en": "Pet Paw Print Keepsake Frame"
+    },
+    "reason": {
+      "de": "Herzerwärmendes Erinnerungsstück – sicher und ganz ohne Tintenflecken.",
+      "ru": "Трогательный сувенир на память — безопасно и без грязных пятен.",
+      "en": "Heartwarming keepsake with clean, pet-safe inkless impression pads."
+    }
+  },
+  {
+    "id": "hum01",
+    "emoji": "☕",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 15,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "sibling",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "humor",
+      "kitchen"
+    ],
+    "query": "Thermoeffekt Tasse Farbwechsel Lustig Kaffee",
+    "title": {
+      "de": "Magische Farbwechsel-Tasse",
+      "ru": "Кружка-хамелеон с весёлым рисунком",
+      "en": "Color-Changing Magic Mug"
+    },
+    "reason": {
+      "de": "Zeigt erst bei heißem Kaffee ihr geheimes Motiv – Büro-Favorit.",
+      "ru": "Проявляет скрытый прикол от горячего кофе — хит для офиса.",
+      "en": "Reveals a hidden design with hot coffee—an instant office favorite."
+    }
+  },
+  {
+    "id": "hum02",
+    "emoji": "🧦",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 65,
+    "price": 14,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "humor",
+      "cozy"
+    ],
+    "query": "Lustige Socken Pizza Sushi Geschenkbox",
+    "title": {
+      "de": "Witzige Sushi- oder Pizza-Socken",
+      "ru": "Прикольные носки в коробке как пицца/суши",
+      "en": "Novelty Pizza/Sushi Box Socks"
+    },
+    "reason": {
+      "de": "Sieht aus wie Fast Food, wärmt aber die Füße – garantierter Lacher.",
+      "ru": "Упакованы как еда, а внутри классные носки — улыбка гарантирована.",
+      "en": "Packaged like takeout food—guaranteed laugh the second it's unwrapped."
+    }
+  },
+  {
+    "id": "hum03",
+    "emoji": "🚨",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 13,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "humor"
+    ],
+    "query": "Lustiger Buzzer Sound Knopf Büro Geschenk",
+    "title": {
+      "de": "Lustiger Büro-Sound-Buzzer",
+      "ru": "Прикольная кнопка со смешным звуком",
+      "en": "Funny Office Sound Buzzer"
+    },
+    "reason": {
+      "de": "Der legendäre Eisbrecher für lustige Runden im Büro oder unter Freunden.",
+      "ru": "Снимает напряжение на работе и веселит всю компанию за секунду.",
+      "en": "Instant icebreaker for laughs at the office or with friends."
+    }
+  },
+  {
+    "id": "hum04",
+    "emoji": "🧠",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 75,
+    "price": 17,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "newyear"
+    ],
+    "hobbies": [
+      "humor",
+      "gaming"
+    ],
+    "query": "Geduldsspiel Metall Holz Knobelspiel Set Erwachsene",
+    "title": {
+      "de": "Kniffliges Knobelspiel-Set",
+      "ru": "Набор металлических и деревянных головоломок",
+      "en": "Brain Teaser Puzzle Set"
+    },
+    "reason": {
+      "de": "Sorgt bei jeder Feier für Ehrgeiz, Gelächter und rauchende Köpfe.",
+      "ru": "Разжигает азарт и весёлые споры на любой вечеринке.",
+      "en": "Sparks friendly rivalry and laughs at any gathering."
+    }
+  },
+  {
+    "id": "hum05",
+    "emoji": "🦆",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 12,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "justbecause"
+    ],
+    "hobbies": [
+      "humor",
+      "cozy"
+    ],
+    "query": "Lustige Badeente Beruf Motto Geschenk",
+    "title": {
+      "de": "Originelle Motto-Badeente",
+      "ru": "Прикольная тематическая уточка",
+      "en": "Quirky Themed Rubber Duck"
+    },
+    "reason": {
+      "de": "Kultiger kleiner Hingucker fürs Bad oder den Schreibtisch.",
+      "ru": "Культовый мелкий сувенир с юмором для ванной или рабочего стола.",
+      "en": "Quirky little desk or bath companion with big personality."
+    }
+  },
+  {
+    "id": "hum06",
+    "emoji": "🧻",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 65,
+    "price": 11,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "newyear"
+    ],
+    "hobbies": [
+      "humor"
+    ],
+    "query": "Lustiges Kartenspiel Party Erwachsene Freunde",
+    "title": {
+      "de": "Schwarzer-Humor Partyspiel",
+      "ru": "Весёлая карточная игра для компании",
+      "en": "Hilarious Party Card Game"
+    },
+    "reason": {
+      "de": "Bringt jede Party und Silvesterrunde in Minuten zum Toben.",
+      "ru": "Раскачивает любую вечеринку и новогоднюю ночь за пять минут.",
+      "en": "Gets any house party or New Year's group roaring within minutes."
+    }
+  },
+  {
+    "id": "hum07",
+    "emoji": "💰",
+    "gender": "all",
+    "minAge": 12,
+    "maxAge": 70,
+    "price": 16,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wedding",
+      "wichteln"
+    ],
+    "hobbies": [
+      "humor",
+      "gaming"
+    ],
+    "query": "Geldgeschenk Labyrinth Box Rätsel Verpackung",
+    "title": {
+      "de": "Rätsel-Labyrinth für Geldgeschenke",
+      "ru": "Коробочка-лабиринт для денежного подарка",
+      "en": "Money Maze Puzzle Gift Box"
+    },
+    "reason": {
+      "de": "Wer ans Geld will, muss erst die Kugel durchs Labyrinth bugsieren!",
+      "ru": "Чтобы достать купюру или подарок, придётся сначала пройти лабиринт!",
+      "en": "They have to solve the maze before unlocking the cash inside!"
+    }
+  },
+  {
+    "id": "hum08",
+    "emoji": "🪴",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 70,
+    "price": 15,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "sibling",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "wichteln",
+      "housewarming"
+    ],
+    "hobbies": [
+      "humor",
+      "cozy"
+    ],
+    "query": "Lustiger Blumentopf Gesicht Figur Sukkulente",
+    "title": {
+      "de": "Witziger Blumentopf mit Charakter",
+      "ru": "Забавный горшочек для суккулента",
+      "en": "Quirky Face Planter Pot"
+    },
+    "reason": {
+      "de": "Bringt sofort ein Schmunzeln auf die Fensterbank oder den Bürotisch.",
+      "ru": "Сразу поднимает настроение на подоконнике или рабочем столе.",
+      "en": "Brings an instant smile to any windowsill or office desk."
+    }
+  },
+  {
+    "id": "hum09",
+    "emoji": "🍺",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 18,
+    "adultOnly": true,
+    "relations": [
+      "friend",
+      "colleague",
+      "sibling",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "newyear"
+    ],
+    "hobbies": [
+      "humor",
+      "grill"
+    ],
+    "query": "Automatischer Flaschenöffner Magnetisch Edelstahl",
+    "title": {
+      "de": "Einhand-Magnet-Flaschenöffner",
+      "ru": "Магнитная открывалка одним нажатием",
+      "en": "Push-Down Magnetic Bottle Opener"
+    },
+    "reason": {
+      "de": "Aufsetzen, drücken, plopp – ein cooler Party-Trick für jede Grillrunde.",
+      "ru": "Нажал сверху — и крышка сама прилипла к магниту. Классный фокус!",
+      "en": "Press down, pop—effortless party trick for every BBQ night."
+    }
+  },
+  {
+    "id": "hum10",
+    "emoji": "🗓️",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 16,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "parents",
+      "sibling"
+    ],
+    "occasions": [
+      "christmas",
+      "newyear",
+      "wichteln"
+    ],
+    "hobbies": [
+      "humor",
+      "cozy"
+    ],
+    "query": "Abreißkalender Lustig Sprüche Jahr Schreibtisch",
+    "title": {
+      "de": "Lustiger Tages-Abreißkalender",
+      "ru": "Отрывной календарь с юмором на год",
+      "en": "Daily Funny Desk Calendar"
+    },
+    "reason": {
+      "de": "Jeden Morgen ein neuer Spruch zum Schmunzeln – genial zu Silvester.",
+      "ru": "Каждый день новая шутка на столе — супер-идея на Новый год.",
+      "en": "A fresh daily laugh for the desk—ideal for New Year's."
+    }
+  },
+  {
+    "id": "hum11",
+    "emoji": "💡",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 65,
+    "price": 22,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln",
+      "housewarming"
+    ],
+    "hobbies": [
+      "humor",
+      "cozy",
+      "tech"
+    ],
+    "query": "LED Neon Schild Wanddeko USB Wohnzimmer",
+    "title": {
+      "de": "Trendiges LED-Neon-Wandschild",
+      "ru": "Стильная LED-неоновая вывеска",
+      "en": "Trendy LED Neon Wall Sign"
+    },
+    "reason": {
+      "de": "Cooler Lichtakzent, der jedes Zimmer sofort gemütlicher macht.",
+      "ru": "Классный световой акцент, мгновенно создающий настроение в комнате.",
+      "en": "Cool glowing accent that immediately elevates any wall."
+    }
+  },
+  {
+    "id": "hum12",
+    "emoji": "🎯",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 65,
+    "price": 21,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "sibling",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wichteln"
+    ],
+    "hobbies": [
+      "humor",
+      "gaming"
+    ],
+    "query": "Mini Tischkicker Desktop Spiel Büro Geschenk",
+    "title": {
+      "de": "Mini-Tischkicker fürs Büro",
+      "ru": "Мини-настольный футбол на стол",
+      "en": "Desktop Mini Foosball Game"
+    },
+    "reason": {
+      "de": "Perfekt für kurze Pausen-Duelle mit Kollegen oder Freunden.",
+      "ru": "Идеально для коротких дуэлей на перерыве с коллегами или друзьями.",
+      "en": "Perfect for quick break-time duels with coworkers or friends."
+    }
+  },
+  {
+    "id": "occ01",
+    "emoji": "🥂",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 45,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "wedding",
+      "anniversary",
+      "newyear",
+      "housewarming"
+    ],
+    "hobbies": [
+      "cozy",
+      "kitchen"
+    ],
+    "query": "Sektgläser Set Kristallglas Modern Geschenkbox",
+    "title": {
+      "de": "Edles Kristall-Sektgläser-Set",
+      "ru": "Набор хрустальных бокалов для шампанского",
+      "en": "Crystal Champagne Flutes Set"
+    },
+    "reason": {
+      "de": "Zeitlos elegant zum Anstoßen auf Hochzeit, Jubiläum oder Silvester.",
+      "ru": "Безупречная классика для тостов на свадьбу, годовщину или Новый год.",
+      "en": "Timeless elegance for toasting weddings, anniversaries, or New Year's."
+    }
+  },
+  {
+    "id": "occ02",
+    "emoji": "💑",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend"
+    ],
+    "occasions": [
+      "wedding",
+      "anniversary",
+      "christmas",
+      "birthday"
+    ],
+    "hobbies": [
+      "cozy",
+      "humor"
+    ],
+    "query": "Date Night Rubbelbuch Paare Ideen Geschenk",
+    "title": {
+      "de": "Date-Night Rubbel-Ideenbuch",
+      "ru": "Книга-скретч идей для свиданий",
+      "en": "Scratch-Off Date Night Book"
+    },
+    "reason": {
+      "de": "Überrascht mit kreativen gemeinsamen Erlebnissen statt Routine.",
+      "ru": "Дарит готовые нестандартные идеи для совместных вечеров без рутины.",
+      "en": "Sparks creative shared adventures instead of the usual routine."
+    }
+  },
+  {
+    "id": "occ03",
+    "emoji": "🔑",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 29,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "housewarming",
+      "wedding",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "diy"
+    ],
+    "query": "Schlüsselbrett Wand Holz Magnetisch Ablage",
+    "title": {
+      "de": "Modernes Holz-Schlüsselbrett",
+      "ru": "Стильная деревянная ключница с полкой",
+      "en": "Modern Wooden Wall Key Holder"
+    },
+    "reason": {
+      "de": "Ein echter Hingucker im Flur – perfekt zum Einzug in die neue Wohnung.",
+      "ru": "Красивый акцент в прихожей — попадание в десятку на новоселье.",
+      "en": "Stylish entryway organizer—a bullseye housewarming gift."
+    }
+  },
+  {
+    "id": "occ04",
+    "emoji": "✨",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 34,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "christmas",
+      "housewarming",
+      "wedding",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "LED Lichtervorhang Warmweiß Fenster Timer Fernbedienung",
+    "title": {
+      "de": "Warmweißer LED-Lichtervorhang",
+      "ru": "Тёплая гирлянда-штора с таймером",
+      "en": "Warm White LED Curtain Lights"
+    },
+    "reason": {
+      "de": "Zaubert im Nu festlichen Glanz ans Fenster oder die Wohnzimmerwand.",
+      "ru": "Мгновенно создаёт праздничное сияние на окне или стене.",
+      "en": "Adds instant festive magic to windows or living room walls."
+    }
+  },
+  {
+    "id": "occ05",
+    "emoji": "🎄",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 36,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "christmas",
+      "wichteln",
+      "newyear"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Schokolade Pralinen Geschenkbox Edle Auswahl",
+    "title": {
+      "de": "Edle Gourmet-Pralinenbox",
+      "ru": "Подарочная коробка элитного шоколада",
+      "en": "Gourmet Artisan Chocolates Box"
+    },
+    "reason": {
+      "de": "Ein stilvoller Genuss-Klassiker, der immer gut ankommt.",
+      "ru": "Элегантная сладкая классика, которой рады абсолютно все.",
+      "en": "A refined sweet treat that never fails to delight."
+    }
+  },
+  {
+    "id": "occ06",
+    "emoji": "🔊",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 135,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "wedding",
+      "housewarming"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy"
+    ],
+    "query": "Bluetooth Lautsprecher Wohnzimmer Design HiFi Stark",
+    "title": {
+      "de": "Design HiFi Bluetooth-Lautsprecher",
+      "ru": "Дизайнерская Hi-Fi Bluetooth-колонка",
+      "en": "Design Hi-Fi Bluetooth Speaker"
+    },
+    "reason": {
+      "de": "Kraftvoller Raumklang und edles Design – ein Geschenk mit Wow-Effekt.",
+      "ru": "Мощный чистый звук и стильный корпус — подарок с настоящим вау-эффектом.",
+      "en": "Room-filling sound and iconic design for a true wow moment."
+    }
+  },
+  {
+    "id": "occ07",
+    "emoji": "☕",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 75,
+    "price": 155,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend",
+      "sibling"
+    ],
+    "occasions": [
+      "wedding",
+      "housewarming",
+      "christmas",
+      "birthday"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Siebträger Espressomaschine Kompakt Milchdüse",
+    "title": {
+      "de": "Kompakte Siebträger-Espressomaschine",
+      "ru": "Компактная рожковая кофеварка",
+      "en": "Compact Barista Espresso Machine"
+    },
+    "reason": {
+      "de": "Für echten italienischen Espresso am Morgen – unvergessliches Hauptgeschenk.",
+      "ru": "Настоящий итальянский эспрессо по утрам — солидный главный подарок.",
+      "en": "Brings authentic Italian espresso mornings—an unforgettable centerpiece gift."
+    }
+  },
+  {
+    "id": "occ08",
+    "emoji": "⌚",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 118,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "sibling",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel"
+    ],
+    "query": "Armbanduhr Minimalistisch Edelstahl Geschenkbox",
+    "title": {
+      "de": "Minimalistische Edelstahl-Armbanduhr",
+      "ru": "Минималистичные наручные часы в футляре",
+      "en": "Minimalist Stainless Steel Watch"
+    },
+    "reason": {
+      "de": "Schlichtes, zeitloses Design, das zu jedem Outfit passt.",
+      "ru": "Лаконичный дизайн вне времени — подходит под любой стиль.",
+      "en": "Clean, timeless styling that complements any wardrobe."
+    }
+  },
+  {
+    "id": "occ09",
+    "emoji": "💼",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 70,
+    "price": 58,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "colleague",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "travel",
+      "auto",
+      "cozy"
+    ],
+    "query": "Leder Geldbörse RFID Schutz Slim Wallet Geschenkbox",
+    "title": {
+      "de": "RFID-Leder-Slim-Wallet in Geschenkbox",
+      "ru": "Кожаный тонкий кошелёк с RFID-защитой",
+      "en": "RFID Leather Slim Wallet Gift Box"
+    },
+    "reason": {
+      "de": "Schlank, hochwertig verarbeitet und schützt Karten vor unbemerktem Auslesen.",
+      "ru": "Тонкий, качественный и защищает банковские карты от считывания.",
+      "en": "Slim, finely crafted, and shields cards from unauthorized scanning."
+    }
+  },
+  {
+    "id": "occ10",
+    "emoji": "🧴",
+    "gender": "f",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 48,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel"
+    ],
+    "query": "LED Kosmetikspiegel Schminkspiegel Vergrößerung Akku",
+    "title": {
+      "de": "Akku-LED-Schminkspiegel mit Zoom",
+      "ru": "Зеркало для макияжа с LED-подсветкой",
+      "en": "Rechargeable LED Vanity Mirror"
+    },
+    "reason": {
+      "de": "Tageslicht-LEDs und Vergrößerung machen die Morgenroutine perfekt.",
+      "ru": "Мягкий дневной свет и увеличение делают утренние сборы комфортными.",
+      "en": "Daylight LEDs and magnification elevate every morning routine."
+    }
+  },
+  {
+    "id": "occ11",
+    "emoji": "💈",
+    "gender": "m",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 42,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel"
+    ],
+    "query": "Bartpflege Set Herren Bartöl Bürste Geschenkbox",
+    "title": {
+      "de": "Komplettes Bartpflege-Geschenkset",
+      "ru": "Подарочный набор для ухода за бородой",
+      "en": "Complete Beard Grooming Kit"
+    },
+    "reason": {
+      "de": "Pflegendes Öl, Balsam und Bürste in einer maskulinen Box.",
+      "ru": "Масло, бальзам и щётка в стильной коробке — ничего лишнего.",
+      "en": "Nourishing oil, balm, and brush neatly packed in a sharp gift box."
+    }
+  },
+  {
+    "id": "occ12",
+    "emoji": "🕯️",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 85,
+    "price": 38,
+    "adultOnly": false,
+    "relations": [
+      "parents",
+      "grandparents",
+      "partner",
+      "friend"
+    ],
+    "occasions": [
+      "wedding",
+      "anniversary",
+      "housewarming",
+      "christmas"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Kaminfeuer Duftset Raumduft Stäbchen Luxus Geschenk",
+    "title": {
+      "de": "Luxus-Raumduft-Set mit Stäbchen",
+      "ru": "Подарочный интерьерный диффузор",
+      "en": "Luxury Reed Diffuser Gift Set"
+    },
+    "reason": {
+      "de": "Verleiht Flur oder Wohnzimmer wochenlang einen edlen Hotel-Duft.",
+      "ru": "Неделями держит в доме благородный аромат дорогого отеля.",
+      "en": "Fills the hallway or living room with upscale boutique-hotel scent."
+    }
+  },
+  {
+    "id": "occ13",
+    "emoji": "📚",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 129,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "grandparents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary"
+    ],
+    "hobbies": [
+      "tech",
+      "cozy",
+      "travel"
+    ],
+    "query": "E-Book Reader Blendfrei Beleuchtet Wasserdicht",
+    "title": {
+      "de": "Blendfreier E-Book-Reader mit Licht",
+      "ru": "Электронная книга с подсветкой",
+      "en": "Glare-Free Lit E-Book Reader"
+    },
+    "reason": {
+      "de": "Hunderte Bücher im Handgepäck – perfekt für Urlaub und Bett.",
+      "ru": "Сотни книг в одном лёгком корпусе — идеален для отпуска и вечеров.",
+      "en": "Carry hundreds of books anywhere—glare-free for beach or bedtime."
+    }
+  },
+  {
+    "id": "occ14",
+    "emoji": "🎲",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 85,
+    "price": 39,
+    "adultOnly": false,
+    "relations": [
+      "parents",
+      "grandparents",
+      "friend",
+      "partner"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "newyear"
+    ],
+    "hobbies": [
+      "gaming",
+      "cozy"
+    ],
+    "query": "Schachspiel Holz Magnetisch Klappbar Handgefertigt",
+    "title": {
+      "de": "Edles Holz-Schachspiel klappbar",
+      "ru": "Деревянные складные шахматы",
+      "en": "Foldable Wooden Chess Set"
+    },
+    "reason": {
+      "de": "Klassisches Strategiespiel in schöner Holzoptik für Generationen.",
+      "ru": "Классическая игра в красивом деревянном исполнении на долгие годы.",
+      "en": "Heirloom-style wooden strategy classic enjoyed across generations."
+    }
+  },
+  {
+    "id": "occ15",
+    "emoji": "🌺",
+    "gender": "f",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 35,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "grandparents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "anniversary",
+      "wedding",
+      "christmas"
+    ],
+    "hobbies": [
+      "cozy"
+    ],
+    "query": "Ewige Rose im Glas LED Beleuchtung Geschenkbox",
+    "title": {
+      "de": "Ewige Rose unter der Glaskuppel",
+      "ru": "Вечная роза под стеклянным куполом",
+      "en": "Eternal Rose in LED Glass Dome"
+    },
+    "reason": {
+      "de": "Verwelkt nie und leuchtet abends romantisch auf dem Nachttisch.",
+      "ru": "Никогда не вянет и романтично светится вечером как ночник.",
+      "en": "Never wilts and casts a warm romantic glow on any nightstand."
+    }
+  },
+  {
+    "id": "occ16",
+    "emoji": "🔥",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 75,
+    "price": 165,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "grill",
+      "kitchen"
+    ],
+    "query": "Kontaktgrill Elektrogrill Temperaturregelung Edelstahl",
+    "title": {
+      "de": "Smarter Edelstahl-Kontaktgrill",
+      "ru": "Умный электрогриль из нержавейки",
+      "en": "Smart Stainless Contact Grill"
+    },
+    "reason": {
+      "de": "Steaks, Paninis und Gemüse perfekt auf den Punkt – das ganze Jahr drinnen.",
+      "ru": "Идеальные стейки, панини и овощи-гриль круглый год прямо на кухне.",
+      "en": "Grills steaks, paninis, and veggies indoors to perfection year-round."
+    }
+  },
+  {
+    "id": "occ17",
+    "emoji": "📸",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 109,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "parents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary",
+      "wedding"
+    ],
+    "hobbies": [
+      "tech",
+      "travel",
+      "cozy"
+    ],
+    "query": "Mini Fotodrucker Smartphone Bluetooth Taschenformat",
+    "title": {
+      "de": "Bluetooth Taschen-Fotodrucker",
+      "ru": "Карманный Bluetooth-фотопринтер",
+      "en": "Pocket Smartphone Photo Printer"
+    },
+    "reason": {
+      "de": "Druckt Lieblingsfotos vom Handy direkt als Sticker in Sekunden.",
+      "ru": "Печатает любимые снимки с телефона за секунды прямо на стикеры.",
+      "en": "Prints favorite phone memories as peel-and-stick photos in seconds."
+    }
+  },
+  {
+    "id": "occ18",
+    "emoji": "🧖",
+    "gender": "all",
+    "minAge": 22,
+    "maxAge": 75,
+    "price": 55,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "anniversary",
+      "wedding"
+    ],
+    "hobbies": [
+      "cozy",
+      "sport"
+    ],
+    "query": "Sauna Aufguss Set Ätherische Öle Holzkelle Geschenk",
+    "title": {
+      "de": "Premium Sauna-Aufguss-Set",
+      "ru": "Подарочный набор эфирных масел для сауны",
+      "en": "Premium Sauna Essential Oils Set"
+    },
+    "reason": {
+      "de": "Holztöne, Eukalyptus und Zitrus bringen echte Wellness-Therme nach Hause.",
+      "ru": "Эвкалипт, хвоя и цитрус — аромат настоящих немецких терм и бани.",
+      "en": "Eucalyptus, pine, and citrus aromas for an authentic spa session."
+    }
+  },
+  {
+    "id": "occ19",
+    "emoji": "🎆",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 75,
+    "price": 19,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "newyear",
+      "christmas",
+      "birthday",
+      "wichteln"
+    ],
+    "hobbies": [
+      "humor",
+      "cozy",
+      "gaming"
+    ],
+    "query": "Wachsgießen Set Silvester Glücksbringer Orakel",
+    "title": {
+      "de": "Silvester Wachsgießen-Orakelset",
+      "ru": "Набор для новогодних гаданий на воске",
+      "en": "New Year's Wax Pouring Fortune Kit"
+    },
+    "reason": {
+      "de": "Der legendäre Silvester-Spaß für Familie und Freunde um Mitternacht.",
+      "ru": "Любимая немецкая традиция на Сильвестр — весёлые предсказания для всех.",
+      "en": "Beloved German New Year's Eve tradition full of midnight laughs."
+    }
+  },
+  {
+    "id": "occ20",
+    "emoji": "🎁",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 80,
+    "price": 14,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "wichteln",
+      "christmas",
+      "birthday",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy",
+      "kitchen"
+    ],
+    "query": "Gourmet Tee Probierbox Geschenkset Sorten",
+    "title": {
+      "de": "Gourmet-Tee Probierbox",
+      "ru": "Подарочный набор элитного чая",
+      "en": "Gourmet Loose Tea Tasting Box"
+    },
+    "reason": {
+      "de": "Edle Sorten zum Durchprobieren – sicherer Treffer für jedes Budget.",
+      "ru": "Ароматные сорта на любой вкус — беспроигрышный вариант при малом бюджете.",
+      "en": "Refined flavors to sample—an effortless crowd-pleaser on any budget."
+    }
+  },
+  {
+    "id": "occ21",
+    "emoji": "🥂",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 85,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend"
+    ],
+    "occasions": [
+      "wedding",
+      "anniversary",
+      "housewarming",
+      "newyear"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Edelstahl Sektkühler Doppelwandig Flaschenkühler",
+    "title": {
+      "de": "Doppelwandiger Design-Flaschenkühler",
+      "ru": "Двустенный дизайнерский кулер для бутылок",
+      "en": "Double-Wall Stainless Bottle Chiller"
+    },
+    "reason": {
+      "de": "Hält Sekt und Weißwein ganz ohne Eiswürfel stundenlang angenehm kühl.",
+      "ru": "Держит вино и шампанское холодными часами даже без льда.",
+      "en": "Keeps sparkling and white wine chilled for hours without ice mess."
+    }
+  },
+  {
+    "id": "occ22",
+    "emoji": "🚁",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 60,
+    "price": 139,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "tech",
+      "travel",
+      "gaming"
+    ],
+    "query": "Mini Drohne mit Kamera Faltbar Anfänger unter 250g",
+    "title": {
+      "de": "Faltbare Mini-Kamera-Drohne (<250g)",
+      "ru": "Складной мини-дрон с камерой (<250 г)",
+      "en": "Foldable Mini Camera Drone (<250g)"
+    },
+    "reason": {
+      "de": "Unter 250 Gramm, leicht zu fliegen und liefert geniale Urlaubsaufnahmen.",
+      "ru": "Весит меньше 250 г, легко управляется и снимает потрясающие кадры.",
+      "en": "Under 250g, beginner-friendly, and captures stunning aerial clips."
+    }
+  },
+  {
+    "id": "occ23",
+    "emoji": "🎸",
+    "gender": "all",
+    "minAge": 14,
+    "maxAge": 65,
+    "price": 44,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "sibling",
+      "child"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "cozy",
+      "travel",
+      "diy"
+    ],
+    "query": "Kalimba 17 Tasten Mahagoni Daumenklavier Lernbuch",
+    "title": {
+      "de": "Mahagoni-Kalimba (Daumenklavier)",
+      "ru": "Калимба из красного дерева (17 клавиш)",
+      "en": "17-Key Mahogany Kalimba"
+    },
+    "reason": {
+      "de": "Klingt sofort verträumt und entspannend – auch ohne musikalische Vorkenntnisse.",
+      "ru": "Звучит волшебно с первых минут — играть научится даже новичок.",
+      "en": "Produces dreamy, soothing melodies immediately—no music experience needed."
+    }
+  },
+  {
+    "id": "occ24",
+    "emoji": "🎨",
+    "gender": "all",
+    "minAge": 16,
+    "maxAge": 80,
+    "price": 26,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "cozy",
+      "diy"
+    ],
+    "query": "Malen nach Zahlen Erwachsene Leinwand Holzrahmen",
+    "title": {
+      "de": "Malen-nach-Zahlen Set auf Leinwand",
+      "ru": "Картина по номерам на холсте",
+      "en": "Adult Paint-by-Numbers Canvas Kit"
+    },
+    "reason": {
+      "de": "Perfekt zum Abschalten nach Feierabend mit stolzem Ergebnis für die Wand.",
+      "ru": "Отлично разгружает голову вечером и превращается в картину на стену.",
+      "en": "Unwinds busy minds after work and ends as frame-worthy wall art."
+    }
+  },
+  {
+    "id": "occ25",
+    "emoji": "💼",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 65,
+    "price": 32,
+    "adultOnly": false,
+    "relations": [
+      "colleague",
+      "friend",
+      "partner",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "justbecause"
+    ],
+    "hobbies": [
+      "tech",
+      "travel"
+    ],
+    "query": "Kabel Organizer Tasche Technik Elektronik Reise",
+    "title": {
+      "de": "Smarte Technik- & Kabeltasche",
+      "ru": "Органайзер для проводов и зарядок",
+      "en": "Tech & Cable Organizer Pouch"
+    },
+    "reason": {
+      "de": "Nie wieder verknotete Ladekabel im Rucksack oder Schreibtisch.",
+      "ru": "Больше никаких запутанных кабелей и потерянных флешек в сумке.",
+      "en": "Ends tangled charger cords forever in any backpack or desk drawer."
+    }
+  },
+  {
+    "id": "occ26",
+    "emoji": "🔋",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 70,
+    "price": 74,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas"
+    ],
+    "hobbies": [
+      "tech",
+      "travel"
+    ],
+    "query": "Powerbank 20000mAh 65W Laptop Schnellladen Display",
+    "title": {
+      "de": "65W Laptop-Powerbank mit Display",
+      "ru": "Мощный пауэрбанк 65W для ноутбука",
+      "en": "65W 20000mAh Laptop Power Bank"
+    },
+    "reason": {
+      "de": "Lädt unterwegs sogar Notebooks und zeigt die genaue Restlaufzeit an.",
+      "ru": "Заряжает в дороге даже ноутбук и показывает точный процент заряда.",
+      "en": "Powers laptops on the move and shows exact remaining charge."
+    }
+  },
+  {
+    "id": "occ27",
+    "emoji": "🍳",
+    "gender": "all",
+    "minAge": 20,
+    "maxAge": 75,
+    "price": 112,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "parents",
+      "friend"
+    ],
+    "occasions": [
+      "wedding",
+      "housewarming",
+      "christmas",
+      "birthday"
+    ],
+    "hobbies": [
+      "kitchen",
+      "cozy"
+    ],
+    "query": "Raclette Grill 8 Personen Naturstein Antihaft",
+    "title": {
+      "de": "Raclette-Grill mit Natursteinplatte",
+      "ru": "Раклетница с каменной плитой на 8 персон",
+      "en": "8-Person Natural Stone Raclette Grill"
+    },
+    "reason": {
+      "de": "Der unangefochtene Klassiker für Weihnachten, Silvester und gesellige Abende.",
+      "ru": "Главный немецкий хит на Рождество, Сильвестр и тёплые посиделки.",
+      "en": "The iconic centerpiece for Christmas, New Year's, and cozy dinner parties."
+    }
+  },
+  {
+    "id": "occ28",
+    "emoji": "🪴",
+    "gender": "all",
+    "minAge": 18,
+    "maxAge": 75,
+    "price": 49,
+    "adultOnly": false,
+    "relations": [
+      "partner",
+      "friend",
+      "parents",
+      "sibling",
+      "colleague",
+      "grandparents"
+    ],
+    "occasions": [
+      "birthday",
+      "christmas",
+      "housewarming",
+      "wedding"
+    ],
+    "hobbies": [
+      "cozy",
+      "tech",
+      "kitchen"
+    ],
+    "query": "Smart Indoor Garten Hydroponik LED Kräuter",
+    "title": {
+      "de": "Smarter LED-Indoor-Kräutergarten",
+      "ru": "Умный гидропонный мини-сад с LED",
+      "en": "Smart LED Hydroponic Herb Garden"
+    },
+    "reason": {
+      "de": "Züchtet frische Kräuter vollautomatisch mit eigenem Wachstumslicht.",
+      "ru": "Сам выращивает свежую зелень с автоматической фитоподсветкой.",
+      "en": "Grows fresh herbs automatically with built-in full-spectrum grow lights."
+    }
+  }
+]
