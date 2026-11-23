@@ -1141,10 +1141,7 @@ ${url}`);
     $('btn-fav-wa').addEventListener('click', () => {
       const favs = getFavs();
       if (!favs.length) return;
-      const lines = favs.map(f => `${f.emoji} ${f.title}
-${f.url}`).join('
-
-');
+      973514
       window.open(`https://wa.me/?text=${encodeURIComponent(lines)}`, '_blank', 'noopener');
     });
 
