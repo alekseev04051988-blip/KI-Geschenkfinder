@@ -9,9 +9,11 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const apiKey = (process.env.GEMINI_API_KEY || '').trim();
-  if (!apiKey) {
-    return res.status(503).json({ error: 'GEMINI_API_KEY is not configured' });
+  const groqKey = (process.env.GROQ_API_KEY || '').trim();
+  const geminiKey = (process.env.GEMINI_API_KEY || '').trim();
+
+  if (!groqKey && !geminiKey) {
+    return res.status(503).json({ error: 'No AI API key configured' });
   }
 
   try {
@@ -40,8 +42,8 @@ export default async function handler(req, res) {
 
     const systemInstruction = `
 Du bist ein kreativer, praxisnaher Geschenkberater für den deutschen Markt (Amazon.de).
-Antworte AUSSCHLIESSLICH mit einem gültigen JSON-Array aus genau 5 originellen Geschenkideen (ohne Markdown-Codeblöcke).
-Jedes Objekt im Array MUSS exakt diese Felder haben:
+Antworte AUSSCHLIESSLICH mit einem gültigen JSON-Objekt im Format {"items": [...]} mit genau 5 originellen Geschenkideen (kein Markdown, kein Text außerhalb des JSON).
+Jedes Objekt im Array "items" MUSS exakt diese Felder haben:
 {
   "emoji": "1 passendes Emoji",
   "title": "Prägnanter Geschenktitel auf ${targetLangName} (max. 55 Zeichen)",
@@ -56,7 +58,7 @@ Strenge Regeln:
 4. ${isMinor
   ? 'JUGENDSCHUTZ AKTIV: Die Person ist unter 18 Jahre alt! Absolut KEIN Alkohol, keine Messer, keine Erotik, keine Tabak-/Vape-Artikel, kein Glücksspiel, keine gefährlichen Werkzeuge.'
   : 'Wähle alltagstaugliche, gut bewertete und kreative Produktideen.'}
-5. Alle 5 Vorschläge müssen deutlich unterschiedlich sein.
+5. Alle 5 Vorschläge müssen deutlich unterschiedlich sein und direkt zum Zusatzwunsch passen.
 `.trim();
 
     const userPrompt = `
@@ -70,84 +72,99 @@ Geschenkprofil:
 - Zusatzwunsch des Nutzers: ${safePrompt || 'keiner'}
 `.trim();
 
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
-    const payload = JSON.stringify({
-      systemInstruction: { parts: [{ text: systemInstruction }] },
-      contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-      generationConfig: {
-        temperature: 0.85,
-        responseMimeType: 'application/json'
-      }
-    });
+    let rawText = '';
+    let provider = '';
 
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    const retryStatuses = new Set([429, 500, 502, 503, 504]);
-    const maxAttempts = 3;
-    const startedAt = Date.now();
-
-    let response = null;
-    let lastStatus = 0;
-
-    for (let attempt = 0; attempt < maxAttempts; attempt++) {
-      if (attempt > 0 && Date.now() - startedAt > 18000) break;
-
+    // 1. Основной движок: Groq (быстро и стабильно на бесплатном тарифе)
+    if (groqKey) {
       try {
-        response = await fetch(endpoint, {
+        const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: payload,
-          signal: AbortSignal.timeout(12000)
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${groqKey}`
+          },
+          body: JSON.stringify({
+            model: 'llama-3.3-70b-versatile',
+            temperature: 0.8,
+            response_format: { type: 'json_object' },
+            messages: [
+              { role: 'system', content: systemInstruction },
+              { role: 'user', content: userPrompt }
+            ]
+          }),
+          signal: AbortSignal.timeout(10000)
         });
 
-        if (response.ok) break;
-
-        lastStatus = response.status;
-        const errText = await response.text();
-        console.error(`Gemini API error (attempt ${attempt + 1}/${maxAttempts}):`, response.status, errText.slice(0, 300));
-
-        if (retryStatuses.has(response.status) && attempt < maxAttempts - 1) {
-          await sleep(900 * (attempt + 1));
-          continue;
+        if (groqRes.ok) {
+          const groqData = await groqRes.json();
+          rawText = String(groqData?.choices?.[0]?.message?.content || '').trim();
+          provider = 'groq';
+        } else {
+          const errText = await groqRes.text();
+          console.error('Groq API error:', groqRes.status, errText.slice(0, 300));
         }
-        break;
-      } catch (fetchErr) {
-        console.error(`Gemini fetch error (attempt ${attempt + 1}/${maxAttempts}):`, fetchErr?.name || fetchErr?.message || fetchErr);
-        response = null;
-        lastStatus = 504;
-
-        if (attempt < maxAttempts - 1 && Date.now() - startedAt < 14000) {
-          await sleep(900);
-          continue;
-        }
-        break;
+      } catch (err) {
+        console.error('Groq fetch error:', err?.name || err?.message || err);
       }
     }
 
-    if (!response || !response.ok) {
-      return res.status(502).json({ error: 'Upstream AI error', status: lastStatus });
+    // 2. Резерв: Gemini (строго 1 попытка, если Groq не сработал)
+    if (!rawText && geminiKey) {
+      try {
+        const geminiRes = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(geminiKey)}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              systemInstruction: { parts: [{ text: systemInstruction }] },
+              contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+              generationConfig: {
+                temperature: 0.85,
+                responseMimeType: 'application/json'
+              }
+            }),
+            signal: AbortSignal.timeout(10000)
+          }
+        );
+
+        if (geminiRes.ok) {
+          const geminiData = await geminiRes.json();
+          const parts = geminiData?.candidates?.[0]?.content?.parts || [];
+          const textParts = parts
+            .filter((p) => !p.thought && typeof p.text === 'string')
+            .map((p) => p.text);
+          rawText = String(textParts.length ? textParts.join('\n') : (parts[parts.length - 1]?.text || '')).trim();
+          provider = 'gemini';
+        } else {
+          const errText = await geminiRes.text();
+          console.error('Gemini fallback error:', geminiRes.status, errText.slice(0, 300));
+        }
+      } catch (err) {
+        console.error('Gemini fallback fetch error:', err?.name || err?.message || err);
+      }
     }
 
-    const data = await response.json();
-    const parts = data?.candidates?.[0]?.content?.parts || [];
-    const textParts = parts
-      .filter((p) => !p.thought && typeof p.text === 'string')
-      .map((p) => p.text);
-    const rawText = String(textParts.length ? textParts.join('\n') : (parts[parts.length - 1]?.text || '[]'))
+    if (!rawText) {
+      return res.status(502).json({ error: 'Upstream AI error' });
+    }
+
+    const cleanedText = rawText
       .replace(/^```(?:json)?\s*/i, '')
       .replace(/\s*```$/i, '')
       .trim();
 
-    let parsed = [];
+    let parsed = null;
     try {
-      parsed = JSON.parse(rawText);
+      parsed = JSON.parse(cleanedText);
     } catch {
-      const match = rawText.match(/\[[\s\S]*\]/);
-      if (match) {
-        try {
-          parsed = JSON.parse(match[0]);
-        } catch {
-          parsed = [];
-        }
+      const objMatch = cleanedText.match(/\{[\s\S]*\}/);
+      const arrMatch = cleanedText.match(/\[[\s\S]*\]/);
+      try {
+        parsed = objMatch ? JSON.parse(objMatch[0]) : (arrMatch ? JSON.parse(arrMatch[0]) : []);
+      } catch {
+        parsed = [];
       }
     }
 
@@ -183,11 +200,11 @@ Geschenkprofil:
       .slice(0, 5);
 
     if (!cleanItems.length) {
-      console.error('Empty parsed items:', rawText.slice(0, 300));
+      console.error('Empty parsed items:', provider, cleanedText.slice(0, 300));
       return res.status(502).json({ error: 'Empty AI response' });
     }
 
-    return res.status(200).json({ items: cleanItems });
+    return res.status(200).json({ items: cleanItems, provider });
   } catch (error) {
     console.error('Suggest handler error:', error);
     return res.status(500).json({ error: 'Internal Server Error' });
