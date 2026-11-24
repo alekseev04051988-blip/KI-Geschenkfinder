@@ -3,11 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>KI Geschenkfinder — Persönliche Geschenkideen in Sekunden</title>
-  <meta name="description" content="Finde mit dem KI Geschenkfinder in wenigen Sekunden passende, kreative Geschenkideen für Geburtstag, Weihnachten, Wichteln & mehr — perfekt im Wunschbudget." />
-  <meta property="og:title" content="KI Geschenkfinder — Persönliche Geschenkideen in Sekunden" />
-  <meta property="og:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen." />
+  <title>KI-Geschenkfinder — Persönliche Ideen in Sekunden</title>
+  <meta name="description" content="Finde mit dem KI-Geschenkfinder in wenigen Sekunden passende, kreative Geschenkideen für Geburtstag, Weihnachten, Wichteln & mehr — perfekt im Wunschbudget." />
+  <meta property="og:site_name" content="KI-Geschenkfinder" />
+  <meta property="og:title" content="🎁 KI-Geschenkfinder — Persönliche Ideen in Sekunden" />
+  <meta property="og:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen für Amazon.de (4★+)." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ki-geschenkfinder.vercel.app/" />
+  <meta property="og:image" content="https://ki-geschenkfinder.vercel.app/og-banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🎁 KI-Geschenkfinder — Persönliche Ideen in Sekunden" />
+  <meta name="twitter:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen." />
+  <meta name="twitter:image" content="https://ki-geschenkfinder.vercel.app/og-banner.jpg" />
   <meta name="theme-color" content="#6d28d9" />
   <style>
     :root {
@@ -57,30 +66,40 @@
     /* Header */
     .topbar {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 10px; margin-bottom: 16px;
+      gap: 8px; margin-bottom: 16px;
     }
     .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
     .logo {
       width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
       display: grid; place-items: center; font-size: 21px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff; box-shadow: 0 8px 20px rgba(124,58,237,0.32);
+      background: linear-gradient(135deg, #7c3aed, #ec4899 60%, #f59e0b);
+      color: #fff; box-shadow: 0 8px 20px rgba(124,58,237,0.34);
     }
-    .brand-title { font-weight: 800; font-size: 1.08rem; letter-spacing: -0.02em; }
-    .brand-sub { font-size: 0.76rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .brand-title {
+      font-weight: 900;
+      font-size: 1.12rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      background: linear-gradient(95deg, #7c3aed 0%, #ec4899 45%, #f97316 80%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .brand-sub { font-size: 0.74rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .controls { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
     .icon-btn {
-      height: 38px; padding: 0 11px; border-radius: 12px;
+      height: 36px; padding: 0 9px; border-radius: 12px;
       border: 1px solid var(--border); background: var(--surface);
-      color: var(--text); font-weight: 700; font-size: 0.82rem;
-      display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+      color: var(--text); font-weight: 700; font-size: 0.8rem;
+      display: inline-flex; align-items: center; justify-content: center; gap: 4px; cursor: pointer;
       transition: transform .15s, border-color .15s;
     }
     .icon-btn:active { transform: scale(0.95); }
     .fav-badge {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff; font-size: 0.72rem; padding: 1px 6px; border-radius: 999px;
-      min-width: 19px; text-align: center;
+      color: #fff; font-size: 0.7rem; padding: 1px 5px; border-radius: 999px;
+      min-width: 18px; text-align: center;
     }
 
     /* Hero */
@@ -349,12 +368,13 @@
     <header class="topbar">
       <div class="brand">
         <div class="logo">🎁</div>
-        <div>
-          <div class="brand-title" id="t-brand">KI Geschenkfinder</div>
+        <div style="min-width:0">
+          <div class="brand-title" id="t-brand">KI-Geschenkfinder</div>
           <div class="brand-sub" id="t-sub">Persönliche Ideen in Sekunden</div>
         </div>
       </div>
       <div class="controls">
+        <button class="icon-btn" id="btn-share-app" title="App teilen">📤</button>
         <button class="icon-btn" id="btn-lang" title="Sprache">DE</button>
         <button class="icon-btn" id="btn-theme" title="Theme">🌙</button>
         <button class="icon-btn" id="btn-favs">❤️ <span class="fav-badge" id="fav-count">0</span></button>
@@ -542,8 +562,11 @@
 
     const I18N = {
       de: {
-        brand: 'KI Geschenkfinder',
+        brand: 'KI-Geschenkfinder',
         sub: 'Persönliche Ideen in Sekunden',
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Finde in Sekunden das perfekte Geschenk — probier den KI-Geschenkfinder aus:',
+        shareAppCopied: '🔗 App-Link kopiert!',
         pill: '✨ Smart-Auswahl für Amazon.de (4★+)',
         h1: 'Das perfekte Geschenk — ohne langes Suchen',
         lead: 'Wähle Profil, Anlass, Hobbys und Budget. Unsere KI analysiert passende Ideen und zeigt dir 5 Volltreffer.',
@@ -570,7 +593,7 @@
         aiPh: 'z.B. mag Angeln, Sauna & scharfe Saucen...',
         aiLoading: '⏳ Live-KI denkt nach...',
         aiReady: '✅ 5 frische Live-KI Ideen generiert!',
-        aiFallback: '✨ Smart-Auswahl lokal verfeinert (für Live-KI einfach GEMINI_API_KEY auf Vercel hinterlegen).',
+        aiFallback: '✨ Smart-Auswahl lokal verfeinert.',
         amzBtn: 'Auf Amazon.de ansehen *',
         match: (p) => `${p}% Match`,
         aiTag: 'Live-KI ✨',
@@ -591,12 +614,15 @@
           s.age < 18 ? 'Jugendschutz-Filter (<18) strikt anwenden' : 'Interessen & Originalität abgleichen',
           'Top 5 Geschenkideen zusammenstellen'
         ],
-        impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
+        impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI-Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
         datenschutz: `<strong>Datenschutz (DSGVO):</strong><br>Diese Website setzt keine Werbe-Cookies und kein Tracking-Pixel ein. Deine Merkliste sowie Sprach- und Theme-Wahl werden ausschließlich lokal im Browser (<code>localStorage</code>) gespeichert.<br><br>Wenn du die optionale Live-KI-Suche nutzt, werden deine gewählten Filter und dein eingegebener Hinweis kurzzeitig zur Erstellung der Geschenkideen an den KI-Dienst übermittelt und nicht dauerhaft gespeichert. Beim Klick auf einen Amazon-Link gelten die Datenschutzbestimmungen von Amazon.de.`
       },
       ru: {
-        brand: 'ИИ Подборщик подарков',
+        brand: 'KI-Geschenkfinder',
         sub: 'Персональные идеи за секунды',
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Подбери идеальный подарок за пару секунд — попробуй KI-Geschenkfinder:',
+        shareAppCopied: '🔗 Ссылка на приложение скопирована!',
         pill: '✨ Умный подбор на Amazon.de (4★+)',
         h1: 'Идеальный подарок — без долгих поисков',
         lead: 'Выбери профиль, повод, хобби и бюджет. ИИ проанализирует параметры и предложит 5 точных вариантов.',
@@ -623,7 +649,7 @@
         aiPh: 'например: любит рыбалку, баню и острые соусы...',
         aiLoading: '⏳ Живой ИИ придумывает идеи...',
         aiReady: '✅ Сгенерировано 5 свежих идей от ИИ!',
-        aiFallback: '✨ Подборка уточнена локально (для живого ИИ добавь GEMINI_API_KEY в Vercel).',
+        aiFallback: '✨ Подборка уточнена локально.',
         amzBtn: 'Смотреть на Amazon.de *',
         match: (p) => `Совпадение ${p}%`,
         aiTag: 'Живой ИИ ✨',
@@ -644,12 +670,15 @@
           s.age < 18 ? 'Применение строгого фильтра 18-' : 'Сопоставление хобби и оригинальности',
           'Формирование 5 лучших рекомендаций'
         ],
-        impressum: `<strong>Сведения согласно § 5 DDG (Германия):</strong><br>KI Geschenkfinder<br>Владелец: Имя владельца (шаблон)<br>Postfach 1234, 63738 Musterstadt, Германия<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon PartnerNet:</strong><br>Участник партнёрской программы Amazon EU (тег: <code>kigeschenkfinder-21</code>). Комиссия начисляется без какой-либо наценки для покупателя.`,
+        impressum: `<strong>Сведения согласно § 5 DDG (Германия):</strong><br>KI-Geschenkfinder<br>Владелец: Имя владельца (шаблон)<br>Postfach 1234, 63738 Musterstadt, Германия<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon PartnerNet:</strong><br>Участник партнёрской программы Amazon EU (тег: <code>kigeschenkfinder-21</code>). Комиссия начисляется без какой-либо наценки для покупателя.`,
         datenschutz: `<strong>Конфиденциальность (DSGVO):</strong><br>Сайт не использует рекламные cookies и трекеры. Избранное, язык и тема хранятся только локально в браузере (<code>localStorage</code>). При использовании кнопки живого ИИ параметры подбора временно передаются на сервер для генерации идей и не сохраняются.`
       },
       en: {
-        brand: 'AI Gift Finder',
+        brand: 'KI-Geschenkfinder',
         sub: 'Personal ideas in seconds',
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Find the perfect gift in seconds — try KI-Geschenkfinder:',
+        shareAppCopied: '🔗 App link copied!',
         pill: '✨ Smart Picks for Amazon.de (4★+)',
         h1: 'The right gift — without endless scrolling',
         lead: 'Pick age, occasion, hobbies, and budget. Our AI analyzes the profile and surfaces 5 great matches.',
@@ -676,7 +705,7 @@
         aiPh: 'e.g. loves fishing, sauna & hot sauces...',
         aiLoading: '⏳ Live AI is thinking...',
         aiReady: '✅ 5 fresh Live AI ideas generated!',
-        aiFallback: '✨ Refined locally (add GEMINI_API_KEY on Vercel to activate Live AI).',
+        aiFallback: '✨ Refined locally.',
         amzBtn: 'View on Amazon.de *',
         match: (p) => `${p}% Match`,
         aiTag: 'Live AI ✨',
@@ -697,7 +726,7 @@
           s.age < 18 ? 'Enforcing strict under-18 safety filter' : 'Matching hobbies & uniqueness',
           'Compiling top 5 gift recommendations'
         ],
-        impressum: `<strong>Information pursuant to § 5 DDG:</strong><br>KI Geschenkfinder<br>Operator: Owner Name (Placeholder)<br>Postfach 1234, 63738 Musterstadt, Germany<br>Email: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon Associates Disclosure:</strong><br>This site participates in the Amazon EU Associates Programme (Tag: <code>kigeschenkfinder-21</code>) at zero additional cost to buyers.`,
+        impressum: `<strong>Information pursuant to § 5 DDG:</strong><br>KI-Geschenkfinder<br>Operator: Owner Name (Placeholder)<br>Postfach 1234, 63738 Musterstadt, Germany<br>Email: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon Associates Disclosure:</strong><br>This site participates in the Amazon EU Associates Programme (Tag: <code>kigeschenkfinder-21</code>) at zero additional cost to buyers.`,
         datenschutz: `<strong>Privacy Policy (GDPR):</strong><br>No ad cookies or tracking pixels are used. Favorites, language, and theme preferences stay strictly inside your browser's <code>localStorage</code>.`
       }
     };
@@ -722,6 +751,32 @@
         tag: AFFILIATE_TAG
       });
       return `https://www.amazon.de/s?${params.toString()}`;
+    }
+
+    function makeSlug(text) {
+      return String(text || 'geschenkidee')
+        .toLowerCase()
+        .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 55) || 'geschenkidee';
+    }
+
+    function buildGiftShareUrl(item, minPrice, maxPrice) {
+      const origin = (window.location.origin && window.location.origin.startsWith('http'))
+        ? window.location.origin
+        : 'https://ki-geschenkfinder.vercel.app';
+      const slug = makeSlug(item.query || item.title);
+      const params = new URLSearchParams({
+        t: String(item.title || '').slice(0, 80),
+        r: String(item.reason || '').slice(0, 150),
+        q: String(item.query || item.title || '').slice(0, 75),
+        e: String(item.emoji || '🎁'),
+        min: String(minPrice),
+        max: String(maxPrice),
+        l: currentLang
+      });
+      return `${origin}/idee/${slug}?${params.toString()}`;
     }
 
     function showToast(msg) {
@@ -752,7 +807,7 @@
       const tr = t();
       document.documentElement.lang = currentLang;
       $('btn-lang').textContent = currentLang.toUpperCase();
-      $('t-brand').textContent = tr.brand;
+      $('t-brand').textContent = 'KI-Geschenkfinder';
       $('t-sub').textContent = tr.sub;
       $('t-pill').textContent = tr.pill;
       $('t-h1').textContent = tr.h1;
@@ -830,7 +885,6 @@
       const isMinor = state.age < 18;
       const tokens = `${state.prompt} ${extraPrompt}`.toLowerCase().split(/[\s,.;!?]+/).filter(w => w.length > 2);
 
-      // Step 1: Hard safety & age/gender filters
       let pool = GIFTS_DB.filter(item => {
         if (isMinor && item.adultOnly) return false;
         if (state.age < item.minAge - 2 || state.age > item.maxAge + 5) return false;
@@ -844,30 +898,23 @@
 
       const scored = pool.map(item => {
         let score = 50;
-        // Budget fit
         if (item.price >= minB && item.price <= maxB) score += 32;
         else {
           const dist = Math.min(Math.abs(item.price - minB), Math.abs(item.price - maxB));
           score += Math.max(0, 22 - dist * 0.6);
         }
-        // Relation fit
         if (item.relations && item.relations.includes(state.relation)) score += 16;
-        // Occasion fit
         if (item.occasions && item.occasions.includes(state.occasion)) score += 14;
-        // Hobbies fit
         if (state.hobbies.size > 0 && item.hobbies) {
           let matched = 0;
           state.hobbies.forEach(h => { if (item.hobbies.includes(h)) matched++; });
           score += matched * 22;
         }
-        // Text hint matching
         if (tokens.length) {
           const blob = `${item.query} ${item.title.de} ${item.title.ru} ${item.title.en} ${item.reason.de} ${item.reason.ru}`.toLowerCase();
           tokens.forEach(tok => { if (blob.includes(tok)) score += 28; });
         }
-        // Novelty penalty if recently shown
         if (recentlyShown.has(item.id)) score -= 26;
-        // Slight randomness for fresh recalculations
         score += Math.random() * 14;
         return { item, score };
       });
@@ -897,10 +944,23 @@
       const tr = t();
 
       targetEl.innerHTML = items.map(item => {
-        const url = item.url || buildAmazonUrl(item.query, minB, maxB);
+        const itemMin = item.minB || minB;
+        const itemMax = item.maxB || maxB;
+        const amazonUrl = item.url || buildAmazonUrl(item.query, itemMin, itemMax);
+        const shareUrl = item.shareUrl || buildGiftShareUrl(item, itemMin, itemMax);
         const isFav = favIds.has(item.id);
-        const waText = encodeURIComponent(`${item.emoji} ${item.title} — ${item.reason}
-${url}`);
+        const waText = encodeURIComponent(`${item.emoji} ${item.title} (${itemMin}–${itemMax} €)\n${item.reason}\n${shareUrl}`);
+        const favPayload = {
+          id: item.id,
+          emoji: item.emoji,
+          title: item.title,
+          reason: item.reason,
+          query: item.query,
+          url: amazonUrl,
+          shareUrl,
+          minB: itemMin,
+          maxB: itemMax
+        };
         return `
           <article class="gift-card">
             <div class="gift-top">
@@ -915,9 +975,9 @@ ${url}`);
               </div>
             </div>
             <div class="gift-actions">
-              <a class="amz-btn" href="${url}" target="_blank" rel="noopener noreferrer sponsored">🛒 ${tr.amzBtn}</a>
-              <button class="act-btn" data-copy="${encodeURIComponent(url)}" title="Link kopieren">📋</button>
-              <button class="act-btn ${isFav ? 'faved' : ''}" data-fav="${encodeURIComponent(JSON.stringify({ id: item.id, emoji: item.emoji, title: item.title, reason: item.reason, query: item.query, url }))}" title="Merken">${isFav ? '❤️' : '🤍'}</button>
+              <a class="amz-btn" href="${amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">🛒 ${tr.amzBtn}</a>
+              <button class="act-btn" data-copy="${encodeURIComponent(shareUrl)}" title="Link kopieren">📋</button>
+              <button class="act-btn ${isFav ? 'faved' : ''}" data-fav="${encodeURIComponent(JSON.stringify(favPayload))}" title="Merken">${isFav ? '❤️' : '🤍'}</button>
               <a class="act-btn" style="text-decoration:none" href="https://wa.me/?text=${waText}" target="_blank" rel="noopener noreferrer" title="WhatsApp">💬</a>
             </div>
           </article>
@@ -1030,7 +1090,6 @@ ${url}`);
       renderGiftCards(favs, box);
     }
 
-    // Load external ./gifts.json if deployed on Vercel / web server
     async function loadExternalDatabase() {
       try {
         const res = await fetch('./gifts.json', { cache: 'default' });
@@ -1041,7 +1100,7 @@ ${url}`);
           $('db-count-badge').textContent = t().dbInfo(GIFTS_DB.length);
         }
       } catch {
-        // Silent fallback to built-in 36 items when opened offline
+        // Silent fallback to built-in items
       }
     }
 
@@ -1116,6 +1175,29 @@ ${url}`);
     $('btn-recalc').addEventListener('click', () => runThinkingAndShow(950));
     $('btn-live-ai').addEventListener('click', askLiveAI);
 
+    $('btn-share-app').addEventListener('click', async () => {
+      const tr = t();
+      const appUrl = (window.location.origin && window.location.origin.startsWith('http'))
+        ? window.location.origin
+        : 'https://ki-geschenkfinder.vercel.app';
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: tr.shareAppTitle,
+            text: tr.shareAppText,
+            url: appUrl
+          });
+          return;
+        } catch (err) {
+          if (err && err.name === 'AbortError') return;
+        }
+      }
+      navigator.clipboard?.writeText(`${tr.shareAppText} ${appUrl}`)
+        .then(() => showToast(tr.shareAppCopied))
+        .catch(() => showToast(tr.shareAppCopied));
+    });
+
     $('btn-lang').addEventListener('click', () => {
       const order = ['de', 'ru', 'en'];
       currentLang = order[(order.indexOf(currentLang) + 1) % order.length];
@@ -1141,7 +1223,11 @@ ${url}`);
     $('btn-fav-wa').addEventListener('click', () => {
       const favs = getFavs();
       if (!favs.length) return;
-      973514
+      const { minB, maxB } = getBudgetBounds();
+      const lines = favs.map(f => {
+        const link = f.shareUrl || buildGiftShareUrl(f, f.minB || minB, f.maxB || maxB);
+        return `${f.emoji} ${f.title}\n${link}`;
+      }).join('\n\n');
       window.open(`https://wa.me/?text=${encodeURIComponent(lines)}`, '_blank', 'noopener');
     });
 
