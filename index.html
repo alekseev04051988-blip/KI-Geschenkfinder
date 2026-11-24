@@ -1490,7 +1490,7 @@
       let picks = null;
       let statusMsg = '';
 
-      if (state.prompt) {
+      if (state.prompt || !['de', 'ru', 'en'].includes(currentLang)) {
         try {
           const [aiItems] = await Promise.all([fetchLiveAIItems(state.prompt), waitMin]);
           picks = aiItems;
