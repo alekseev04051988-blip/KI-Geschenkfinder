@@ -1,13 +1,8 @@
 {
-  "headers": [
+  "rewrites": [
     {
-      "source": "/gifts.json",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, stale-while-revalidate=86400"
-        }
-      ]
+      "source": "/idee/:slug",
+      "destination": "/api/g?slug=:slug"
     }
   ]
 }
