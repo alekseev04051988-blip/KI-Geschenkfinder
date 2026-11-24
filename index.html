@@ -83,6 +83,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+      direction: ltr;
     }
     .brand {
       flex: 1;
@@ -120,15 +121,17 @@
       position: absolute;
       top: calc(100% + 6px);
       right: 0;
-      min-width: 140px;
+      min-width: 158px;
+      max-height: 320px;
+      overflow-y: auto;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 6px;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
       display: none;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
       z-index: 60;
     }
     .lang-menu.open { display: flex; }
@@ -313,7 +316,7 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
       transition: width .22s ease;
     }
-    .think-steps { text-align: left; display: grid; gap: 8px; max-width: 420px; margin: 0 auto; }
+    .think-steps { text-align: start; display: grid; gap: 8px; max-width: 420px; margin: 0 auto; }
     .t-step {
       font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 8px;
       opacity: 0.4; transition: all .2s;
@@ -449,8 +452,14 @@
           <button class="icon-btn" id="btn-lang" title="Sprache">DE ▾</button>
           <div class="lang-menu" id="lang-menu">
             <button class="lang-opt" data-setlang="de">🇩🇪 Deutsch</button>
-            <button class="lang-opt" data-setlang="ru">🇷🇺 Русский</button>
             <button class="lang-opt" data-setlang="en">🇬🇧 English</button>
+            <button class="lang-opt" data-setlang="ru">🇷🇺 Русский</button>
+            <button class="lang-opt" data-setlang="tr">🇹🇷 Türkçe</button>
+            <button class="lang-opt" data-setlang="ar">🇸🇦 العربية</button>
+            <button class="lang-opt" data-setlang="pl">🇵🇱 Polski</button>
+            <button class="lang-opt" data-setlang="uk">🇺🇦 Українська</button>
+            <button class="lang-opt" data-setlang="ro">🇷🇴 Română</button>
+            <button class="lang-opt" data-setlang="it">🇮🇹 Italiano</button>
           </div>
         </div>
         <button class="icon-btn" id="btn-theme" title="Theme">🌙</button>
@@ -619,11 +628,26 @@
   <script>
     const AFFILIATE_TAG = 'kigeschenkfinder-21';
     const STORAGE_FAV_KEY = 'ki_geschenkfinder_favs_v3';
-    const FALLBACK_GIFTS = [{"id": "kid01", "emoji": "🧲", "gender": "all", "minAge": 3, "maxAge": 10, "price": 28, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["diy", "cozy"], "query": "Magnetbausteine Kinder Lernspielzeug", "title": {"de": "Magnetbausteine Kreativ-Set", "ru": "Набор магнитного конструктора", "en": "Magnetic Building Tiles Set"}, "reason": {"de": "Fördert räumliches Denken und beschäftigt Kinder stundenlang kreativ.", "ru": "Развивает пространственное мышление и увлекает ребёнка на часы.", "en": "Boosts spatial thinking and keeps kids creatively engaged for hours."}}, {"id": "kid02", "emoji": "🌌", "gender": "all", "minAge": 3, "maxAge": 14, "price": 22, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["cozy", "tech"], "query": "Sternenhimmel Projektor Nachtlicht Kinder", "title": {"de": "Galaxie-Nachtlicht Projektor", "ru": "Ночник-проектор звёздного неба", "en": "Galaxy Star Nightlight Projector"}, "reason": {"de": "Verwandelt das Kinderzimmer abends in einen magischen Sternenhimmel.", "ru": "Превращает детскую комнату вечером в волшебное звёздное небо.", "en": "Turns the bedroom ceiling into a soothing starry galaxy at night."}}, {"id": "kid03", "emoji": "🔬", "gender": "all", "minAge": 7, "maxAge": 14, "price": 35, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["tech", "diy"], "query": "Kinder Mikroskop Set Experimente", "title": {"de": "Entdecker-Mikroskop für Kinder", "ru": "Детский микроскоп с набором опытов", "en": "Kids Explorer Microscope Kit"}, "reason": {"de": "Weckt echte Forscherlust mit fertigen Präparaten zum Sofort-Loslegen.", "ru": "Пробуждает интерес к науке — готовые образцы уже в комплекте.", "en": "Sparks real curiosity with ready-to-view slides out of the box."}}, {"id": "kid04", "emoji": "📻", "gender": "all", "minAge": 5, "maxAge": 12, "price": 26, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["travel", "sport", "tech"], "query": "Kinder Walkie Talkie Aufladbar", "title": {"de": "Wiederaufladbare Walkie-Talkies", "ru": "Детские рации с подзарядкой", "en": "Rechargeable Kids Walkie Talkies"}, "reason": {"de": "Perfekt für Abenteuer im Garten, Park oder im Familienurlaub.", "ru": "Идеально для игр во дворе, парке и семейных поездок.", "en": "Great for backyard adventures, park games, and family trips."}}, {"id": "kid05", "emoji": "🎨", "gender": "all", "minAge": 4, "maxAge": 12, "price": 24, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["diy", "cozy"], "query": "Kinder Malkoffer Komplettset Buntstifte", "title": {"de": "Großer Künstler-Malkoffer", "ru": "Большой чемоданчик для рисования", "en": "Deluxe Kids Art Case"}, "reason": {"de": "Alles ordentlich verstaut für kleine Künstler – sofort startklar.", "ru": "Всё аккуратно разложено для юного художника — можно рисовать сразу.", "en": "Everything neatly packed for young artists to start right away."}}, {"id": "kid06", "emoji": "🏎️", "gender": "all", "minAge": 6, "maxAge": 13, "price": 38, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["auto", "tech"], "query": "Ferngesteuertes Stunt Auto 360 Grad", "title": {"de": "RC Stunt-Auto mit 360°-Drehung", "ru": "Радиоуправляемая машинка-перевёртыш", "en": "360° RC Stunt Car"}, "reason": {"de": "Fährt über Hindernisse, dreht sich blitzschnell und sorgt für Action.", "ru": "Легко преодолевает препятствия, крутится на 360° и дарит море драйва.", "en": "Handles obstacles easily, flips 360°, and delivers nonstop action."}}, {"id": "kid07", "emoji": "🧪", "gender": "all", "minAge": 8, "maxAge": 14, "price": 30, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["diy", "tech"], "query": "Experimentierkasten Kinder Wissenschaft", "title": {"de": "Spannender Experimentierkasten", "ru": "Набор научных экспериментов", "en": "Science Experiment Kit for Kids"}, "reason": {"de": "Spielerisches Lernen mit beeindruckenden Aha-Effekten zu Hause.", "ru": "Обучение через игру с эффектными домашними опытами.", "en": "Hands-on learning packed with impressive at-home experiments."}}, {"id": "kid08", "emoji": "🛤️", "gender": "all", "minAge": 8, "maxAge": 15, "price": 48, "adultOnly": false, "relations": ["child", "sibling"], "occasions": ["birthday", "christmas"], "hobbies": ["diy", "gaming"], "query": "GraviTrax Kugelbahn Starter Set", "title": {"de": "Interaktive Kugelbahn Starter-Set", "ru": "Интерактивный конструктор-трек", "en": "Interactive Marble Run Starter Set"}, "reason": {"de": "Fesselndes Bausystem rund um Schwerkraft, das immer erweiterbar ist.", "ru": "Захватывающий трек с законами физики, который можно бесконечно расширять.", "en": "Addictive gravity track system that expands endlessly."}}, {"id": "kid09", "emoji": "📷", "gender": "all", "minAge": 5, "maxAge": 11, "price": 32, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas"], "hobbies": ["tech", "travel"], "query": "Kinderkamera Digital Sofortbild Thermodruck", "title": {"de": "Kinder-Sofortbildkamera", "ru": "Детский фотоаппарат с мгновенной печатью", "en": "Kids Instant Print Camera"}, "reason": {"de": "Druckt Schnappschüsse sofort auf günstiges Thermopapier zum Ausmalen.", "ru": "Печатает снимки на недорогую термобумагу — фото можно даже раскрашивать.", "en": "Prints snapshots instantly on affordable paper kids can color."}}, {"id": "kid10", "emoji": "🧸", "gender": "all", "minAge": 3, "maxAge": 9, "price": 18, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "wichteln"], "hobbies": ["cozy"], "query": "Wärmekissen Kuscheltier Mikrowelle Kinder", "title": {"de": "Kuscheliges Wärme-Stofftier", "ru": "Мягкая игрушка-грелка", "en": "Warmable Plush Toy"}, "reason": {"de": "Spendet angenehme Wärme beim Einschlafen und tröstet an kalten Tagen.", "ru": "Дарит мягкое тепло перед сном и уют в прохладные вечера.", "en": "Gives soothing warmth at bedtime and comfort on chilly days."}}, {"id": "teen01", "emoji": "🌈", "gender": "all", "minAge": 12, "maxAge": 22, "price": 22, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "cozy", "gaming"], "query": "LED Strip RGBIC App Steuerung Zimmer", "title": {"de": "Smarte RGBIC LED-Lichterkette", "ru": "Умная адресная LED-лента в комнату", "en": "Smart RGBIC LED Strip Lights"}, "reason": {"de": "Reagiert auf Musik und verleiht dem Zimmer sofort modernen Vibe.", "ru": "Реагирует на музыку и мгновенно преображает комнату.", "en": "Syncs to music and instantly upgrades room ambiance."}}, {"id": "teen03", "emoji": "🧥", "gender": "all", "minAge": 12, "maxAge": 45, "price": 34, "adultOnly": false, "relations": ["child", "sibling", "partner", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["cozy", "gaming"], "query": "Oversize Hoodie Decke Sherpa Fleece", "title": {"de": "Kuschelige Oversize-Hoodie-Decke", "ru": "Огромное худи-плед с мягким мехом", "en": "Oversized Sherpa Hoodie Blanket"}, "reason": {"de": "Ultimativer Kuschelfaktor für Serienabende, Zocken und kalte Tage.", "ru": "Максимум уюта для сериалов, игр и холодных вечеров.", "en": "Peak cozy comfort for movie nights, gaming, and chilly days."}}, {"id": "teen05", "emoji": "🔋", "gender": "all", "minAge": 13, "maxAge": 60, "price": 29, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner", "colleague"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "travel"], "query": "Mini Powerbank USB C Schnellladen 10000mAh", "title": {"de": "Kompakte Schnelllade-Powerbank", "ru": "Компактный пауэрбанк с быстрой зарядкой", "en": "Compact Fast-Charge Power Bank"}, "reason": {"de": "Passt in jede Jackentasche und rettet zuverlässig vor leerem Akku.", "ru": "Помещается в карман и всегда спасает от севшего телефона.", "en": "Fits any pocket and rescues low batteries on the go."}}, {"id": "teen06", "emoji": "🎵", "gender": "all", "minAge": 12, "maxAge": 45, "price": 44, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "travel", "sport"], "query": "Bluetooth Lautsprecher Wasserdicht Kompakt", "title": {"de": "Wasserdichter Bluetooth-Speaker", "ru": "Водонепроницаемая Bluetooth-колонка", "en": "Waterproof Portable Bluetooth Speaker"}, "reason": {"de": "Satter Sound für Park, Strand, Dusche oder spontane Treffen.", "ru": "Сочный звук для парка, пляжа, душа и встреч с друзьями.", "en": "Punchy sound built for parks, showers, and spontaneous hangouts."}}, {"id": "teen08", "emoji": "🥤", "gender": "all", "minAge": 13, "maxAge": 55, "price": 32, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner", "colleague"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["sport", "travel", "cozy"], "query": "Edelstahl Trinkflasche Isoliert Thermosflasche", "title": {"de": "Stylische Isolier-Trinkflasche", "ru": "Стильная термобутылка из нержавеющей стали", "en": "Insulated Stainless Steel Bottle"}, "reason": {"de": "Hält Getränke 24 Stunden eiskalt oder 12 Stunden angenehm heiß.", "ru": "Держит напиток ледяным сутки или горячим до 12 часов.", "en": "Keeps drinks ice-cold for 24h or steaming hot for 12h."}}, {"id": "auto01", "emoji": "💨", "gender": "all", "minAge": 18, "maxAge": 70, "price": 49, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["auto", "tech", "diy"], "query": "Akku Luftpumpe Auto Kompressor Digital", "title": {"de": "Digitaler Akku-Minikompressor", "ru": "Портативный электронасос-компрессор", "en": "Cordless Digital Tire Inflator"}, "reason": {"de": "Prüft und füllt Auto-, Fahrrad- und Rollerreifen in Sekunden auf.", "ru": "Подкачивает колёса авто, велосипеда и самоката за секунды без проводов.", "en": "Checks and inflates car, bike, and scooter tires effortlessly."}}, {"id": "auto05", "emoji": "📱", "gender": "all", "minAge": 18, "maxAge": 70, "price": 24, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "wichteln", "justbecause"], "hobbies": ["auto", "tech"], "query": "Magnetische Handyhalterung Auto MagSafe Lüftung", "title": {"de": "Magnet-Handyhalterung fürs Auto", "ru": "Магнитный держатель телефона в авто", "en": "Magnetic Car Phone Mount"}, "reason": {"de": "Hält das Smartphone bombenfest mit nur einer Handbewegung.", "ru": "Держит смартфон намертво и крепится буквально одним движением.", "en": "Locks your phone securely in place with a single effortless tap."}}];
+    const SUPPORTED_LANGS = ['de', 'en', 'ru', 'tr', 'ar', 'pl', 'uk', 'ro', 'it'];
+
+    function detectInitialLang() {
+      const saved = localStorage.getItem('ki_gf_lang');
+      if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
+      const navLangs = Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'de'];
+      for (const raw of navLangs) {
+        const code = String(raw || '').toLowerCase().slice(0, 2);
+        if (SUPPORTED_LANGS.includes(code)) return code;
+      }
+      return 'de';
+    }
+
+    const FALLBACK_GIFTS = [{"id": "kid01", "emoji": "🧲", "gender": "all", "minAge": 3, "maxAge": 10, "price": 28, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["diy", "cozy"], "query": "Magnetbausteine Kinder Lernspielzeug", "title": {"de": "Magnetbausteine Kreativ-Set", "ru": "Набор магнитного конструктора", "en": "Magnetic Building Tiles Set"}, "reason": {"de": "Fördert räumliches Denken und beschäftigt Kinder stundenlang kreativ.", "ru": "Развивает пространственное мышление и увлекает ребёнка на часы.", "en": "Boosts spatial thinking and keeps kids creatively engaged for hours."}}, {"id": "kid02", "emoji": "🌌", "gender": "all", "minAge": 3, "maxAge": 14, "price": 22, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["cozy", "tech"], "query": "Sternenhimmel Projektor Nachtlicht Kinder", "title": {"de": "Galaxie-Nachtlicht Projektor", "ru": "Ночник-проектор звёздного неба", "en": "Galaxy Star Nightlight Projector"}, "reason": {"de": "Verwandelt das Kinderzimmer abends in einen magischen Sternenhimmel.", "ru": "Превращает детскую комнату вечером в волшебное звёздное небо.", "en": "Turns the bedroom ceiling into a soothing starry galaxy at night."}}, {"id": "teen01", "emoji": "🌈", "gender": "all", "minAge": 12, "maxAge": 22, "price": 22, "adultOnly": false, "relations": ["child", "sibling", "friend"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "cozy", "gaming"], "query": "LED Strip RGBIC App Steuerung Zimmer", "title": {"de": "Smarte RGBIC LED-Lichterkette", "ru": "Умная адресная LED-лента в комнату", "en": "Smart RGBIC LED Strip Lights"}, "reason": {"de": "Reagiert auf Musik und verleiht dem Zimmer sofort modernen Vibe.", "ru": "Реагирует на музыку и мгновенно преображает комнату.", "en": "Syncs to music and instantly upgrades room ambiance."}}, {"id": "teen05", "emoji": "🔋", "gender": "all", "minAge": 13, "maxAge": 60, "price": 29, "adultOnly": false, "relations": ["child", "sibling", "friend", "partner", "colleague"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["tech", "travel"], "query": "Mini Powerbank USB C Schnellladen 10000mAh", "title": {"de": "Kompakte Schnelllade-Powerbank", "ru": "Компактный пауэрбанк с быстрой зарядкой", "en": "Compact Fast-Charge Power Bank"}, "reason": {"de": "Passt in jede Jackentasche und rettet zuverlässig vor leerem Akku.", "ru": "Помещается в карман и всегда спасает от севшего телефона.", "en": "Fits any pocket and rescues low batteries on the go."}}, {"id": "auto01", "emoji": "💨", "gender": "all", "minAge": 18, "maxAge": 70, "price": 49, "adultOnly": false, "relations": ["partner", "friend", "parents", "sibling", "colleague", "grandparents"], "occasions": ["birthday", "christmas", "justbecause"], "hobbies": ["auto", "tech", "diy"], "query": "Akku Luftpumpe Auto Kompressor Digital", "title": {"de": "Digitaler Akku-Minikompressor", "ru": "Портативный электронасос-компрессор", "en": "Cordless Digital Tire Inflator"}, "reason": {"de": "Prüft und füllt Auto-, Fahrrad- und Rollerreifen in Sekunden auf.", "ru": "Подкачивает колёса авто, велосипеда и самоката за секунды без проводов.", "en": "Checks and inflates car, bike, and scooter tires effortlessly."}}];
 
     let GIFTS_DB = [...FALLBACK_GIFTS];
     let recentlyShown = new Set();
-    let currentLang = localStorage.getItem('ki_gf_lang') || 'de';
+    let currentLang = detectInitialLang();
     let currentTheme = localStorage.getItem('ki_gf_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
     const state = {
@@ -635,6 +659,11 @@
       budget: 35,
       tolerance: 0.20,
       prompt: ''
+    };
+
+    const LEGAL_DE = {
+      impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI-Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
+      datenschutz: `<strong>Datenschutz (DSGVO):</strong><br>Diese Website setzt keine Werbe-Cookies und kein Tracking-Pixel ein. Deine Merkliste sowie Sprach- und Theme-Wahl werden ausschließlich lokal im Browser (<code>localStorage</code>) gespeichert.<br><br>Wenn du die Live-KI-Suche nutzt, werden deine gewählten Filter und dein eingegebener Hinweis kurzzeitig zur Erstellung der Geschenkideen an den KI-Dienst übermittelt und nicht dauerhaft gespeichert. Beim Klick auf einen Amazon-Link gelten die Datenschutzbestimmungen von Amazon.de.`
     };
 
     const I18N = {
@@ -690,63 +719,7 @@
           s.age < 18 ? 'Jugendschutz-Filter (<18) strikt anwenden' : (s.prompt ? 'Live-KI erstellt individuelle Ideen...' : 'Interessen & Originalität abgleichen'),
           'Top 5 Geschenkideen zusammenstellen'
         ],
-        impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI-Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
-        datenschutz: `<strong>Datenschutz (DSGVO):</strong><br>Diese Website setzt keine Werbe-Cookies und kein Tracking-Pixel ein. Deine Merkliste sowie Sprach- und Theme-Wahl werden ausschließlich lokal im Browser (<code>localStorage</code>) gespeichert.<br><br>Wenn du die Live-KI-Suche nutzt, werden deine gewählten Filter und dein eingegebener Hinweis kurzzeitig zur Erstellung der Geschenkideen an den KI-Dienst übermittelt und nicht dauerhaft gespeichert. Beim Klick auf einen Amazon-Link gelten die Datenschutzbestimmungen von Amazon.de.`
-      },
-      ru: {
-        shareAppTitle: '🎁 KI-Geschenkfinder',
-        shareAppText: '✨ Подбери идеальный подарок за пару секунд — попробуй KI-Geschenkfinder:',
-        shareAppCopied: '🔗 Ссылка на приложение скопирована!',
-        shareList: 'Поделиться списком',
-        pill: '✨ Умный подбор на Amazon.de (4★+)',
-        h1: 'Идеальный подарок — без долгих поисков',
-        lead: 'Выбери профиль, повод, хобби и бюджет. ИИ проанализирует параметры и предложит 5 точных вариантов.',
-        who: 'Для кого ищем?',
-        ageLbl: 'Возраст',
-        years: 'лет',
-        minor: 'Защита 18- активна',
-        rel: 'Кем приходится человек?',
-        occ: 'Какой повод?',
-        hob: 'Хобби и интересы',
-        hobHint: 'Необязательно, можно несколько',
-        bud: 'Примерный бюджет',
-        corridor: (a, b) => `Коридор поиска: ${a} € – ${b} €`,
-        promptLbl: 'Особая подсказка (сразу запускает Живой ИИ)',
-        promptPh: 'например: любит кофе, водит авто, ценит уют...',
-        cta: 'Подобрать подарки',
-        disclosure: '* Участник партнёрской программы Amazon EU (тег: kigeschenkfinder-21). Для покупателя цена не меняется.',
-        thinkTitle: '✨ ИИ анализирует профиль...',
-        thinkHead: 'ИИ подбирает лучшие идеи...',
-        resTitle: '🎁 Рекомендации ИИ',
-        recalc: 'Пересчитать идеи',
-        change: 'Изменить параметры',
-        aibox: '✨ Нужно ещё точнее? Спроси живой ИИ:',
-        aiPh: 'например: любит рыбалку, баню и острые соусы...',
-        aiLoading: '⏳ Живой ИИ придумывает идеи...',
-        aiReady: '✅ Сгенерировано 5 свежих идей от ИИ!',
-        aiFallback: '✨ Подборка уточнена локально.',
-        amzBtn: 'Смотреть на Amazon.de *',
-        match: (p) => `Совпадение ${p}%`,
-        aiTag: 'Живой ИИ ✨',
-        copied: '🔗 Ссылка скопирована!',
-        saved: '❤️ Добавлено в избранное',
-        removed: 'Удалено',
-        favTitle: '❤️ Избранное',
-        favEmpty: 'Список пока пуст. Нажми ❤️ на понравившейся идее.',
-        clear: 'Очистить',
-        dbInfo: (n) => `В базе ${n} идей`,
-        genders: { all: '✨ Неважно', m: '👨 Мужчина / Мальчик', f: '👩 Женщина / Девочка' },
-        relations: { partner: '❤️ Партнёр', friend: '🥳 Друг / Подруга', parents: '🏡 Родители', sibling: '👫 Брат / Сестра', colleague: '💼 Коллега', child: '🧒 Ребёнок', grandparents: '🌟 Бабушка / Дедушка' },
-        occasions: { birthday: '🎂 День рождения', christmas: '🎄 Рождество', newyear: '🎆 Новый год', wichteln: '🎅 Тайный Санта', wedding: '💍 Свадьба', housewarming: '🏠 Новоселье', anniversary: '💐 Годовщина', justbecause: '✨ Просто так' },
-        hobbies: { auto: '🚗 Авто', tech: '📱 Техника', kitchen: '☕ Кухня и кофе', grill: '🔥 Гриль и сад', sport: '🏋️ Спорт', gaming: '🎮 Гейминг', diy: '🔧 DIY и инструменты', cozy: '🕯️ Уют и релакс', travel: '✈️ Путешествия', pets: '🐾 Питомцы', humor: '😂 Юмор' },
-        steps: (s, minB, maxB) => [
-          `Анализ профиля: ${s.age} лет · ${I18N.ru.occasions[s.occasion]}`,
-          `Проверка бюджета ${minB}–${maxB} € и рейтинга 4★+`,
-          s.age < 18 ? 'Применение строгого фильтра 18-' : (s.prompt ? 'Живой ИИ придумывает идеи по запросу...' : 'Сопоставление хобби и оригинальности'),
-          'Формирование 5 лучших рекомендаций'
-        ],
-        impressum: `<strong>Сведения согласно § 5 DDG (Германия):</strong><br>KI-Geschenkfinder<br>Владелец: Имя владельца (шаблон)<br>Postfach 1234, 63738 Musterstadt, Германия<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon PartnerNet:</strong><br>Участник партнёрской программы Amazon EU (тег: <code>kigeschenkfinder-21</code>). Комиссия начисляется без какой-либо наценки для покупателя.`,
-        datenschutz: `<strong>Конфиденциальность (DSGVO):</strong><br>Сайт не использует рекламные cookies и трекеры. Избранное, язык и тема хранятся только локально в браузере (<code>localStorage</code>). При использовании живого ИИ параметры подбора временно передаются на сервер для генерации идей и не сохраняются.`
+        ...LEGAL_DE
       },
       en: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -800,8 +773,385 @@
           s.age < 18 ? 'Enforcing strict under-18 safety filter' : (s.prompt ? 'Live AI generating custom ideas...' : 'Matching hobbies & uniqueness'),
           'Compiling top 5 gift recommendations'
         ],
-        impressum: `<strong>Information pursuant to § 5 DDG:</strong><br>KI-Geschenkfinder<br>Operator: Owner Name (Placeholder)<br>Postfach 1234, 63738 Musterstadt, Germany<br>Email: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Amazon Associates Disclosure:</strong><br>This site participates in the Amazon EU Associates Programme (Tag: <code>kigeschenkfinder-21</code>) at zero additional cost to buyers.`,
-        datenschutz: `<strong>Privacy Policy (GDPR):</strong><br>No ad cookies or tracking pixels are used. Favorites, language, and theme preferences stay strictly inside your browser's <code>localStorage</code>.`
+        ...LEGAL_DE
+      },
+      ru: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Подбери идеальный подарок за пару секунд — попробуй KI-Geschenkfinder:',
+        shareAppCopied: '🔗 Ссылка на приложение скопирована!',
+        shareList: 'Поделиться списком',
+        pill: '✨ Умный подбор на Amazon.de (4★+)',
+        h1: 'Идеальный подарок — без долгих поисков',
+        lead: 'Выбери профиль, повод, хобби и бюджет. ИИ проанализирует параметры и предложит 5 точных вариантов.',
+        who: 'Для кого ищем?',
+        ageLbl: 'Возраст',
+        years: 'лет',
+        minor: 'Защита 18- активна',
+        rel: 'Кем приходится человек?',
+        occ: 'Какой повод?',
+        hob: 'Хобби и интересы',
+        hobHint: 'Необязательно, можно несколько',
+        bud: 'Примерный бюджет',
+        corridor: (a, b) => `Коридор поиска: ${a} € – ${b} €`,
+        promptLbl: 'Особая подсказка (сразу запускает Живой ИИ)',
+        promptPh: 'например: любит кофе, водит авто, ценит уют...',
+        cta: 'Подобрать подарки',
+        disclosure: '* Участник партнёрской программы Amazon EU (тег: kigeschenkfinder-21). Для покупателя цена не меняется.',
+        thinkTitle: '✨ ИИ анализирует профиль...',
+        thinkHead: 'ИИ подбирает лучшие идеи...',
+        resTitle: '🎁 Рекомендации ИИ',
+        recalc: 'Пересчитать идеи',
+        change: 'Изменить параметры',
+        aibox: '✨ Нужно ещё точнее? Спроси живой ИИ:',
+        aiPh: 'например: любит рыбалку, баню и острые соусы...',
+        aiLoading: '⏳ Живой ИИ придумывает идеи...',
+        aiReady: '✅ Сгенерировано 5 свежих идей от ИИ!',
+        aiFallback: '✨ Подборка уточнена локально.',
+        amzBtn: 'Смотреть на Amazon.de *',
+        match: (p) => `Совпадение ${p}%`,
+        aiTag: 'Живой ИИ ✨',
+        copied: '🔗 Ссылка скопирована!',
+        saved: '❤️ Добавлено в избранное',
+        removed: 'Удалено',
+        favTitle: '❤️ Избранное',
+        favEmpty: 'Список пока пуст. Нажми ❤️ на понравившейся идее.',
+        clear: 'Очистить',
+        dbInfo: (n) => `В базе ${n} идей`,
+        genders: { all: '✨ Неважно', m: '👨 Мужчина / Мальчик', f: '👩 Женщина / Девочка' },
+        relations: { partner: '❤️ Партнёр', friend: '🥳 Друг / Подруга', parents: '🏡 Родители', sibling: '👫 Брат / Сестра', colleague: '💼 Коллега', child: '🧒 Ребёнок', grandparents: '🌟 Бабушка / Дедушка' },
+        occasions: { birthday: '🎂 День рождения', christmas: '🎄 Рождество', newyear: '🎆 Новый год', wichteln: '🎅 Тайный Санта', wedding: '💍 Свадьба', housewarming: '🏠 Новоселье', anniversary: '💐 Годовщина', justbecause: '✨ Просто так' },
+        hobbies: { auto: '🚗 Авто', tech: '📱 Техника', kitchen: '☕ Кухня и кофе', grill: '🔥 Гриль и сад', sport: '🏋️ Спорт', gaming: '🎮 Гейминг', diy: '🔧 DIY и инструменты', cozy: '🕯️ Уют и релакс', travel: '✈️ Путешествия', pets: '🐾 Питомцы', humor: '😂 Юмор' },
+        steps: (s, minB, maxB) => [
+          `Анализ профиля: ${s.age} лет · ${I18N.ru.occasions[s.occasion]}`,
+          `Проверка бюджета ${minB}–${maxB} € и рейтинга 4★+`,
+          s.age < 18 ? 'Применение строгого фильтра 18-' : (s.prompt ? 'Живой ИИ придумывает идеи по запросу...' : 'Сопоставление хобби и оригинальности'),
+          'Формирование 5 лучших рекомендаций'
+        ],
+        ...LEGAL_DE
+      },
+      tr: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Saniyeler içinde mükemmel hediyeyi bul — KI-Geschenkfinder\'ı dene:',
+        shareAppCopied: '🔗 Uygulama bağlantısı kopyalandı!',
+        shareList: 'Listeyi paylaş',
+        pill: '✨ Amazon.de için akıllı seçim (4★+)',
+        h1: 'Uzun aramalara son — mükemmel hediye burada',
+        lead: 'Profil, özel gün, hobiler ve bütçeyi seç. Yapay zeka sana hemen 5 harika fikir bulsun.',
+        who: 'Kimin için arıyorsun?',
+        ageLbl: 'Yaş',
+        years: 'yaş',
+        minor: '18 yaş altı koruması aktif',
+        rel: 'Bu kişi senin neyin oluyor?',
+        occ: 'Hangi özel gün?',
+        hob: 'Hobiler ve İlgi Alanları',
+        hobHint: 'İsteğe bağlı, çoklu seçim',
+        bud: 'Hedef Bütçe',
+        corridor: (a, b) => `Arama aralığı: ${a} € – ${b} €`,
+        promptLbl: 'Özel not (Canlı Yapay Zekayı başlatır)',
+        promptPh: 'örn. kahve sever, araba tutkunu, minimalist...',
+        cta: 'Hediye Bul',
+        disclosure: '* Amazon iş ortağı olarak uygun satışlardan ek maliyet olmadan komisyon kazanıyorum (Tag: kigeschenkfinder-21).',
+        thinkTitle: '✨ Yapay zeka analiz ediyor...',
+        thinkHead: 'En uygun hediyeler hesaplanıyor...',
+        resTitle: '🎁 Yapay Zeka Önerilerin',
+        recalc: 'Yeni fikirler bul',
+        change: 'Ayarları değiştir',
+        aibox: '✨ Daha özel bir şey mi? Canlı Yapay Zekaya sor:',
+        aiPh: 'örn. balık tutma, sauna ve acı sos sever...',
+        aiLoading: '⏳ Canlı Yapay Zeka düşünüyor...',
+        aiReady: '✅ 5 yeni Yapay Zeka fikri üretildi!',
+        aiFallback: '✨ Akıllı liste yerel olarak güncellendi.',
+        amzBtn: 'Amazon.de\'de gör *',
+        match: (p) => `%${p} Uyum`,
+        aiTag: 'Canlı YZ ✨',
+        copied: '🔗 Bağlantı kopyalandı!',
+        saved: '❤️ Kaydedildi',
+        removed: 'Kaldırıldı',
+        favTitle: '❤️ Favori Listen',
+        favEmpty: 'Henüz kaydedilen hediye yok. Beğendiklerine ❤️ dokun.',
+        clear: 'Temizle',
+        dbInfo: (n) => `${n} fikir hazır`,
+        genders: { all: '✨ Fark etmez', m: '👨 Erkek', f: '👩 Kadın' },
+        relations: { partner: '❤️ Sevgili / Eş', friend: '🥳 Arkadaş', parents: '🏡 Ebeveyn', sibling: '👫 Kardeş', colleague: '💼 İş arkadaşı', child: '🧒 Çocuk', grandparents: '🌟 Büyükanne/Baba' },
+        occasions: { birthday: '🎂 Doğum Günü', christmas: '🎄 Noel', newyear: '🎆 Yılbaşı', wichteln: '🎅 Çekiliş', wedding: '💍 Düğün', housewarming: '🏠 Yeni Ev', anniversary: '💐 Yıl Dönümü', justbecause: '✨ İçimden Geldi' },
+        hobbies: { auto: '🚗 Araba', tech: '📱 Teknoloji', kitchen: '☕ Mutfak & Kahve', grill: '🔥 Mangal & Bahçe', sport: '🏋️ Spor', gaming: '🎮 Oyun', diy: '🔧 El İşi & Alet', cozy: '🕯️ Keyif & Spa', travel: '✈️ Seyahat', pets: '🐾 Evcil Hayvan', humor: '😂 Mizah' },
+        steps: (s, minB, maxB) => [
+          `Profil analizi: ${s.age} yaş · ${I18N.tr.occasions[s.occasion]}`,
+          `${minB}–${maxB} € bütçe ve 4★+ kalite kontrolü`,
+          s.age < 18 ? '18 yaş altı filtresi uygulanıyor' : (s.prompt ? 'Canlı Yapay Zeka özel fikirler üretiyor...' : 'Hobiler eşleştiriliyor'),
+          'En iyi 5 hediye hazırlanıyor'
+        ],
+        ...LEGAL_DE
+      },
+      ar: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ اعثر على الهدية المثالية في ثوانٍ — جرّب KI-Geschenkfinder:',
+        shareAppCopied: '🔗 تم نسخ رابط التطبيق!',
+        shareList: 'مشاركة القائمة',
+        pill: '✨ اختيارات ذكية من Amazon.de (4★+)',
+        h1: 'الهدية المثالية — بدون بحث طويل',
+        lead: 'اختر العمر والمناسبة والهوايات والميزانية، وسيقترح عليك الذكاء الاصطناعي فوراً 5 هدايا رائعة.',
+        who: 'لمن تبحث عن هدية؟',
+        ageLbl: 'العمر',
+        years: 'سنة',
+        minor: 'حماية تحت 18 سنة مفعّلة',
+        rel: 'صلة القرابة؟',
+        occ: 'ما هي المناسبة؟',
+        hob: 'الهوايات والاهتمامات',
+        hobHint: 'اختياري، يمكن اختيار أكثر من خيار',
+        bud: 'الميزانية المطلوبة',
+        corridor: (a, b) => `نطاق البحث: ${a} € – ${b} €`,
+        promptLbl: 'ملاحظة خاصة (تشغّل الذكاء الاصطناعي مباشرة)',
+        promptPh: 'مثلاً: يحب القهوة، السفر بالسيارة، الأشياء البسيطة...',
+        cta: 'ابحث عن هدايا',
+        disclosure: '* بصفتي شريكاً لأمازون، أحصل على عمولة من المبيعات المؤهلة دون أي تكلفة إضافية عليك (Tag: kigeschenkfinder-21).',
+        thinkTitle: '✨ الذكاء الاصطناعي يحلل الملف...',
+        thinkHead: 'جارٍ اختيار أفضل أفكار الهدايا...',
+        resTitle: '🎁 توصيات الذكاء الاصطناعي',
+        recalc: 'أفكار جديدة',
+        change: 'تعديل الخيارات',
+        aibox: '✨ تريد شيئاً أكثر تحديداً؟ اسأل الذكاء الاصطناعي:',
+        aiPh: 'مثلاً: يحب الصيد والساونا والصلصات الحارة...',
+        aiLoading: '⏳ الذكاء الاصطناعي يفكر...',
+        aiReady: '✅ تم توليد 5 أفكار جديدة بالذكاء الاصطناعي!',
+        aiFallback: '✨ تم تحديث القائمة محلياً.',
+        amzBtn: 'عرض على Amazon.de *',
+        match: (p) => `توافق ${p}%`,
+        aiTag: 'ذكاء اصطناعي ✨',
+        copied: '🔗 تم نسخ الرابط!',
+        saved: '❤️ تم الحفظ',
+        removed: 'تمت الإزالة',
+        favTitle: '❤️ قائمة المفضلة',
+        favEmpty: 'لا توجد هدايا محفوظة بعد. اضغط على ❤️ لحفظ أي فكرة.',
+        clear: 'مسح',
+        dbInfo: (n) => `${n} فكرة جاهزة`,
+        genders: { all: '✨ الكل', m: '👨 رجل / ولد', f: '👩 امرأة / بنت' },
+        relations: { partner: '❤️ شريك/ة', friend: '🥳 صديق/ة', parents: '🏡 الوالدين', sibling: '👫 أخ / أخت', colleague: '💼 زميل/ة عمل', child: '🧒 طفل', grandparents: '🌟 الأجداد' },
+        occasions: { birthday: '🎂 عيد ميلاد', christmas: '🎄 عيد الميلاد', newyear: '🎆 رأس السنة', wichteln: '🎅 هدية مفاجئة', wedding: '💍 زفاف', housewarming: '🏠 منزل جديد', anniversary: '💐 ذكرى سنوية', justbecause: '✨ بدون مناسبة' },
+        hobbies: { auto: '🚗 سيارات', tech: '📱 تقنية', kitchen: '☕ مطبخ وقهوة', grill: '🔥 شواء وحديقة', sport: '🏋️ رياضة', gaming: '🎮 ألعاب', diy: '🔧 أدوات يدوية', cozy: '🕯️ استرخاء', travel: '✈️ سفر', pets: '🐾 حيوانات أليفة', humor: '😂 مرح' },
+        steps: (s, minB, maxB) => [
+          `تحليل الملف: ${s.age} سنة · ${I18N.ar.occasions[s.occasion]}`,
+          `فحص الميزانية ${minB}–${maxB} € وتقييم 4★+`,
+          s.age < 18 ? 'تطبيق فلتر الحماية تحت 18 سنة' : (s.prompt ? 'الذكاء الاصطناعي يبتكر أفكاراً مخصصة...' : 'مطابقة الهوايات والتميز'),
+          'تجهيز أفضل 5 هدايا لك'
+        ],
+        ...LEGAL_DE
+      },
+      pl: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Znajdź idealny prezent w kilka sekund — wypróbuj KI-Geschenkfinder:',
+        shareAppCopied: '🔗 Link do aplikacji skopiowany!',
+        shareList: 'Udostępnij listę',
+        pill: '✨ Inteligentny wybór na Amazon.de (4★+)',
+        h1: 'Idealny prezent — bez długiego szukania',
+        lead: 'Wybierz wiek, okazję, hobby i budżet. Nasze AI przeanalizuje profil i pokaże 5 trafionych pomysłów.',
+        who: 'Dla kogo szukasz?',
+        ageLbl: 'Wiek',
+        years: 'lat',
+        minor: 'Ochrona <18 aktywna',
+        rel: 'Kim jest ta osoba dla Ciebie?',
+        occ: 'Jaka okazja?',
+        hob: 'Hobby i zainteresowania',
+        hobHint: 'Opcjonalnie, wielokrotny wybór',
+        bud: 'Budżet',
+        corridor: (a, b) => `Zakres cen: ${a} € – ${b} €`,
+        promptLbl: 'Dodatkowa wskazówka (uruchamia Live AI)',
+        promptPh: 'np. kocha espresso, dużo jeździ autem, lubi minimalizm...',
+        cta: 'Znajdź prezenty',
+        disclosure: '* Jako partner Amazon zarabiam na kwalifikujących się zakupach bez dodatkowych kosztów dla Ciebie (Tag: kigeschenkfinder-21).',
+        thinkTitle: '✨ AI analizuje profil...',
+        thinkHead: 'AI dobiera najlepsze pomysły...',
+        resTitle: '🎁 Twoje rekomendacje AI',
+        recalc: 'Nowe pomysły',
+        change: 'Zmień parametry',
+        aibox: '✨ Szukasz czegoś konkretnego? Zapytaj Live AI:',
+        aiPh: 'np. lubi wędkarstwo, saunę i ostre sosy...',
+        aiLoading: '⏳ Live AI myśli...',
+        aiReady: '✅ Wygenerowano 5 świeżych pomysłów AI!',
+        aiFallback: '✨ Lista dopasowana lokalnie.',
+        amzBtn: 'Zobacz na Amazon.de *',
+        match: (p) => `${p}% dopasowania`,
+        aiTag: 'Live AI ✨',
+        copied: '🔗 Link skopiowany!',
+        saved: '❤️ Zapisano',
+        removed: 'Usunięto',
+        favTitle: '❤️ Ulubione',
+        favEmpty: 'Brak zapisanych prezentów. Kliknij ❤️ przy wybranym pomyśle.',
+        clear: 'Wyczyść',
+        dbInfo: (n) => `${n} pomysłów w bazie`,
+        genders: { all: '✨ Obojętnie', m: '👨 Mężczyzna / Chłopiec', f: '👩 Kobieta / Dziewczynka' },
+        relations: { partner: '❤️ Partner/ka', friend: '🥳 Przyjaciel', parents: '🏡 Rodzice', sibling: '👫 Rodzeństwo', colleague: '💼 Kolega z pracy', child: '🧒 Dziecko', grandparents: '🌟 Dziadkowie' },
+        occasions: { birthday: '🎂 Urodziny', christmas: '🎄 Święta', newyear: '🎆 Sylwester', wichteln: '🎅 Mikołajki', wedding: '💍 Ślub', housewarming: '🏠 Parapetówka', anniversary: '💐 Rocznica', justbecause: '✨ Bez okazji' },
+        hobbies: { auto: '🚗 Auto', tech: '📱 Technologia', kitchen: '☕ Kuchnia i kawa', grill: '🔥 Grill i ogród', sport: '🏋️ Sport', gaming: '🎮 Gaming', diy: '🔧 Majsterkowanie', cozy: '🕯️ Relaks i dom', travel: '✈️ Podróże', pets: '🐾 Zwierzęta', humor: '😂 Humor' },
+        steps: (s, minB, maxB) => [
+          `Analiza profilu: ${s.age} lat · ${I18N.pl.occasions[s.occasion]}`,
+          `Sprawdzanie budżetu ${minB}–${maxB} € i ocen 4★+`,
+          s.age < 18 ? 'Stosowanie filtra <18' : (s.prompt ? 'Live AI tworzy indywidualne pomysły...' : 'Dopasowanie hobby'),
+          'Przygotowanie 5 najlepszych prezentów'
+        ],
+        ...LEGAL_DE
+      },
+      uk: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Знайди ідеальний подарунок за секунди — спробуй KI-Geschenkfinder:',
+        shareAppCopied: '🔗 Посилання на додаток скопійовано!',
+        shareList: 'Поділитися списком',
+        pill: '✨ Розумний підбір на Amazon.de (4★+)',
+        h1: 'Ідеальний подарунок — без довгих пошуків',
+        lead: 'Обери профіль, привід, хобі та бюджет. ШІ проаналізує параметри й покаже 5 влучних ідей.',
+        who: 'Для кого шукаємо?',
+        ageLbl: 'Вік',
+        years: 'років',
+        minor: 'Захист 18- активний',
+        rel: 'Ким є ця людина?',
+        occ: 'Який привід?',
+        hob: 'Хобі та інтереси',
+        hobHint: 'Необов\'язково, можна кілька',
+        bud: 'Бажаний бюджет',
+        corridor: (a, b) => `Діапазон пошуку: ${a} € – ${b} €`,
+        promptLbl: 'Особлива підказка (одразу запускає Живий ШІ)',
+        promptPh: 'наприклад: любить еспресо, авто, мінімалізм...',
+        cta: 'Знайти подарунки',
+        disclosure: '* Як партнер Amazon я отримую комісію з покупок без жодних доплат для тебе (Tag: kigeschenkfinder-21).',
+        thinkTitle: '✨ ШІ аналізує профіль...',
+        thinkHead: 'ШІ підбирає найкращі ідеї...',
+        resTitle: '🎁 Рекомендації ШІ',
+        recalc: 'Нові ідеї',
+        change: 'Змінити параметри',
+        aibox: '✨ Потрібно точніше? Запитай Живий ШІ:',
+        aiPh: 'наприклад: любить риболовлю, сауну та гострі соуси...',
+        aiLoading: '⏳ Живий ШІ думає...',
+        aiReady: '✅ Згенеровано 5 свіжих ідей від ШІ!',
+        aiFallback: '✨ Підбірку уточнено локально.',
+        amzBtn: 'Дивитись на Amazon.de *',
+        match: (p) => `Збіг ${p}%`,
+        aiTag: 'Живий ШІ ✨',
+        copied: '🔗 Посилання скопійовано!',
+        saved: '❤️ Збережено',
+        removed: 'Видалено',
+        favTitle: '❤️ Обране',
+        favEmpty: 'Список порожній. Натисни ❤️ на ідеї, яка сподобалась.',
+        clear: 'Очистити',
+        dbInfo: (n) => `У базі ${n} ідей`,
+        genders: { all: '✨ Неважливо', m: '👨 Чоловік / Хлопчик', f: '👩 Жінка / Дівчинка' },
+        relations: { partner: '❤️ Партнер', friend: '🥳 Друг / Подруга', parents: '🏡 Батьки', sibling: '👫 Брат / Сестра', colleague: '💼 Колега', child: '🧒 Дитина', grandparents: '🌟 Дідусь / Бабуся' },
+        occasions: { birthday: '🎂 День народження', christmas: '🎄 Різдво', newyear: '🎆 Новий рік', wichteln: '🎅 Таємний Санта', wedding: '💍 Весілля', housewarming: '🏠 Новосілля', anniversary: '💐 Річниця', justbecause: '✨ Просто так' },
+        hobbies: { auto: '🚗 Авто', tech: '📱 Техніка', kitchen: '☕ Кухня і кава', grill: '🔥 Гриль і сад', sport: '🏋️ Спорт', gaming: '🎮 Геймінг', diy: '🔧 DIY та інструменти', cozy: '🕯️ Затишок і спа', travel: '✈️ Подорожі', pets: '🐾 Тварини', humor: '😂 Гумор' },
+        steps: (s, minB, maxB) => [
+          `Аналіз профілю: ${s.age} років · ${I18N.uk.occasions[s.occasion]}`,
+          `Перевірка бюджету ${minB}–${maxB} € та рейтингу 4★+`,
+          s.age < 18 ? 'Застосування фільтра 18-' : (s.prompt ? 'Живий ШІ генерує ідеї за запитом...' : 'Підбір за хобі'),
+          'Формування 5 найкращих ідей'
+        ],
+        ...LEGAL_DE
+      },
+      ro: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Găsește cadoul perfect în câteva secunde — încearcă KI-Geschenkfinder:',
+        shareAppCopied: '🔗 Link-ul aplicației a fost copiat!',
+        shareList: 'Distribuie lista',
+        pill: '✨ Selecție inteligentă pe Amazon.de (4★+)',
+        h1: 'Cadoul perfect — fără căutări nesfârșite',
+        lead: 'Alege vârsta, ocazia, hobby-urile și bugetul. AI-ul analizează profilul și îți arată 5 idei potrivite.',
+        who: 'Pentru cine cauți?',
+        ageLbl: 'Vârstă',
+        years: 'ani',
+        minor: 'Filtru <18 activ',
+        rel: 'Cine este persoana pentru tine?',
+        occ: 'Ce ocazie?',
+        hob: 'Hobby-uri și interese',
+        hobHint: 'Opțional, selecție multiplă',
+        bud: 'Buget dorit',
+        corridor: (a, b) => `Interval preț: ${a} € – ${b} €`,
+        promptLbl: 'Indiciu special (pornește direct Live AI)',
+        promptPh: 'ex. iubește espresso, conduce mult, stil minimalist...',
+        cta: 'Găsește cadouri',
+        disclosure: '* Ca partener Amazon, câștig din vânzările eligibile fără costuri suplimentare pentru tine (Tag: kigeschenkfinder-21).',
+        thinkTitle: '✨ AI analizează profilul...',
+        thinkHead: 'AI caută cele mai bune idei...',
+        resTitle: '🎁 Recomandările tale AI',
+        recalc: 'Idei noi',
+        change: 'Schimbă parametrii',
+        aibox: '✨ Vrei ceva mai specific? Întreabă Live AI:',
+        aiPh: 'ex. îi place pescuitul, sauna și sosurile picante...',
+        aiLoading: '⏳ Live AI gândește...',
+        aiReady: '✅ 5 idei noi generate de AI!',
+        aiFallback: '✨ Selecție rafinată local.',
+        amzBtn: 'Vezi pe Amazon.de *',
+        match: (p) => `${p}% Potrivire`,
+        aiTag: 'Live AI ✨',
+        copied: '🔗 Link copiat!',
+        saved: '❤️ Salvat',
+        removed: 'Eliminat',
+        favTitle: '❤️ Lista ta de favorite',
+        favEmpty: 'Niciun cadou salvat încă. Apasă ❤️ pe o idee preferată.',
+        clear: 'Golește',
+        dbInfo: (n) => `${n} idei pregătite`,
+        genders: { all: '✨ Oricine', m: '👨 Bărbat / Băiat', f: '👩 Femeie / Fată' },
+        relations: { partner: '❤️ Partener/ă', friend: '🥳 Prieten/ă', parents: '🏡 Părinți', sibling: '👫 Frați', colleague: '💼 Coleg/ă', child: '🧒 Copil', grandparents: '🌟 Bunici' },
+        occasions: { birthday: '🎂 Zi de naștere', christmas: '🎄 Crăciun', newyear: '🎆 Revelion', wichteln: '🎅 Secret Santa', wedding: '💍 Nuntă', housewarming: '🏠 Casă nouă', anniversary: '💐 Aniversare', justbecause: '✨ Fără ocazie' },
+        hobbies: { auto: '🚗 Auto', tech: '📱 Tehnologie', kitchen: '☕ Bucătărie & Cafea', grill: '🔥 Grătar & Grădină', sport: '🏋️ Sport', gaming: '🎮 Gaming', diy: '🔧 Bricolaj', cozy: '🕯️ Relaxare', travel: '✈️ Călătorii', pets: '🐾 Animale', humor: '😂 Umor' },
+        steps: (s, minB, maxB) => [
+          `Analiză profil: ${s.age} ani · ${I18N.ro.occasions[s.occasion]}`,
+          `Verificare buget ${minB}–${maxB} € și rating 4★+`,
+          s.age < 18 ? 'Aplicare filtru <18' : (s.prompt ? 'Live AI generează idei personalizate...' : 'Potrivire hobby-uri'),
+          'Pregătire top 5 cadouri'
+        ],
+        ...LEGAL_DE
+      },
+      it: {
+        shareAppTitle: '🎁 KI-Geschenkfinder',
+        shareAppText: '✨ Trova il regalo perfetto in pochi secondi — prova KI-Geschenkfinder:',
+        shareAppCopied: '🔗 Link dell\'app copiato!',
+        shareList: 'Condividi lista',
+        pill: '✨ Selezione smart per Amazon.de (4★+)',
+        h1: 'Il regalo perfetto — senza cercare ore',
+        lead: 'Scegli età, occasione, hobby e budget. La nostra IA analizza il profilo e ti propone 5 idee azzeccate.',
+        who: 'Per chi stai cercando?',
+        ageLbl: 'Età',
+        years: 'anni',
+        minor: 'Filtro <18 attivo',
+        rel: 'Che rapporto hai con questa persona?',
+        occ: 'Quale occasione?',
+        hob: 'Hobby e interessi',
+        hobHint: 'Opzionale, scelta multipla',
+        bud: 'Budget desiderato',
+        corridor: (a, b) => `Fascia di prezzo: ${a} € – ${b} €`,
+        promptLbl: 'Nota speciale (avvia subito Live IA)',
+        promptPh: 'es. ama l\'espresso, viaggia in auto, stile minimal...',
+        cta: 'Trova regali',
+        disclosure: '* In qualità di Affiliato Amazon ricevo un guadagno dagli acquisti idonei senza costi aggiuntivi per te (Tag: kigeschenkfinder-21).',
+        thinkTitle: '✨ L\'IA analizza il profilo...',
+        thinkHead: 'L\'IA sta creando idee regalo...',
+        resTitle: '🎁 I tuoi consigli IA',
+        recalc: 'Nuove idee',
+        change: 'Modifica parametri',
+        aibox: '✨ Vuoi qualcosa di più specifico? Chiedi a Live IA:',
+        aiPh: 'es. ama la pesca, la sauna e le salse piccanti...',
+        aiLoading: '⏳ Live IA sta pensando...',
+        aiReady: '✅ 5 nuove idee IA generate!',
+        aiFallback: '✨ Selezione affinata localmente.',
+        amzBtn: 'Vedi su Amazon.de *',
+        match: (p) => `${p}% Match`,
+        aiTag: 'Live IA ✨',
+        copied: '🔗 Link copiato!',
+        saved: '❤️ Salvato',
+        removed: 'Rimosso',
+        favTitle: '❤️ I tuoi preferiti',
+        favEmpty: 'Nessun regalo salvato. Tocca ❤️ su un\'idea che ti piace.',
+        clear: 'Svuota',
+        dbInfo: (n) => `${n} idee pronte`,
+        genders: { all: '✨ Qualsiasi', m: '👨 Uomo / Ragazzo', f: '👩 Donna / Ragazza' },
+        relations: { partner: '❤️ Partner', friend: '🥳 Amico/a', parents: '🏡 Genitori', sibling: '👫 Fratelli', colleague: '💼 Collega', child: '🧒 Bambino/a', grandparents: '🌟 Nonni' },
+        occasions: { birthday: '🎂 Compleanno', christmas: '🎄 Natale', newyear: '🎆 Capodanno', wichteln: '🎅 Secret Santa', wedding: '💍 Matrimonio', housewarming: '🏠 Nuova casa', anniversary: '💐 Anniversario', justbecause: '✨ Senza motivo' },
+        hobbies: { auto: '🚗 Auto', tech: '📱 Tech', kitchen: '☕ Cucina & Caffè', grill: '🔥 BBQ & Giardino', sport: '🏋️ Sport', gaming: '🎮 Gaming', diy: '🔧 Fai da te', cozy: '🕯️ Relax & Casa', travel: '✈️ Viaggi', pets: '🐾 Animali', humor: '😂 Umorismo' },
+        steps: (s, minB, maxB) => [
+          `Analisi profilo: ${s.age} anni · ${I18N.it.occasions[s.occasion]}`,
+          `Controllo budget ${minB}–${maxB} € e valutazioni 4★+`,
+          s.age < 18 ? 'Filtro <18 attivo' : (s.prompt ? 'Live IA genera idee su misura...' : 'Abbinamento hobby'),
+          'Selezione dei migliori 5 regali'
+        ],
+        ...LEGAL_DE
       }
     };
 
@@ -895,6 +1245,7 @@
     function renderFormControls() {
       const tr = t();
       document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
       $('btn-lang').textContent = `${currentLang.toUpperCase()} ▾`;
       document.querySelectorAll('.lang-opt').forEach(btn =>
         btn.classList.toggle('active', btn.dataset.setlang === currentLang)
@@ -996,7 +1347,7 @@
           score += matched * 22;
         }
         if (tokens.length) {
-          const blob = `${item.query} ${item.title.de} ${item.title.ru} ${item.title.en} ${item.reason.de} ${item.reason.ru}`.toLowerCase();
+          const blob = `${item.query} ${item.title.de} ${item.title.ru || ''} ${item.title.en || ''} ${item.reason.de} ${item.reason.ru || ''}`.toLowerCase();
           tokens.forEach(tok => { if (blob.includes(tok)) score += 28; });
         }
         if (recentlyShown.has(item.id)) score -= 26;
