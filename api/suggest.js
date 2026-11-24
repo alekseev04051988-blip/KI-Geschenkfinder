@@ -1,3 +1,129 @@
+let cachedGroqModels = null;
+let cachedGroqModelsAt = 0;
+
+async function getGroqModels(groqKey) {
+  if (cachedGroqModels && Date.now() - cachedGroqModelsAt < 30 * 60 * 1000) {
+    return cachedGroqModels;
+  }
+
+  try {
+    const res = await fetch('https://api.groq.com/openai/v1/models', {
+      headers: { 'Authorization': `Bearer ${groqKey}` },
+      signal: AbortSignal.timeout(5000)
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.error('Groq models list error:', res.status, errText.slice(0, 200));
+      return [];
+    }
+
+    const json = await res.json();
+    const list = Array.isArray(json?.data) ? json.data : [];
+
+    const excluded = /(whisper|tts|guard|shield|safeguard|embed|rerank|orpheus|playai|moderation|compound|canopylabs|prompt-guard|audio|speech|transcribe|image)/i;
+
+    const candidates = list
+      .filter((m) => m && typeof m.id === 'string' && m.active !== false && !excluded.test(m.id))
+      .map((m) => m.id);
+
+    const scoreModel = (id) => {
+      const s = id.toLowerCase();
+      if (s.includes('llama-4-maverick')) return 100;
+      if (s.includes('llama-4-scout')) return 95;
+      if (s.includes('llama-4')) return 90;
+      if (s.includes('gpt-oss-120b')) return 88;
+      if (s.includes('llama-3.3-70b')) return 85;
+      if (s.includes('kimi-k2')) return 82;
+      if (s.includes('gpt-oss-20b')) return 80;
+      if (s.includes('qwen3-32b') || s.includes('qwen-3')) return 78;
+      if (s.includes('70b')) return 75;
+      if (s.includes('llama-3.1-8b-instant')) return 70;
+      if (s.includes('llama')) return 65;
+      if (s.includes('qwen')) return 60;
+      if (s.includes('gemma')) return 55;
+      return 40;
+    };
+
+    candidates.sort((a, b) => scoreModel(b) - scoreModel(a));
+    console.log('Groq available chat models:', candidates.slice(0, 6).join(', '));
+
+    if (candidates.length > 0) {
+      cachedGroqModels = candidates.slice(0, 5);
+      cachedGroqModelsAt = Date.now();
+    }
+    return candidates.slice(0, 5);
+  } catch (err) {
+    console.error('Groq models fetch error:', err?.name || err?.message || err);
+    return [];
+  }
+}
+
+function parseGiftItems(rawText, isMinor) {
+  if (!rawText) return [];
+
+  const cleanedText = String(rawText)
+    .replace(/<think>[\s\S]*?<\/think>/gi, '')
+    .replace(/^```(?:json)?\s*/i, '')
+    .replace(/\s*```$/i, '')
+    .trim();
+
+  let parsed = null;
+  try {
+    parsed = JSON.parse(cleanedText);
+  } catch {
+    const arrMatch = cleanedText.match(/\[[\s\S]*\]/);
+    if (arrMatch) {
+      try {
+        parsed = JSON.parse(arrMatch[0]);
+      } catch {
+        parsed = null;
+      }
+    }
+    if (!parsed) {
+      const objMatch = cleanedText.match(/\{[\s\S]*\}/);
+      if (objMatch) {
+        try {
+          parsed = JSON.parse(objMatch[0]);
+        } catch {
+          parsed = [];
+        }
+      }
+    }
+  }
+
+  const rawList = Array.isArray(parsed)
+    ? parsed
+    : (parsed && typeof parsed === 'object'
+        ? (Object.values(parsed).find((v) => Array.isArray(v)) || [])
+        : []);
+
+  const bannedMinor = /(alkohol|whisky|wein|bier|gin|vodka|likör|messer|zigarre|vape|erotik)/i;
+
+  return rawList
+    .slice(0, 6)
+    .map((item, idx) => {
+      const cleanQuery = String(item.query || item.title || '')
+        .replace(/bestseller/gi, '')
+        .replace(/\d+\s?(€|eur|euro)/gi, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 65);
+      const safeEmoji = Array.from(String(item.emoji || '✨').trim()).slice(0, 4).join('') || '✨';
+      return {
+        id: `ai_${Date.now()}_${idx}`,
+        emoji: safeEmoji,
+        title: String(item.title || 'Geschenkidee').replace(/\d+\s?(€|eur|euro)/gi, '').trim().slice(0, 75),
+        reason: String(item.reason || '').replace(/\d+\s?(€|eur|euro)/gi, '').trim().slice(0, 145),
+        query: cleanQuery,
+        isAi: true
+      };
+    })
+    .filter((item) => item.query.length > 2)
+    .filter((item) => !(isMinor && bannedMinor.test(`${item.title} ${item.query} ${item.reason}`)))
+    .slice(0, 5);
+}
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -72,45 +198,55 @@ Geschenkprofil:
 - Zusatzwunsch des Nutzers: ${safePrompt || 'keiner'}
 `.trim();
 
-    let rawText = '';
-    let provider = '';
-
-    // 1. Основной движок: Groq (быстро и стабильно на бесплатном тарифе)
+    // 1. Основной движок: Groq с автовыбором доступной модели
     if (groqKey) {
-      try {
-        const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${groqKey}`
-          },
-          body: JSON.stringify({
-            model: 'llama-3.3-70b-versatile',
-            temperature: 0.8,
-            response_format: { type: 'json_object' },
-            messages: [
-              { role: 'system', content: systemInstruction },
-              { role: 'user', content: userPrompt }
-            ]
-          }),
-          signal: AbortSignal.timeout(10000)
-        });
+      const groqModels = await getGroqModels(groqKey);
+      const startedAt = Date.now();
 
-        if (groqRes.ok) {
+      for (const model of groqModels.slice(0, 3)) {
+        if (Date.now() - startedAt > 12000) break;
+
+        try {
+          const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${groqKey}`
+            },
+            body: JSON.stringify({
+              model,
+              temperature: 0.8,
+              messages: [
+                { role: 'system', content: systemInstruction },
+                { role: 'user', content: userPrompt }
+              ]
+            }),
+            signal: AbortSignal.timeout(9000)
+          });
+
+          if (!groqRes.ok) {
+            const errText = await groqRes.text();
+            console.error(`Groq API error (${model}):`, groqRes.status, errText.slice(0, 250));
+            continue;
+          }
+
           const groqData = await groqRes.json();
-          rawText = String(groqData?.choices?.[0]?.message?.content || '').trim();
-          provider = 'groq';
-        } else {
-          const errText = await groqRes.text();
-          console.error('Groq API error:', groqRes.status, errText.slice(0, 300));
+          const rawText = String(groqData?.choices?.[0]?.message?.content || '').trim();
+          const items = parseGiftItems(rawText, isMinor);
+
+          if (items.length > 0) {
+            return res.status(200).json({ items, provider: `groq:${model}` });
+          }
+
+          console.error(`Groq empty parse (${model}):`, rawText.slice(0, 250));
+        } catch (err) {
+          console.error(`Groq fetch error (${model}):`, err?.name || err?.message || err);
         }
-      } catch (err) {
-        console.error('Groq fetch error:', err?.name || err?.message || err);
       }
     }
 
-    // 2. Резерв: Gemini (строго 1 попытка, если Groq не сработал)
-    if (!rawText && geminiKey) {
+    // 2. Резерв: Gemini (1 попытка)
+    if (geminiKey) {
       try {
         const geminiRes = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(geminiKey)}`,
@@ -135,76 +271,22 @@ Geschenkprofil:
           const textParts = parts
             .filter((p) => !p.thought && typeof p.text === 'string')
             .map((p) => p.text);
-          rawText = String(textParts.length ? textParts.join('\n') : (parts[parts.length - 1]?.text || '')).trim();
-          provider = 'gemini';
+          const rawText = String(textParts.length ? textParts.join('\n') : (parts[parts.length - 1]?.text || '')).trim();
+          const items = parseGiftItems(rawText, isMinor);
+
+          if (items.length > 0) {
+            return res.status(200).json({ items, provider: 'gemini' });
+          }
         } else {
           const errText = await geminiRes.text();
-          console.error('Gemini fallback error:', geminiRes.status, errText.slice(0, 300));
+          console.error('Gemini fallback error:', geminiRes.status, errText.slice(0, 250));
         }
       } catch (err) {
         console.error('Gemini fallback fetch error:', err?.name || err?.message || err);
       }
     }
 
-    if (!rawText) {
-      return res.status(502).json({ error: 'Upstream AI error' });
-    }
-
-    const cleanedText = rawText
-      .replace(/^```(?:json)?\s*/i, '')
-      .replace(/\s*```$/i, '')
-      .trim();
-
-    let parsed = null;
-    try {
-      parsed = JSON.parse(cleanedText);
-    } catch {
-      const objMatch = cleanedText.match(/\{[\s\S]*\}/);
-      const arrMatch = cleanedText.match(/\[[\s\S]*\]/);
-      try {
-        parsed = objMatch ? JSON.parse(objMatch[0]) : (arrMatch ? JSON.parse(arrMatch[0]) : []);
-      } catch {
-        parsed = [];
-      }
-    }
-
-    const rawList = Array.isArray(parsed)
-      ? parsed
-      : (parsed && typeof parsed === 'object'
-          ? (Object.values(parsed).find((v) => Array.isArray(v)) || [])
-          : []);
-
-    const bannedMinor = /(alkohol|whisky|wein|bier|gin|vodka|likör|messer|zigarre|vape|erotik)/i;
-
-    const cleanItems = rawList
-      .slice(0, 6)
-      .map((item, idx) => {
-        const cleanQuery = String(item.query || item.title || '')
-          .replace(/bestseller/gi, '')
-          .replace(/\d+\s?(€|eur|euro)/gi, '')
-          .replace(/\s+/g, ' ')
-          .trim()
-          .slice(0, 65);
-        const safeEmoji = Array.from(String(item.emoji || '✨').trim()).slice(0, 4).join('') || '✨';
-        return {
-          id: `ai_${Date.now()}_${idx}`,
-          emoji: safeEmoji,
-          title: String(item.title || 'Geschenkidee').replace(/\d+\s?(€|eur|euro)/gi, '').trim().slice(0, 75),
-          reason: String(item.reason || '').replace(/\d+\s?(€|eur|euro)/gi, '').trim().slice(0, 145),
-          query: cleanQuery,
-          isAi: true
-        };
-      })
-      .filter((item) => item.query.length > 2)
-      .filter((item) => !(isMinor && bannedMinor.test(`${item.title} ${item.query} ${item.reason}`)))
-      .slice(0, 5);
-
-    if (!cleanItems.length) {
-      console.error('Empty parsed items:', provider, cleanedText.slice(0, 300));
-      return res.status(502).json({ error: 'Empty AI response' });
-    }
-
-    return res.status(200).json({ items: cleanItems, provider });
+    return res.status(502).json({ error: 'Upstream AI error' });
   } catch (error) {
     console.error('Suggest handler error:', error);
     return res.status(500).json({ error: 'Internal Server Error' });
