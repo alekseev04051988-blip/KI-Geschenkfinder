@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "KI Geschenkfinder — Interaktiver Geschenkideen-Finder für Amazon.de"
+  "description": "KI-Geschenkfinder",
+  "dependencies": {
+    "@vercel/og": "^0.6.2"
+  }
 }
