@@ -15,11 +15,107 @@ function slugToTitle(slug) {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+const SUPPORTED_LANGS = ['de', 'en', 'ru', 'tr', 'ar', 'pl', 'uk', 'ro', 'it'];
+
+const TEXTS = {
+  de: {
+    subtitle: 'Persönliche Ideen in Sekunden',
+    badge: 'Empfohlene Geschenkidee',
+    defaultReason: 'Passende Geschenkidee mit guten Bewertungen auf Amazon.de entdecken.',
+    amazonBtn: 'Auf Amazon.de ansehen *',
+    moreBtn: 'Eigene Geschenkidee finden',
+    shareBtn: 'Idee teilen',
+    copied: 'Link kopiert!',
+    disclaimer: '* Affiliate-Link: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Für dich entstehen keine Mehrkosten.'
+  },
+  en: {
+    subtitle: 'Personal gift ideas in seconds',
+    badge: 'Recommended Gift Idea',
+    defaultReason: 'Discover this top-rated gift idea on Amazon.de.',
+    amazonBtn: 'View on Amazon.de *',
+    moreBtn: 'Find your own gift idea',
+    shareBtn: 'Share idea',
+    copied: 'Link copied!',
+    disclaimer: '* Affiliate link: As an Amazon Associate I earn from qualifying purchases at no extra cost to you.'
+  },
+  ru: {
+    subtitle: 'Идеи подарков за секунды',
+    badge: 'Рекомендованный подарок',
+    defaultReason: 'Отличная идея подарка с высоким рейтингом на Amazon.de.',
+    amazonBtn: 'Смотреть на Amazon.de *',
+    moreBtn: 'Подобрать свой подарок',
+    shareBtn: 'Поделиться идеей',
+    copied: 'Ссылка скопирована!',
+    disclaimer: '* Партнёрская ссылка: как партнёр Amazon я получаю комиссию с покупок без доплат для тебя.'
+  },
+  tr: {
+    subtitle: 'Saniyeler içinde hediye fikirleri',
+    badge: 'Önerilen Hediye Fikri',
+    defaultReason: 'Amazon.de üzerinde yüksek puanlı harika bir hediye fikri.',
+    amazonBtn: 'Amazon.de\'de incele *',
+    moreBtn: 'Kendi hediyeni bul',
+    shareBtn: 'Fikri paylaş',
+    copied: 'Bağlantı kopyalandı!',
+    disclaimer: '* Ortaklık bağlantısı: Amazon iş ortağı olarak uygun satışlardan ek maliyet olmadan komisyon kazanıyorum.'
+  },
+  ar: {
+    subtitle: 'أفكار هدايا مخصصة في ثوانٍ',
+    badge: 'فكرة هدية مقترحة',
+    defaultReason: 'اكتشف هذه الهدية المميزة بتقييمات عالية على Amazon.de.',
+    amazonBtn: 'عرض على Amazon.de *',
+    moreBtn: 'ابحث عن هديتك الخاصة',
+    shareBtn: 'مشاركة الفكرة',
+    copied: 'تم نسخ الرابط!',
+    disclaimer: '* رابط تسويق بالعمولة: بصفتي شريكاً لأمازون، أحصل على عمولة من المبيعات المؤهلة دون أي تكلفة إضافية عليك.'
+  },
+  pl: {
+    subtitle: 'Pomysły na prezent w sekundy',
+    badge: 'Polecany pomysł na prezent',
+    defaultReason: 'Sprawdź ten świetnie oceniany pomysł na prezent na Amazon.de.',
+    amazonBtn: 'Zobacz na Amazon.de *',
+    moreBtn: 'Znajdź własny prezent',
+    shareBtn: 'Udostępnij',
+    copied: 'Link skopiowany!',
+    disclaimer: '* Link partnerski: jako partner Amazon zarabiam na kwalifikujących się zakupach bez dodatkowych kosztów dla Ciebie.'
+  },
+  uk: {
+    subtitle: 'Ідеї подарунків за секунди',
+    badge: 'Рекомендований подарунок',
+    defaultReason: 'Чудова ідея подарунка з високим рейтингом на Amazon.de.',
+    amazonBtn: 'Дивитись на Amazon.de *',
+    moreBtn: 'Підібрати свій подарунок',
+    shareBtn: 'Поділитися ідеєю',
+    copied: 'Посилання скопійовано!',
+    disclaimer: '* Партнерське посилання: як партнер Amazon я отримую комісію з покупок без жодних доплат для тебе.'
+  },
+  ro: {
+    subtitle: 'Idei de cadouri în câteva secunde',
+    badge: 'Idee de cadou recomandată',
+    defaultReason: 'Descoperă această idee de cadou cu recenzii excelente pe Amazon.de.',
+    amazonBtn: 'Vezi pe Amazon.de *',
+    moreBtn: 'Găsește propriul cadou',
+    shareBtn: 'Distribuie ideea',
+    copied: 'Link copiat!',
+    disclaimer: '* Link de afiliere: ca partener Amazon, câștig din vânzările eligibile fără costuri suplimentare pentru tine.'
+  },
+  it: {
+    subtitle: 'Idee regalo in pochi secondi',
+    badge: 'Idea regalo consigliata',
+    defaultReason: 'Scopri questa idea regalo molto apprezzata su Amazon.de.',
+    amazonBtn: 'Vedi su Amazon.de *',
+    moreBtn: 'Trova il tuo regalo',
+    shareBtn: 'Condividi idea',
+    copied: 'Link copiato!',
+    disclaimer: '* Link di affiliazione: in qualità di Affiliato Amazon ricevo un guadagno dagli acquisti idonei senza costi aggiuntivi per te.'
+  }
+};
+
 export default function handler(req, res) {
   const q = req.query || {};
-  const lang = ['de', 'ru', 'en'].includes(String(q.l || '').toLowerCase())
-    ? String(q.l).toLowerCase()
-    : 'de';
+  const rawLang = String(q.l || '').toLowerCase();
+  const lang = SUPPORTED_LANGS.includes(rawLang) ? rawLang : 'de';
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+  const texts = TEXTS[lang];
 
   const rawSlug = String(q.slug || '').slice(0, 80);
   const rawTitle = String(q.t || '').trim() || slugToTitle(rawSlug) || 'Geschenkidee';
@@ -38,42 +134,16 @@ export default function handler(req, res) {
 
   const host = req.headers['x-forwarded-host'] || req.headers.host || 'ki-geschenkfinder.vercel.app';
   const baseUrl = `https://${host}`;
-  const ogImage = `${baseUrl}/og-banner.jpg`;
-
-  const texts = {
-    de: {
-      subtitle: 'Persönliche Ideen in Sekunden',
-      badge: 'Empfohlene Geschenkidee',
-      defaultReason: 'Passende Geschenkidee mit guten Bewertungen auf Amazon.de entdecken.',
-      amazonBtn: 'Auf Amazon.de ansehen *',
-      moreBtn: 'Eigene Geschenkidee finden',
-      shareBtn: 'Idee teilen',
-      copied: 'Link kopiert!',
-      disclaimer: '* Affiliate-Link: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Für dich entstehen keine Mehrkosten.'
-    },
-    ru: {
-      subtitle: 'Идеи подарков за секунды',
-      badge: 'Рекомендованный подарок',
-      defaultReason: 'Отличная идея подарка с высоким рейтингом на Amazon.de.',
-      amazonBtn: 'Смотреть на Amazon.de *',
-      moreBtn: 'Подобрать свой подарок',
-      shareBtn: 'Поделиться идеей',
-      copied: 'Ссылка скопирована!',
-      disclaimer: '* Партнёрская ссылка: как партнёр Amazon я получаю комиссию с покупок без доплат для тебя.'
-    },
-    en: {
-      subtitle: 'Personal gift ideas in seconds',
-      badge: 'Recommended Gift Idea',
-      defaultReason: 'Discover this top-rated gift idea on Amazon.de.',
-      amazonBtn: 'View on Amazon.de *',
-      moreBtn: 'Find your own gift idea',
-      shareBtn: 'Share idea',
-      copied: 'Link copied!',
-      disclaimer: '* Affiliate link: As an Amazon Associate I earn from qualifying purchases at no extra cost to you.'
-    }
-  }[lang];
-
   const finalReason = reason || texts.defaultReason;
+
+  const ogParams = new URLSearchParams({
+    t: title,
+    r: finalReason,
+    e: emoji,
+    b: budgetText
+  });
+  const ogImage = `${baseUrl}/api/og?${ogParams.toString()}`;
+
   const ogTitle = `${emoji} ${title}${budgetText ? ` (${budgetText})` : ''} | KI-Geschenkfinder`;
   const ogDescription = `${finalReason} — Amazon.de (4★+)`;
 
@@ -83,7 +153,7 @@ export default function handler(req, res) {
   }).replace(/</g, '\\u003c');
 
   const html = `<!DOCTYPE html>
-<html lang="${lang}">
+<html lang="${lang}" dir="${dir}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,7 +165,7 @@ export default function handler(req, res) {
   <meta property="og:description" content="${escapeHtml(ogDescription)}" />
   <meta property="og:image" content="${escapeHtml(ogImage)}" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="675" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(ogTitle)}" />
   <meta name="twitter:description" content="${escapeHtml(ogDescription)}" />
@@ -121,6 +191,7 @@ export default function handler(req, res) {
       text-decoration: none;
       margin-bottom: 18px;
       justify-content: center;
+      direction: ltr;
     }
     .logo-box {
       width: 46px;
