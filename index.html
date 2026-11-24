@@ -18,6 +18,9 @@
   <meta name="twitter:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen." />
   <meta name="twitter:image" content="https://ki-geschenkfinder.vercel.app/og-banner.jpg?v=2" />
   <meta name="theme-color" content="#6d28d9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f6f7fb;
@@ -75,32 +78,32 @@
     .topbar {
       max-width: 720px;
       margin: 0 auto;
-      padding: 10px 16px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
     }
     .brand {
+      flex: 1;
+      min-width: 0;
       display: flex;
       align-items: center;
-      min-width: 0;
       text-decoration: none;
     }
-    .brand-img {
-      height: 40px;
-      width: auto;
-      max-width: 175px;
-      border-radius: 10px;
-      object-fit: cover;
+    .brand-svg {
+      width: 100%;
+      height: auto;
+      max-height: 46px;
       display: block;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.22);
+      overflow: visible;
+      filter: drop-shadow(0 3px 4px rgba(17, 24, 39, 0.24));
     }
-    .controls { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+    .controls { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
     .icon-btn {
-      height: 36px; padding: 0 9px; border-radius: 12px;
+      height: 34px; padding: 0 8px; border-radius: 11px;
       border: 1px solid var(--border); background: var(--surface);
-      color: var(--text); font-weight: 700; font-size: 0.8rem;
+      color: var(--text); font-weight: 700; font-size: 0.78rem;
       display: inline-flex; align-items: center; justify-content: center; gap: 4px; cursor: pointer;
       transition: transform .15s, border-color .15s;
     }
@@ -404,8 +407,41 @@
 <body>
   <div class="topbar-wrap">
     <header class="topbar">
-      <a class="brand" href="/">
-        <img class="brand-img" src="/og-banner.jpg?v=2" alt="KI-Geschenkfinder" />
+      <a class="brand" href="/" aria-label="KI-Geschenkfinder">
+        <svg class="brand-svg" viewBox="0 0 436 66" preserveAspectRatio="xMinYMid meet" role="img" aria-label="KI-Geschenkfinder">
+          <defs>
+            <linearGradient id="g-yel" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFE838" />
+              <stop offset="100%" stop-color="#FF8C00" />
+            </linearGradient>
+            <linearGradient id="g-cor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FF9A62" />
+              <stop offset="100%" stop-color="#FF4769" />
+            </linearGradient>
+            <linearGradient id="g-cyn" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5CF2FF" />
+              <stop offset="100%" stop-color="#00A8CC" />
+            </linearGradient>
+            <linearGradient id="g-pnk" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FF7AE0" />
+              <stop offset="100%" stop-color="#E11D8F" />
+            </linearGradient>
+          </defs>
+          <text
+            x="6"
+            y="49"
+            font-family="'Fredoka', 'Arial Rounded MT Bold', sans-serif"
+            font-weight="700"
+            font-size="46"
+            letter-spacing="-0.5"
+            stroke="#ffffff"
+            stroke-width="10"
+            stroke-linejoin="round"
+            paint-order="stroke fill"
+          >
+            <tspan fill="url(#g-yel)">KI</tspan><tspan fill="url(#g-cor)">-Ge</tspan><tspan fill="url(#g-cyn)">sc</tspan><tspan fill="url(#g-cor)">h</tspan><tspan fill="url(#g-pnk)">enk</tspan><tspan fill="url(#g-cyn)">fin</tspan><tspan fill="url(#g-yel)">der</tspan>
+          </text>
+        </svg>
       </a>
       <div class="controls">
         <button class="icon-btn" id="btn-share-app" title="App teilen">📤</button>
