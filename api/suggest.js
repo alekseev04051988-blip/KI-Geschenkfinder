@@ -124,6 +124,18 @@ function parseGiftItems(rawText, isMinor) {
     .slice(0, 5);
 }
 
+const LANG_NAMES = {
+  de: 'Deutsch',
+  en: 'Englisch',
+  ru: 'Russisch',
+  tr: 'Türkisch',
+  ar: 'Arabisch',
+  pl: 'Polnisch',
+  uk: 'Ukrainisch',
+  ro: 'Rumänisch',
+  it: 'Italienisch'
+};
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -162,9 +174,7 @@ export default async function handler(req, res) {
     const safePrompt = String(prompt || '').slice(0, 220).trim();
     const isMinor = safeAge < 18;
 
-    const targetLangName =
-      lang === 'ru' ? 'Russisch' :
-      lang === 'en' ? 'Englisch' : 'Deutsch';
+    const targetLangName = LANG_NAMES[String(lang || 'de').toLowerCase()] || 'Deutsch';
 
     const systemInstruction = `
 Du bist ein kreativer, praxisnaher Geschenkberater für den deutschen Markt (Amazon.de).
