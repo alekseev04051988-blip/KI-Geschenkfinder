@@ -1186,21 +1186,28 @@
         .slice(0, 55) || 'geschenkidee';
     }
 
+    function encodeGiftPayload(arr) {
+      const bytes = new TextEncoder().encode(JSON.stringify(arr));
+      let bin = '';
+      for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+      return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    }
+
     function buildGiftShareUrl(item, minPrice, maxPrice) {
       const origin = (window.location.origin && window.location.origin.startsWith('http'))
         ? window.location.origin
         : 'https://ki-geschenkfinder.vercel.app';
       const slug = makeSlug(item.query || item.title);
-      const params = new URLSearchParams({
-        t: String(item.title || '').slice(0, 80),
-        r: String(item.reason || '').slice(0, 150),
-        q: String(item.query || item.title || '').slice(0, 75),
-        e: String(item.emoji || '🎁'),
-        min: String(minPrice),
-        max: String(maxPrice),
-        l: currentLang
-      });
-      return `${origin}/idee/${slug}?${params.toString()}`;
+      const d = encodeGiftPayload([
+        String(item.title || '').slice(0, 80),
+        String(item.reason || '').slice(0, 140),
+        String(item.query || item.title || '').slice(0, 75),
+        String(item.emoji || '🎁'),
+        Number(minPrice) || 0,
+        Number(maxPrice) || 0,
+        currentLang
+      ]);
+      return `${origin}/idee/${slug}?d=${d}`;
     }
 
     async function nativeShare({ title, text, url, fallbackMsg }) {
