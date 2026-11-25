@@ -15,6 +15,18 @@ function slugToTitle(slug) {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+function decodePayload(d) {
+  if (!d) return null;
+  try {
+    const b64 = String(d).replace(/-/g, '+').replace(/_/g, '/');
+    const json = Buffer.from(b64, 'base64').toString('utf8');
+    const arr = JSON.parse(json);
+    return Array.isArray(arr) ? arr : null;
+  } catch {
+    return null;
+  }
+}
+
 const SUPPORTED_LANGS = ['de', 'en', 'ru', 'tr', 'ar', 'pl', 'uk', 'ro', 'it'];
 
 const TEXTS = {
@@ -112,20 +124,22 @@ const TEXTS = {
 
 export default function handler(req, res) {
   const q = req.query || {};
-  const rawLang = String(q.l || '').toLowerCase();
+  const packed = decodePayload(q.d);
+
+  const rawLang = String((packed ? packed[6] : q.l) || '').toLowerCase();
   const lang = SUPPORTED_LANGS.includes(rawLang) ? rawLang : 'de';
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
   const texts = TEXTS[lang];
 
   const rawSlug = String(q.slug || '').slice(0, 80);
-  const rawTitle = String(q.t || '').trim() || slugToTitle(rawSlug) || 'Geschenkidee';
+  const rawTitle = String((packed ? packed[0] : q.t) || '').trim() || slugToTitle(rawSlug) || 'Geschenkidee';
   const title = rawTitle.slice(0, 85);
-  const reason = String(q.r || '').trim().slice(0, 180);
-  const query = (String(q.q || '').trim() || title).slice(0, 80);
-  const emoji = Array.from(String(q.e || '🎁').trim()).slice(0, 4).join('') || '🎁';
+  const reason = String((packed ? packed[1] : q.r) || '').trim().slice(0, 180);
+  const query = (String((packed ? packed[2] : q.q) || '').trim() || title).slice(0, 80);
+  const emoji = Array.from(String((packed ? packed[3] : q.e) || '🎁').trim()).slice(0, 4).join('') || '🎁';
 
-  const min = parseInt(q.min, 10);
-  const max = parseInt(q.max, 10);
+  const min = parseInt(packed ? packed[4] : q.min, 10);
+  const max = parseInt(packed ? packed[5] : q.max, 10);
   const hasBudget = Number.isFinite(min) && Number.isFinite(max) && min > 0 && max >= min && max <= 1000;
   const budgetText = hasBudget ? `${min}–${max} €` : '';
 
@@ -164,8 +178,8 @@ export default function handler(req, res) {
   <meta property="og:title" content="${escapeHtml(ogTitle)}" />
   <meta property="og:description" content="${escapeHtml(ogDescription)}" />
   <meta property="og:image" content="${escapeHtml(ogImage)}" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="420" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(ogTitle)}" />
   <meta name="twitter:description" content="${escapeHtml(ogDescription)}" />
