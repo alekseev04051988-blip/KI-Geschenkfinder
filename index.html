@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" />
-    <script>
+  <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -451,7 +451,7 @@
         </svg>
       </a>
       <div class="controls">
-        <button class="icon-btn" id="btn-share-app" title="App teilen">📤</button>
+        <button class="icon-btn" id="btn-share-app" title="App teilen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
         <div class="lang-wrap">
           <button class="icon-btn" id="btn-lang" title="Sprache">DE ▾</button>
           <div class="lang-menu" id="lang-menu">
@@ -610,7 +610,7 @@
       </div>
       <div class="gift-list" id="fav-list"></div>
       <div class="res-controls" style="margin-top:14px">
-        <button class="sec-btn" id="btn-fav-share">📤 <span id="t-share-list">Liste teilen</span></button>
+        <button class="sec-btn" id="btn-fav-share"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><span id="t-share-list">Liste teilen</span></button>
         <button class="sec-btn" id="btn-fav-clear">🗑️ <span id="t-clear">Leeren</span></button>
       </div>
     </div>
@@ -1138,7 +1138,7 @@
         amzBtn: 'Vedi su Amazon.de *',
         match: (p) => `${p}% Match`,
         aiTag: 'Live IA ✨',
-        copied: '🔗 Link copiato!',
+        copied: '🔗 Link copiat!',
         saved: '❤️ Salvato',
         removed: 'Rimosso',
         favTitle: '❤️ I tuoi preferiti',
@@ -1429,7 +1429,7 @@
               <a class="amz-btn" href="${amazonUrl}" target="_blank" rel="noopener noreferrer sponsored">🛒 ${tr.amzBtn}</a>
               <button class="act-btn" data-copy="${encodeURIComponent(shareUrl)}" title="Link kopieren">📋</button>
               <button class="act-btn ${isFav ? 'faved' : ''}" data-fav="${encodeURIComponent(JSON.stringify(favPayload))}" title="Merken">${isFav ? '❤️' : '🤍'}</button>
-              <button class="act-btn" data-share="${encodeURIComponent(JSON.stringify(sharePayload))}" title="Teilen">📤</button>
+              <button class="act-btn" data-share="${encodeURIComponent(JSON.stringify(sharePayload))}" title="Teilen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </article>
         `;
