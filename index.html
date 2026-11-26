@@ -30,31 +30,18 @@
   <script>
     (function () {
       try {
-        var params = new URLSearchParams(window.location.search);
-        if (params.get('va-disable') === '1') {
-          localStorage.setItem('va-disable', '1');
-          window.__vaJustChanged = 'off';
-        } else if (params.get('va-disable') === '0') {
-          localStorage.removeItem('va-disable');
-          window.__vaJustChanged = 'on';
-        }
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('notrack') === '1') localStorage.setItem('ki_gf_notrack', '1');
+        if (params.get('notrack') === '0') localStorage.removeItem('ki_gf_notrack');
+        if (localStorage.getItem('ki_gf_notrack') === '1') return;
       } catch (e) {}
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      const s = document.createElement('script');
+      s.defer = true;
+      s.src = '/_vercel/insights/script.js';
+      document.head.appendChild(s);
     })();
-
-    window.va = window.va || function () {
-      (window.vaq = window.vaq || []).push(arguments);
-    };
-
-    window.va('beforeSend', function (event) {
-      try {
-        if (localStorage.getItem('va-disable') === '1') {
-          return null;
-        }
-      } catch (e) {}
-      return event;
-    });
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
   <style>
     :root {
       --bg: #f6f7fb;
@@ -714,7 +701,10 @@
   <script>
     const AFFILIATE_TAG = 'kigeschenkfinder-21';
     const STORAGE_FAV_KEY = 'ki_geschenkfinder_favs_v3';
+    const THEME_STORAGE_KEY = 'ki_gf_theme_v2';
     const SUPPORTED_LANGS = ['de', 'en', 'ru', 'tr', 'ar', 'pl', 'uk', 'ro', 'it'];
+
+    localStorage.removeItem('ki_gf_theme');
 
     function detectInitialLang() {
       const saved = localStorage.getItem('ki_gf_lang');
@@ -734,7 +724,19 @@
     let GIFTS_DB = [...FALLBACK_GIFTS];
     let recentlyShown = new Set();
     let currentLang = detectInitialLang();
-    let currentTheme = localStorage.getItem('ki_gf_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function getSystemTheme() {
+      return themeMedia.matches ? 'dark' : 'light';
+    }
+
+    function getSavedTheme() {
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      return (saved === 'dark' || saved === 'light') ? saved : null;
+    }
+
+    let currentTheme = getSavedTheme() || getSystemTheme();
 
     const state = {
       gender: 'all',
@@ -1380,7 +1382,17 @@
     function applyTheme() {
       document.documentElement.setAttribute('data-theme', currentTheme);
       $('btn-theme').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-      localStorage.setItem('ki_gf_theme', currentTheme);
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme) {
+        metaTheme.setAttribute('content', currentTheme === 'dark' ? '#0b0f19' : '#6d28d9');
+      }
+    }
+
+    function syncSystemTheme() {
+      if (!getSavedTheme()) {
+        currentTheme = getSystemTheme();
+        applyTheme();
+      }
     }
 
     function renderFormControls() {
@@ -1826,8 +1838,23 @@
     });
 
     $('btn-theme').addEventListener('click', () => {
-      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      currentTheme = nextTheme;
+      if (nextTheme === getSystemTheme()) {
+        localStorage.removeItem(THEME_STORAGE_KEY);
+      } else {
+        localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+      }
       applyTheme();
+    });
+
+    if (typeof themeMedia.addEventListener === 'function') {
+      themeMedia.addEventListener('change', syncSystemTheme);
+    } else if (typeof themeMedia.addListener === 'function') {
+      themeMedia.addListener(syncSystemTheme);
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) syncSystemTheme();
     });
 
     $('btn-favs').addEventListener('click', () => {
@@ -1865,6 +1892,41 @@
       $('legal-body').innerHTML = t().datenschutz;
       $('modal-legal').classList.add('open');
     });
+
+    // Скрытый переключатель исключения своих визитов из статистики Vercel
+    (function setupNoTrackToggle() {
+      const params = new URLSearchParams(window.location.search);
+      const nt = params.get('notrack');
+      if (nt === '1' || nt === '0') {
+        showToast(nt === '1' ? '🙈 Твои визиты скрыты из Vercel' : '📊 Учёт визитов в Vercel включён');
+        params.delete('notrack');
+        const cleanQuery = params.toString();
+        const cleanUrl = window.location.pathname + (cleanQuery ? '?' + cleanQuery : '') + window.location.hash;
+        window.history.replaceState({}, '', cleanUrl);
+      }
+
+      const badge = $('db-count-badge');
+      if (!badge) return;
+      let taps = 0;
+      let tapTimer = null;
+      badge.addEventListener('click', () => {
+        taps++;
+        clearTimeout(tapTimer);
+        if (taps >= 5) {
+          taps = 0;
+          const isDisabled = localStorage.getItem('ki_gf_notrack') === '1';
+          if (isDisabled) {
+            localStorage.removeItem('ki_gf_notrack');
+            showToast('📊 Учёт визитов в Vercel снова включён');
+          } else {
+            localStorage.setItem('ki_gf_notrack', '1');
+            showToast('🙈 Твои визиты скрыты из Vercel');
+          }
+          return;
+        }
+        tapTimer = setTimeout(() => { taps = 0; }, 1200);
+      });
+    })();
 
     // PWA Install Button logic
     (function setupPwaInstall() {
@@ -1913,12 +1975,6 @@
     applyTheme();
     renderFormControls();
     loadExternalDatabase();
-
-    if (window.__vaJustChanged === 'off') {
-      showToast('🙈 Аналитика отключена для этого устройства');
-    } else if (window.__vaJustChanged === 'on') {
-      showToast('📊 Аналитика снова включена');
-    }
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
