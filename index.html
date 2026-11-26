@@ -28,7 +28,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" />
   <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('va-disable') === '1') {
+          localStorage.setItem('va-disable', '1');
+          window.__vaJustChanged = 'off';
+        } else if (params.get('va-disable') === '0') {
+          localStorage.removeItem('va-disable');
+          window.__vaJustChanged = 'on';
+        }
+      } catch (e) {}
+    })();
+
+    window.va = window.va || function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+
+    window.va('beforeSend', function (event) {
+      try {
+        if (localStorage.getItem('va-disable') === '1') {
+          return null;
+        }
+      } catch (e) {}
+      return event;
+    });
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
@@ -1889,6 +1913,12 @@
     applyTheme();
     renderFormControls();
     loadExternalDatabase();
+
+    if (window.__vaJustChanged === 'off') {
+      showToast('🙈 Аналитика отключена для этого устройства');
+    } else if (window.__vaJustChanged === 'on') {
+      showToast('📊 Аналитика снова включена');
+    }
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
