@@ -18,12 +18,12 @@
   <meta name="twitter:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen." />
   <meta name="twitter:image" content="https://ki-geschenkfinder.vercel.app/og-banner.jpg?v=2" />
   <meta name="theme-color" content="#6d28d9" />
-    <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" sizes="192x192" href="/gift-192.png" />
   <link rel="apple-touch-icon" href="/gift-192.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Geschenkfinder" />
+  <meta name="apple-mobile-web-app-title" content="KI-Geschenke" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" />
@@ -165,6 +165,47 @@
     }
 
     .wrap { max-width: 720px; margin: 0 auto; padding: 12px 16px 32px; }
+
+    /* PWA Install Banner */
+    .pwa-install-wrap {
+      display: none;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .pwa-install-wrap.visible {
+      display: flex;
+    }
+    .pwa-install-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 58, 237, 0.35);
+      background: var(--accent-soft);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .pwa-install-btn:active {
+      transform: scale(0.97);
+    }
+    .pwa-install-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .pwa-install-close {
+      margin-inline-start: 4px;
+      opacity: 0.6;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 2px 4px;
+    }
 
     /* Hero */
     .hero { text-align: center; padding: 6px 4px 18px; }
@@ -479,6 +520,17 @@
   </div>
 
   <div class="wrap">
+    <div id="pwa-install-wrap" class="pwa-install-wrap">
+      <button id="pwa-install-btn" class="pwa-install-btn" type="button">
+        <svg class="pwa-install-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v12m0 0l-4-4m4 4l4-4" />
+          <path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+        </svg>
+        <span id="pwa-install-text">App auf Startbildschirm</span>
+        <span id="pwa-install-close" class="pwa-install-close" title="Ausblenden">✕</span>
+      </button>
+    </div>
+
     <section class="hero">
       <div class="pill" id="t-pill">✨ Smart-Auswahl für Amazon.de (4★+)</div>
       <h1 id="t-h1">Das perfekte Geschenk — ohne langes Suchen</h1>
@@ -674,6 +726,54 @@
     const LEGAL_DE = {
       impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI-Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
       datenschutz: `<strong>Datenschutz (DSGVO):</strong><br>Diese Website setzt keine Werbe-Cookies und kein Tracking-Pixel ein. Deine Merkliste sowie Sprach- und Theme-Wahl werden ausschließlich lokal im Browser (<code>localStorage</code>) gespeichert.<br><br>Wenn du die Live-KI-Suche nutzt, werden deine gewählten Filter und dein eingegebener Hinweis kurzzeitig zur Erstellung der Geschenkideen an den KI-Dienst übermittelt und nicht dauerhaft gespeichert. Beim Klick auf einen Amazon-Link gelten die Datenschutzbestimmungen von Amazon.de.`
+    };
+
+    const PWA_I18N = {
+      de: {
+        btn: 'App auf Startbildschirm',
+        ios: 'So installierst du die App auf dem iPhone:\nTippe unten in Safari auf „Teilen“ (Quadrat mit Pfeil nach oben) → „Zum Home-Bildschirm“.',
+        other: 'Falls du die Seite in Telegram geöffnet hast:\nTippe auf das Menü (⋮) → „Im Browser öffnen“ und wähle dort „App installieren“ oder „Zum Startbildschirm hinzufügen“.'
+      },
+      en: {
+        btn: 'Add App to Home Screen',
+        ios: 'How to install on iPhone:\nTap "Share" (square with up arrow) at the bottom of Safari → "Add to Home Screen".',
+        other: 'If opened inside Telegram:\nTap the menu (⋮) → "Open in browser", then choose "Install app" or "Add to Home screen" in your browser menu.'
+      },
+      ru: {
+        btn: 'Добавить на главный экран',
+        ios: 'Чтобы установить приложение на iPhone:\nНажмите «Поделиться» (квадрат со стрелкой вверх) внизу Safari → «На экран „Домой“».',
+        other: 'Если сайт открыт внутри Telegram:\nНажмите три точки (⋮) → «Открыть в браузере», а затем в меню браузера выберите «Установить приложение» или «Добавить на главный экран».'
+      },
+      uk: {
+        btn: 'Додати на головний екран',
+        ios: 'Щоб встановити додаток на iPhone:\nНатисніть «Поділитися» (квадрат зі стрілкою вгору) внизу Safari → «На екран Додому».',
+        other: 'Якщо ви відкрили сайт у Telegram:\nНатисніть три крапки (⋮) → «Відкрити в браузері», а потім у меню браузера оберіть «Встановити додаток» або «Додати на головний екран».'
+      },
+      tr: {
+        btn: 'Ana Ekrana Ekle',
+        ios: 'iPhone\'a kurmak için:\nSafari\'nin altındaki "Paylaş" (yukarı oklu kare) simgesine dokun → "Ana Ekrana Ekle".',
+        other: 'Sayfayı Telegram içinde açtıysan:\nMenüye (⋮) dokun → "Tarayıcıda aç", ardından tarayıcı menüsünden "Uygulamayı yükle" veya "Ana ekrana ekle" seçeneğini seç.'
+      },
+      ar: {
+        btn: 'إضافة للشاشة الرئيسية',
+        ios: 'لتثبيت التطبيق على iPhone:\nاضغط على "مشاركة" أسفل Safari ← "إضافة إلى الشاشة الرئيسية".',
+        other: 'إذا فتحت الموقع داخل Telegram:\nاضغط على القائمة (⋮) ← "فتح في المتصفح"، ثم اختر "تثبيت التطبيق" أو "إضافة إلى الشاشة الرئيسية".'
+      },
+      pl: {
+        btn: 'Dodaj do ekranu głównego',
+        ios: 'Jak zainstalować na iPhonie:\nKliknij „Udostępnij” (kwadrat ze strzałką) na dole Safari → „Do ekranu początkowego”.',
+        other: 'Jeśli otwarto w Telegramie:\nKliknij menu (⋮) → „Otwórz w przeglądarce”, a następnie wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.'
+      },
+      ro: {
+        btn: 'Adaugă pe ecranul principal',
+        ios: 'Cum instalezi pe iPhone:\nApasă „Partajează” (pătrat cu săgeată) jos în Safari → „Adaugă la ecranul principal”.',
+        other: 'Dacă ai deschis pagina în Telegram:\nApasă meniul (⋮) → „Deschide în browser”, apoi alege „Instalează aplicația” sau „Adaugă pe ecranul principal”.'
+      },
+      it: {
+        btn: 'Aggiungi alla schermata Home',
+        ios: 'Come installare su iPhone:\nTocca "Condividi" (quadrato con freccia) in basso in Safari → "Aggiungi alla schermata Home".',
+        other: 'Se aperto dentro Telegram:\nTocca il menu (⋮) → "Apri nel browser", poi scegli "Installa app" o "Aggiungi a schermata Home".'
+      }
     };
 
     const I18N = {
@@ -1267,6 +1367,8 @@
       document.querySelectorAll('.lang-opt').forEach(btn =>
         btn.classList.toggle('active', btn.dataset.setlang === currentLang)
       );
+      const pwaLabel = $('pwa-install-text');
+      if (pwaLabel) pwaLabel.textContent = (PWA_I18N[currentLang] || PWA_I18N.de).btn;
       $('t-pill').textContent = tr.pill;
       $('t-h1').textContent = tr.h1;
       $('t-lead').textContent = tr.lead;
@@ -1740,10 +1842,55 @@
       $('modal-legal').classList.add('open');
     });
 
+    // PWA Install Button logic
+    (function setupPwaInstall() {
+      const wrap = $('pwa-install-wrap');
+      const btn = $('pwa-install-btn');
+      const closeBtn = $('pwa-install-close');
+      if (!wrap || !btn) return;
+
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      if (isStandalone || sessionStorage.getItem('pwaBannerDismissed') === '1') return;
+
+      let deferredPrompt = null;
+      wrap.classList.add('visible');
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        wrap.classList.add('visible');
+      });
+
+      window.addEventListener('appinstalled', () => {
+        wrap.classList.remove('visible');
+        deferredPrompt = null;
+      });
+
+      closeBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        wrap.classList.remove('visible');
+        sessionStorage.setItem('pwaBannerDismissed', '1');
+      });
+
+      btn.addEventListener('click', async () => {
+        const pwaTr = PWA_I18N[currentLang] || PWA_I18N.de;
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') wrap.classList.remove('visible');
+          deferredPrompt = null;
+          return;
+        }
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        alert(isIos ? pwaTr.ios : pwaTr.other);
+      });
+    })();
+
     applyTheme();
     renderFormControls();
     loadExternalDatabase();
-        if ('serviceWorker' in navigator) {
+
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
