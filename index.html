@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="🎁 KI-Geschenkfinder — Persönliche Ideen in Sekunden" />
   <meta name="twitter:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen." />
   <meta name="twitter:image" content="https://ki-geschenkfinder.vercel.app/og-banner.jpg?v=2" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#6d28d9" />
   <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" sizes="192x192" href="/gift-192.png" />
@@ -44,6 +45,7 @@
   </script>
   <style>
     :root {
+      color-scheme: light dark;
       --bg: #f6f7fb;
       --surface: #ffffff;
       --surface-2: #f1f3f9;
@@ -59,7 +61,11 @@
       --shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
       --radius: 20px;
     }
+    [data-theme="light"] {
+      color-scheme: light;
+    }
     [data-theme="dark"] {
+      color-scheme: dark;
       --bg: #0b0f19;
       --surface: #131a2a;
       --surface-2: #1b2438;
@@ -70,6 +76,20 @@
       --accent-2: #f472b6;
       --accent-soft: rgba(139, 92, 246, 0.18);
       --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0b0f19;
+        --surface: #131a2a;
+        --surface-2: #1b2438;
+        --text: #f3f6fc;
+        --muted: #98a4bc;
+        --border: rgba(255, 255, 255, 0.09);
+        --accent: #8b5cf6;
+        --accent-2: #f472b6;
+        --accent-soft: rgba(139, 92, 246, 0.18);
+        --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      }
     }
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     html, body {
@@ -281,6 +301,9 @@
       background: rgba(16, 185, 129, 0.14); color: #059669;
     }
     [data-theme="dark"] .safe-badge { color: #34d399; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .safe-badge { color: #34d399; }
+    }
     input[type="range"] {
       width: 100%; height: 8px; border-radius: 999px; appearance: none;
       background: var(--surface-2); outline: none; accent-color: var(--accent);
@@ -409,6 +432,9 @@
       background: rgba(16, 185, 129, 0.14); color: #059669;
     }
     [data-theme="dark"] .match-badge { color: #34d399; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .match-badge { color: #34d399; }
+    }
     .ai-badge {
       font-size: 0.71rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;
       background: var(--accent-soft); color: var(--accent);
@@ -736,7 +762,9 @@
       return (saved === 'dark' || saved === 'light') ? saved : null;
     }
 
-    let currentTheme = getSavedTheme() || getSystemTheme();
+    function getEffectiveTheme() {
+      return getSavedTheme() || getSystemTheme();
+    }
 
     const state = {
       gender: 'all',
@@ -1380,17 +1408,22 @@
     }
 
     function applyTheme() {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-      $('btn-theme').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+      const saved = getSavedTheme();
+      const effective = saved || getSystemTheme();
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+      $('btn-theme').textContent = effective === 'dark' ? '☀️' : '🌙';
       const metaTheme = document.querySelector('meta[name="theme-color"]');
       if (metaTheme) {
-        metaTheme.setAttribute('content', currentTheme === 'dark' ? '#0b0f19' : '#6d28d9');
+        metaTheme.setAttribute('content', effective === 'dark' ? '#0b0f19' : '#6d28d9');
       }
     }
 
     function syncSystemTheme() {
       if (!getSavedTheme()) {
-        currentTheme = getSystemTheme();
         applyTheme();
       }
     }
@@ -1838,8 +1871,7 @@
     });
 
     $('btn-theme').addEventListener('click', () => {
-      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      currentTheme = nextTheme;
+      const nextTheme = getEffectiveTheme() === 'dark' ? 'light' : 'dark';
       if (nextTheme === getSystemTheme()) {
         localStorage.removeItem(THEME_STORAGE_KEY);
       } else {
