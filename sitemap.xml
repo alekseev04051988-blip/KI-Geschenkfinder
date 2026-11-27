@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ki-geschenkfinder.vercel.app/</loc>
-    <lastmod>2026-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/18-geburtstag</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/25-geburtstag</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/30-geburtstag</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/40-geburtstag</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/50-geburtstag</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/60-geburtstag</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/wichteln-unter-15-euro</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/wichteln-unter-20-euro</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/weihnachten-eltern</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/weihnachten-kollegen</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/weihnachten-mann</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/weihnachten-frau</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/autofahrer</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/kaffeeliebhaber</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/grillfans</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/gamer</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/einzug</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/podarok-muzhchine-25-let</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/podarok-kollege-do-20-evro</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ki-geschenkfinder.vercel.app/geschenke/podarki-na-rozhdestvo-germaniya</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
