@@ -6,6 +6,7 @@
   <meta name="google-site-verification" content="H-F1WaVoec-OMpGqBd1YnuE9poeYj6c-1JYgB2mECMY" />
   <title>KI-Geschenkfinder — Persönliche Ideen in Sekunden</title>
   <meta name="description" content="Finde mit dem KI-Geschenkfinder in wenigen Sekunden passende, kreative Geschenkideen für Geburtstag, Weihnachten, Wichteln & mehr — perfekt im Wunschbudget." />
+  <link rel="canonical" href="https://ki-geschenkfinder.vercel.app/" />
   <meta property="og:site_name" content="KI-Geschenkfinder" />
   <meta property="og:title" content="🎁 KI-Geschenkfinder — Persönliche Ideen in Sekunden" />
   <meta property="og:description" content="Alter, Anlass, Hobbys & Budget wählen — die KI findet sofort 5 passende Geschenkideen für Amazon.de (4★+)." />
@@ -29,6 +30,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "KI-Geschenkfinder",
+        "url": "https://ki-geschenkfinder.vercel.app/",
+        "applicationCategory": "ShoppingApplication",
+        "operatingSystem": "Web",
+        "inLanguage": ["de", "en", "ru", "tr", "ar", "pl", "uk", "ro", "it"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "description": "Kostenloser KI-Geschenkfinder für persönliche Geschenkideen nach Alter, Anlass, Hobbys und Wunschbudget."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie funktioniert der KI-Geschenkfinder?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Wähle Alter, Beziehung, Anlass, Hobbys und Wunschbudget. Der KI-Geschenkfinder schlägt dir sofort 5 passende Geschenkideen mit Amazon.de-Filter ab 4 Sternen vor." }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist der KI-Geschenkfinder kostenlos?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja, die Nutzung ist komplett kostenlos und ohne Registrierung möglich. Die Finanzierung erfolgt über Amazon-Partnerlinks ohne Mehrkosten für dich." }
+          },
+          {
+            "@type": "Question",
+            "name": "Für welche Anlässe finde ich Geschenkideen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Du findest passende Ideen für Geburtstage (z. B. 18., 25., 30., 40., 50., 60.), Weihnachten, Wichteln unter 15 oder 20 Euro, Einzug, Hochzeit und Jahrestage." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <script>
     (function () {
       try {
@@ -477,6 +515,28 @@
     }
     .ai-status { font-size: 0.78rem; color: var(--muted); margin-top: 7px; }
 
+    /* SEO Collapsible Guides & FAQ */
+    .seo-acc { display: grid; gap: 8px; margin: 14px 0 6px; }
+    .seo-acc details {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 11px 14px;
+    }
+    .seo-acc summary {
+      font-size: 0.84rem; font-weight: 700; color: var(--muted);
+      cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
+    }
+    .seo-acc summary::-webkit-details-marker { display: none; }
+    .seo-acc summary::after { content: '▾'; font-size: 0.8rem; opacity: 0.7; }
+    .seo-acc details[open] summary::after { content: '▴'; }
+    .seo-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .seo-link {
+      text-decoration: none; font-size: 0.77rem; font-weight: 700;
+      color: var(--text); background: var(--surface-2); border: 1px solid var(--border);
+      padding: 5px 10px; border-radius: 999px;
+    }
+    .seo-faq-list { margin-top: 10px; display: grid; gap: 8px; font-size: 0.82rem; color: var(--muted); }
+    .seo-faq-list strong { color: var(--text); display: block; margin-bottom: 2px; }
+
     /* Footer */
     footer {
       margin-top: 10px; text-align: center; font-size: 0.77rem; color: var(--muted);
@@ -642,6 +702,44 @@
         <input type="text" class="hint-input" id="main-hint" maxlength="160" placeholder="z.B. liebt Espresso, fährt viel Auto, mag minimalistische Dinge..." />
       </section>
     </main>
+
+    <!-- Collapsible SEO Guides & FAQ -->
+    <section class="seo-acc" aria-label="Geschenk-Ratgeber und FAQ">
+      <details>
+        <summary>📚 Beliebte Geschenk-Ratgeber (Alter, Wichteln, Weihnachten & Hobbys)</summary>
+        <div class="seo-links">
+          <a class="seo-link" href="/geschenke/18-geburtstag">18. Geburtstag</a>
+          <a class="seo-link" href="/geschenke/25-geburtstag">25. Geburtstag</a>
+          <a class="seo-link" href="/geschenke/30-geburtstag">30. Geburtstag</a>
+          <a class="seo-link" href="/geschenke/40-geburtstag">40. Geburtstag</a>
+          <a class="seo-link" href="/geschenke/50-geburtstag">50. Geburtstag</a>
+          <a class="seo-link" href="/geschenke/60-geburtstag">60. Geburtstag</a>
+          <a class="seo-link" href="/geschenke/wichteln-unter-15-euro">Wichteln unter 15 €</a>
+          <a class="seo-link" href="/geschenke/wichteln-unter-20-euro">Wichteln unter 20 €</a>
+          <a class="seo-link" href="/geschenke/weihnachten-eltern">Weihnachten Eltern</a>
+          <a class="seo-link" href="/geschenke/weihnachten-kollegen">Weihnachten Kollegen</a>
+          <a class="seo-link" href="/geschenke/weihnachten-mann">Weihnachten Mann</a>
+          <a class="seo-link" href="/geschenke/weihnachten-frau">Weihnachten Frau</a>
+          <a class="seo-link" href="/geschenke/autofahrer">Autofahrer</a>
+          <a class="seo-link" href="/geschenke/kaffeeliebhaber">Kaffeeliebhaber</a>
+          <a class="seo-link" href="/geschenke/grillfans">Grillfans</a>
+          <a class="seo-link" href="/geschenke/gamer">Gamer</a>
+          <a class="seo-link" href="/geschenke/einzug">Einzug</a>
+          <a class="seo-link" href="/geschenke/podarok-muzhchine-25-let">Подарок мужчине 25 лет</a>
+          <a class="seo-link" href="/geschenke/podarok-kollege-do-20-evro">Подарок коллеге до 20 €</a>
+          <a class="seo-link" href="/geschenke/podarki-na-rozhdestvo-germaniya">Подарки на Рождество (DE)</a>
+          <a class="seo-link" href="/geschenke">Alle Ratgeber →</a>
+        </div>
+      </details>
+      <details>
+        <summary>❓ Häufige Fragen zum KI-Geschenkfinder</summary>
+        <div class="seo-faq-list">
+          <div><strong>Wie funktioniert der KI-Geschenkfinder?</strong>Wähle Alter, Beziehung, Anlass, Hobbys und Budget. Unsere KI prüft passende Ideen und zeigt dir 5 Treffer mit Amazon.de-Bewertungsfilter (4★+).</div>
+          <div><strong>Kostet der Service etwas?</strong>Nein, die Nutzung ist komplett kostenlos und ohne Anmeldung. Für dich entstehen über die markierten Amazon-Links keine Mehrkosten.</div>
+          <div><strong>Kann ich auch sehr spezielle Ideen suchen?</strong>Ja — tippe einfach im Feld „Besonderer Hinweis“ konkrete Hobbys oder Vorlieben ein, und die Live-KI erstellt individuelle Vorschläge.</div>
+        </div>
+      </details>
+    </section>
 
     <footer>
       <div id="t-disclosure">* Als Amazon-Partner verdiene ich an qualifizierten Verkäufen (Tag: kigeschenkfinder-21). Für dich entstehen keine Mehrkosten.</div>
@@ -1299,7 +1397,7 @@
         amzBtn: 'Vedi su Amazon.de *',
         match: (p) => `${p}% Match`,
         aiTag: 'Live IA ✨',
-        copied: '🔗 Link copiat!',
+        copied: '🔗 Link copiato!',
         saved: '❤️ Salvato',
         removed: 'Rimosso',
         favTitle: '❤️ I tuoi preferiti',
@@ -1323,6 +1421,29 @@
     const $ = (id) => document.getElementById(id);
 
     function t() { return I18N[currentLang] || I18N.de; }
+
+    function applyUrlPresets() {
+      const p = new URLSearchParams(window.location.search);
+      const lang = p.get('lang');
+      if (lang && SUPPORTED_LANGS.includes(lang)) currentLang = lang;
+      const gender = p.get('gender');
+      if (gender && ['all', 'm', 'f'].includes(gender)) state.gender = gender;
+      const age = Number(p.get('age'));
+      if (Number.isFinite(age) && age >= 3 && age <= 85) state.age = Math.round(age);
+      const rel = p.get('rel');
+      if (rel && I18N.de.relations[rel]) state.relation = rel;
+      const occ = p.get('occ');
+      if (occ && I18N.de.occasions[occ]) state.occasion = occ;
+      const bud = Number(p.get('bud'));
+      if (Number.isFinite(bud) && bud >= 10 && bud <= 200) state.budget = Math.round(bud / 5) * 5;
+      const hob = p.get('hob');
+      if (hob) {
+        state.hobbies.clear();
+        hob.split(',').forEach(h => {
+          if (I18N.de.hobbies[h]) state.hobbies.add(h);
+        });
+      }
+    }
 
     function getBudgetBounds() {
       const minB = Math.max(5, Math.round(state.budget * (1 - state.tolerance)));
@@ -2005,6 +2126,7 @@
       });
     })();
 
+    applyUrlPresets();
     applyTheme();
     renderFormControls();
     loadExternalDatabase();
