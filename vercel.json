@@ -1,8 +1,21 @@
 {
+  "functions": {
+    "api/geschenke.js": {
+      "includeFiles": "gifts.json"
+    }
+  },
   "rewrites": [
     {
       "source": "/idee/:slug",
       "destination": "/api/g?slug=:slug"
+    },
+    {
+      "source": "/geschenke",
+      "destination": "/api/geschenke"
+    },
+    {
+      "source": "/geschenke/:slug",
+      "destination": "/api/geschenke?slug=:slug"
     }
   ]
 }
