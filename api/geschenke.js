@@ -436,7 +436,7 @@ function isSimilarGift(candidate, chosenList) {
     let shared = 0;
     for (const w of prevTitleWords) {
       if (candTitleWords.has(w)) {
-        if (w.length >= 7) return true; // Strong match on distinctive noun (e.g. tassenwärmer, kaffeemühle)
+        if (w.length >= 7) return true;
         shared++;
       }
     }
@@ -478,7 +478,6 @@ function selectGifts(gifts, page, dayKey) {
       page.hobbies.forEach(h => {
         if (item.hobbies.includes(h)) hobbyHits++;
       });
-      // Cap hobby bonus so multi-tagged items don't monopolize general pages
       score += isHobbyPage ? hobbyHits * 34 : Math.min(22, hobbyHits * 14);
     }
 
@@ -488,11 +487,9 @@ function selectGifts(gifts, page, dayKey) {
       page.keywords.forEach(kw => {
         if (blob.includes(kw)) kwBonus += 10;
       });
-      // Cap keyword bonus so one niche (e.g. coffee) can't dominate age guides
       score += Math.min(isHobbyPage ? 28 : 16, kwBonus);
     }
 
-    // Deterministic daily rotation across good candidates
     const dailyJitter = hashUnit(`${dayKey}|${page.slug}|${item.id}`) * 24;
     return { item, score: score + dailyJitter };
   });
@@ -503,7 +500,6 @@ function selectGifts(gifts, page, dayKey) {
   const hobbyCounts = Object.create(null);
   const maxPerHobby = isHobbyPage ? 8 : 2;
 
-  // Pass 1: strict diversity + anti-duplicate
   for (const { item } of scored) {
     if (chosen.length >= 8) break;
     if (isSimilarGift(item, chosen)) continue;
@@ -513,7 +509,6 @@ function selectGifts(gifts, page, dayKey) {
     hobbyCounts[primaryHobby] = (hobbyCounts[primaryHobby] || 0) + 1;
   }
 
-  // Pass 2: relax hobby cap if needed, still keep anti-duplicate
   if (chosen.length < 8) {
     for (const { item } of scored) {
       if (chosen.length >= 8) break;
@@ -734,7 +729,7 @@ function renderHubHtml() {
       <p>Unser KI-Geschenkfinder kombiniert Alter, Anlass, Budget und deine eigene Idee in Sekunden.</p>
       <a class="cta-big" href="/">✨ Persönliche Geschenke finden</a>
     </div>
-    <footer>* Als Amazon-Partner verdiene ich an qualifizierten Verkäufen (Tag: ${AFFILIATE_TAG}). <a href="/">Zur Startseite</a></footer>
+    <footer>* Als Amazon-Partner verdiene ich an qualifizierten Verkäufen (Tag: ${AFFILIATE_TAG}). <a href="/">Zur Startseite</a> · <a href="/impressum" rel="nofollow">Impressum</a> · <a href="/datenschutz" rel="nofollow">Datenschutz</a></footer>
   </main>
 </body>
 </html>`;
@@ -966,7 +961,7 @@ function renderGuideHtml(page, items, dayKey) {
 
     <footer>
       <div>${labels.disclosure}</div>
-      <div style="margin-top:8px"><a href="/">${labels.backHome}</a> · <a href="/geschenke">${labels.guides}</a></div>
+      <div style="margin-top:8px"><a href="/">${labels.backHome}</a> · <a href="/geschenke">${labels.guides}</a> · <a href="/impressum" rel="nofollow">Impressum</a> · <a href="/datenschutz" rel="nofollow">Datenschutz</a></div>
     </footer>
   </main>
 
