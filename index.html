@@ -744,8 +744,8 @@
     <footer>
       <div id="t-disclosure">* Als Amazon-Partner verdiene ich an qualifizierten Verkäufen (Tag: kigeschenkfinder-21). Für dich entstehen keine Mehrkosten.</div>
       <div class="foot-links">
-        <button class="link-btn" id="open-impressum">Impressum</button>
-        <button class="link-btn" id="open-datenschutz">Datenschutz</button>
+        <a class="link-btn" href="/impressum" rel="nofollow">Impressum</a>
+        <a class="link-btn" href="/datenschutz" rel="nofollow">Datenschutz</a>
         <span id="db-count-badge"></span>
       </div>
     </footer>
@@ -810,17 +810,6 @@
     </div>
   </div>
 
-  <!-- Legal Modal -->
-  <div class="overlay" id="modal-legal">
-    <div class="modal">
-      <div class="modal-head">
-        <div class="modal-title" id="legal-title">Impressum</div>
-        <button class="close-btn" data-close="modal-legal">✕</button>
-      </div>
-      <div id="legal-body" style="font-size:0.86rem;color:var(--muted);line-height:1.6"></div>
-    </div>
-  </div>
-
   <div class="toast" id="toast"></div>
 
   <script>
@@ -874,11 +863,6 @@
       budget: 35,
       tolerance: 0.20,
       prompt: ''
-    };
-
-    const LEGAL_DE = {
-      impressum: `<strong>Angaben gemäß § 5 DDG:</strong><br>KI-Geschenkfinder<br>Verantwortlich: Betreiber-Name (Platzhalter)<br>Postfach 1234, 63738 Musterstadt, Deutschland<br>E-Mail: kontakt@ki-geschenkfinder-beispiel.de<br><br><strong>Hinweis zum Amazon-Partnerprogramm:</strong><br>Der Betreiber dieser Website ist Teilnehmer des Amazon EU-Partnerprogramms (Tag: <code>kigeschenkfinder-21</code>). Durch mit * gekennzeichnete Links können Werbekostenerstattungen erzielt werden, ohne dass sich der Preis für dich ändert.`,
-      datenschutz: `<strong>Datenschutz (DSGVO):</strong><br>Diese Website setzt keine Werbe-Cookies und kein Tracking-Pixel ein. Deine Merkliste sowie Sprach- und Theme-Wahl werden ausschließlich lokal im Browser (<code>localStorage</code>) gespeichert.<br><br>Wenn du die Live-KI-Suche nutzt, werden deine gewählten Filter und dein eingegebener Hinweis kurzzeitig zur Erstellung der Geschenkideen an den KI-Dienst übermittelt und nicht dauerhaft gespeichert. Beim Klick auf einen Amazon-Link gelten die Datenschutzbestimmungen von Amazon.de.`
     };
 
     const PWA_I18N = {
@@ -981,8 +965,7 @@
           `Preis-Korridor ${minB}–${maxB} € & 4★+ Qualität prüfen`,
           s.age < 18 ? 'Jugendschutz-Filter (<18) strikt anwenden' : (s.prompt ? 'Live-KI erstellt individuelle Ideen...' : 'Interessen & Originalität abgleichen'),
           'Top 5 Geschenkideen zusammenstellen'
-        ],
-        ...LEGAL_DE
+        ]
       },
       en: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1035,8 +1018,7 @@
           `Checking €${minB}–€${maxB} range & 4★+ rating`,
           s.age < 18 ? 'Enforcing strict under-18 safety filter' : (s.prompt ? 'Live AI generating custom ideas...' : 'Matching hobbies & uniqueness'),
           'Compiling top 5 gift recommendations'
-        ],
-        ...LEGAL_DE
+        ]
       },
       ru: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1089,8 +1071,7 @@
           `Проверка бюджета ${minB}–${maxB} € и рейтинга 4★+`,
           s.age < 18 ? 'Применение строгого фильтра 18-' : (s.prompt ? 'Живой ИИ придумывает идеи по запросу...' : 'Сопоставление хобби и оригинальности'),
           'Формирование 5 лучших рекомендаций'
-        ],
-        ...LEGAL_DE
+        ]
       },
       tr: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1143,8 +1124,7 @@
           `${minB}–${maxB} € bütçe ve 4★+ kalite kontrolü`,
           s.age < 18 ? '18 yaş altı filtresi uygulanıyor' : (s.prompt ? 'Canlı Yapay Zeka özel fikirler üretiyor...' : 'Hobiler eşleştiriliyor'),
           'En iyi 5 hediye hazırlanıyor'
-        ],
-        ...LEGAL_DE
+        ]
       },
       ar: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1197,8 +1177,7 @@
           `فحص الميزانية ${minB}–${maxB} € وتقييم 4★+`,
           s.age < 18 ? 'تطبيق فلتر الحماية تحت 18 سنة' : (s.prompt ? 'الذكاء الاصطناعي يبتكر أفكاراً مخصصة...' : 'مطابقة الهوايات والتميز'),
           'تجهيز أفضل 5 هدايا لك'
-        ],
-        ...LEGAL_DE
+        ]
       },
       pl: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1251,8 +1230,7 @@
           `Sprawdzanie budżetu ${minB}–${maxB} € i ocen 4★+`,
           s.age < 18 ? 'Stosowanie filtra <18' : (s.prompt ? 'Live AI tworzy indywidualne pomysły...' : 'Dopasowanie hobby'),
           'Przygotowanie 5 najlepszych prezentów'
-        ],
-        ...LEGAL_DE
+        ]
       },
       uk: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1305,8 +1283,7 @@
           `Перевірка бюджету ${minB}–${maxB} € та рейтингу 4★+`,
           s.age < 18 ? 'Застосування фільтра 18-' : (s.prompt ? 'Живий ШІ генерує ідеї за запитом...' : 'Підбір за хобі'),
           'Формування 5 найкращих ідей'
-        ],
-        ...LEGAL_DE
+        ]
       },
       ro: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1359,8 +1336,7 @@
           `Verificare buget ${minB}–${maxB} € și rating 4★+`,
           s.age < 18 ? 'Aplicare filtru <18' : (s.prompt ? 'Live AI generează idei personalizate...' : 'Potrivire hobby-uri'),
           'Pregătire top 5 cadouri'
-        ],
-        ...LEGAL_DE
+        ]
       },
       it: {
         shareAppTitle: '🎁 KI-Geschenkfinder',
@@ -1413,8 +1389,7 @@
           `Controllo budget ${minB}–${maxB} € e valutazioni 4★+`,
           s.age < 18 ? 'Filtro <18 attivo' : (s.prompt ? 'Live IA genera idee su misura...' : 'Abbinamento hobby'),
           'Selezione dei migliori 5 regali'
-        ],
-        ...LEGAL_DE
+        ]
       }
     };
 
@@ -2033,18 +2008,6 @@
         title: t().favTitle,
         text: lines
       });
-    });
-
-    $('open-impressum').addEventListener('click', () => {
-      $('legal-title').textContent = 'Impressum';
-      $('legal-body').innerHTML = t().impressum;
-      $('modal-legal').classList.add('open');
-    });
-
-    $('open-datenschutz').addEventListener('click', () => {
-      $('legal-title').textContent = 'Datenschutz';
-      $('legal-body').innerHTML = t().datenschutz;
-      $('modal-legal').classList.add('open');
     });
 
     // Скрытый переключатель исключения своих визитов из статистики Vercel
