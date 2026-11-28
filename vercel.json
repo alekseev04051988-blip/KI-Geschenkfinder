@@ -4,6 +4,32 @@
       "includeFiles": "gifts.json"
     }
   },
+  "headers": [
+    {
+      "source": "/impressum",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
+      ]
+    },
+    {
+      "source": "/impressum.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
+      ]
+    },
+    {
+      "source": "/datenschutz",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
+      ]
+    },
+    {
+      "source": "/datenschutz.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/idee/:slug",
@@ -16,6 +42,14 @@
     {
       "source": "/geschenke/:slug",
       "destination": "/api/geschenke?slug=:slug"
+    },
+    {
+      "source": "/impressum",
+      "destination": "/impressum.html"
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/datenschutz.html"
     }
   ]
 }
